@@ -136,7 +136,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_ProjectConfig.Item(&quot;Numerator_Password_1&quot;)]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="330.4,22.4" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[passWord]" Username="[userName]" />
+              <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_ProjectConfig.Item(&quot;SVHarbor_Password_1&quot;)]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="330.4,22.4" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[passWord]" Username="[userName]" />
               <ui:SetValue ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'INPUT  ctl00_ContentPla...'" sap:VirtualizedContainerService.HintSize="330.4,135.2" sap2010:WorkflowViewState.IdRef="SetValue_2" Text="[userName]">
                 <ui:SetValue.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="635c7fd7b5030de29d58bbaaa0ef6bee" Selector="&lt;html title='SiteMinder Password Services' /&gt;&lt;webctrl id='USER' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
