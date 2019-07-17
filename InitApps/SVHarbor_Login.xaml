@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>780.8,2342.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>780.8,2522.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Numerator_Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -61,14 +61,14 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Numerator_Login" sap:VirtualizedContainerService.HintSize="740.8,2262.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Numerator_Login" sap:VirtualizedContainerService.HintSize="740.8,2442.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="702.4,60" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[in_ProjectConfig.Item(&quot;SVHarbor_URL&quot;)]" TopMost="True" />
-    <Sequence DisplayName="Numerator_Login" sap:VirtualizedContainerService.HintSize="702.4,2069.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Numerator_Login" sap:VirtualizedContainerService.HintSize="702.4,2249.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -169,31 +169,45 @@
           </If.Else>
         </If>
       </Sequence>
-      <Sequence DisplayName="Reach Home" sap:VirtualizedContainerService.HintSize="664,262.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <Sequence DisplayName="Reach Home" sap:VirtualizedContainerService.HintSize="664,442.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Boolean" Name="announcementExists" />
+          <Variable x:TypeArguments="x:Boolean" Name="supervaluWholeSaleExists" />
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="330.4,22.4" sap2010:WorkflowViewState.IdRef="Delay_2" />
-        <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click on SUPERVALU Wholesale" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
-          <ui:Click.CursorPosition>
-            <ui:CursorPosition Position="Center">
-              <ui:CursorPosition.OffsetX>
-                <InArgument x:TypeArguments="x:Int32" />
-              </ui:CursorPosition.OffsetX>
-              <ui:CursorPosition.OffsetY>
-                <InArgument x:TypeArguments="x:Int32" />
-              </ui:CursorPosition.OffsetY>
-            </ui:CursorPosition>
-          </ui:Click.CursorPosition>
-          <ui:Click.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="30cd8a57753cdd0cc3516a61212b1b43" Selector="&lt;html title='SVHarbor Home' /&gt;&lt;webctrl aaname='SUPERVALU Wholesale' parentid='page_container' tag='A' /&gt;" WaitForReady="INTERACTIVE" />
-          </ui:Click.Target>
-        </ui:Click>
+        <If Condition="[supervaluWholeSaleExists]" sap:VirtualizedContainerService.HintSize="625.6,349.6" sap2010:WorkflowViewState.IdRef="If_3">
+          <If.Then>
+            <Sequence sap:VirtualizedContainerService.HintSize="368.8,200" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click on SUPERVALU Wholesale" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="30cd8a57753cdd0cc3516a61212b1b43" Selector="&lt;html title='SVHarbor Home' /&gt;&lt;webctrl aaname='SUPERVALU Wholesale' parentid='page_container' tag='A' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:Click.Target>
+              </ui:Click>
+            </Sequence>
+          </If.Then>
+          <If.Else>
+            <Throw Exception="[new SystemException(&quot;Application exception occured : Supervalu Wholesale not found.&quot;)]" sap:VirtualizedContainerService.HintSize="216,22.4" sap2010:WorkflowViewState.IdRef="Throw_3" />
+          </If.Else>
+        </If>
       </Sequence>
     </Sequence>
   </Sequence>
