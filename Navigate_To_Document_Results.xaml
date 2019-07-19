@@ -1,0 +1,347 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Navigate_To_Invoice" this:Navigate_To_Invoice.in_MappingFilePath="C:\Users\JayveersinhMandora\Downloads\Mapping_20190711.xlsx" this:Navigate_To_Invoice.in_MappinngSheetName="Vendor ID" this:Navigate_To_Invoice.in_DedAmount="518.4" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_MappingFilePath" Type="InArgument(x:String)" />
+    <x:Property Name="in_MappinngSheetName" Type="InArgument(x:String)" />
+    <x:Property Name="in_MappingRange" Type="InArgument(x:String)" />
+    <x:Property Name="in_DedAmount" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Navigate_To_Invoice.in_MappingRange>
+    <InArgument x:TypeArguments="x:String">
+      <Literal x:TypeArguments="x:String" Value="" />
+    </InArgument>
+  </this:Navigate_To_Invoice.in_MappingRange>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1041.6,2282.4</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Navigate_To_Invoice_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="21">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="16">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Navigate_To_Invoice" sap:VirtualizedContainerService.HintSize="1001.6,2202.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_VendorIDs" />
+      <Variable x:TypeArguments="x:Boolean" Name="VendorIDDropDownExists" />
+      <Variable x:TypeArguments="x:String" Name="VendorID" />
+      <Variable x:TypeArguments="scg:List(sd:DataRow)" Name="listRowRemove" />
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="documentFound" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope for Mapping File" sap:VirtualizedContainerService.HintSize="963.2,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" Visible="False" WorkbookPath="[in_MappingFilePath]">
+      <ui:ExcelApplicationScope.Body>
+        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="216,68.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ExcelReadRange AddHeaders="True" DataTable="[dt_VendorIDs]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="330.4,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="[in_MappinngSheetName]">
+              <ui:ExcelReadRange.Range>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </ui:ExcelReadRange.Range>
+            </ui:ExcelReadRange>
+          </Sequence>
+        </ActivityAction>
+      </ui:ExcelApplicationScope.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ExcelApplicationScope>
+    <ui:UiElementExists DisplayName="SELECT Vendor ID # DropDown Exists" Exists="[VendorIDDropDownExists]" sap:VirtualizedContainerService.HintSize="963.2,52.8" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+      <ui:UiElementExists.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="e06576de4545b988d5d3fd9c0c702ea5" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl name='value(vendorId)' tag='SELECT' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+      </ui:UiElementExists.Target>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:UiElementExists>
+    <Assign sap:VirtualizedContainerService.HintSize="963.2,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:List(sd:DataRow)">[listRowRemove]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:List(sd:DataRow)">[new List(Of System.Data.DataRow)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_VendorIDs]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="963.2,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="254.4,115.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <AddToCollection x:TypeArguments="sd:DataRow" Collection="[listRowRemove]" DisplayName="Add to collection" sap:VirtualizedContainerService.HintSize="216,22.4" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="[row]" />
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachRow>
+    <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}" DisplayName="For each" sap:VirtualizedContainerService.HintSize="963.2,1731.2" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[listRowRemove]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="item" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="931.2,1596.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="VendorID" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="892.8,64.8" sap2010:WorkflowViewState.IdRef="GetRowItem_2" Row="[item]">
+              <ui:GetRowItem.Value>
+                <OutArgument x:TypeArguments="x:String">[VendorID]</OutArgument>
+              </ui:GetRowItem.Value>
+            </ui:GetRowItem>
+            <If Condition="[VendorIDDropDownExists = True  AND documentFound = False]" sap:VirtualizedContainerService.HintSize="892.8,1399.2" sap2010:WorkflowViewState.IdRef="If_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="636,1249.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="NoResultFoundExists" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item from Vendor ID #" sap:VirtualizedContainerService.HintSize="597.6,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_3" Item="[VendorID]">
+                    <ui:SelectItem.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="50">
+                        <x:String>18 Rabbits                              7580148</x:String>
+                        <x:String>18 Rabbits                              7580148</x:String>
+                        <x:String>3 M COMPANY                             5161725</x:String>
+                        <x:String>3 M COMPANY                             5161725</x:String>
+                        <x:String>3M CONSUMER                             0558650</x:String>
+                        <x:String>3M CONSUMER                             0558650</x:String>
+                        <x:String>3M CONSUMER                             0558650</x:String>
+                        <x:String>AC HUMKO CORP                           7394685</x:String>
+                        <x:String>AC HUMKO CORP                           7394685</x:String>
+                        <x:String>ACH FOOD COMPANIES INC                  0402701</x:String>
+                        <x:String>ACH FOOD COMPANIES INC                  0402701</x:String>
+                        <x:String>ACH FOOD COMPANIES INC                  1166749</x:String>
+                        <x:String>ACH FOOD COMPANIES INC                  1166749</x:String>
+                        <x:String>ADAMS LABS                              7346530</x:String>
+                        <x:String>ADAMS LABS                              7346530</x:String>
+                        <x:String>ADAMS LABS                              7346530</x:String>
+                        <x:String>ADIRONDACK BEVERAGES CORP               5983333</x:String>
+                        <x:String>ADIRONDACK BEVERAGES CORP               5983333</x:String>
+                        <x:String>ADVANCED MEDICAL OPTICS AMO          7321800</x:String>
+                        <x:String>ADVANCED MEDICAL OPTICS AMO          7321800</x:String>
+                        <x:String>ADVANCED MEDICAL OPTICS AMO          7321800</x:String>
+                        <x:String>Agility Sports LLC                      7388494</x:String>
+                        <x:String>Agility Sports LLC                      7388494</x:String>
+                        <x:String>Agility Sports LLC                      7388494</x:String>
+                        <x:String>Agropur                                 7515369</x:String>
+                        <x:String>Agropur                                 7515369</x:String>
+                        <x:String>AINSWORTH PET NUTRITION                 0645325</x:String>
+                        <x:String>AINSWORTH PET NUTRITION                 0645325</x:String>
+                        <x:String>Ajinomoto Foods North America Inc       6498604</x:String>
+                        <x:String>Ajinomoto Foods North America Inc       6498604</x:String>
+                        <x:String>ALBERTO CULVER USA                      0010538</x:String>
+                        <x:String>ALBERTO CULVER USA                      0010538</x:String>
+                        <x:String>ALBERTO CULVER USA                      0010538</x:String>
+                        <x:String>ALCON LABORATORIES INC                  0537035</x:String>
+                        <x:String>ALCON LABORATORIES INC                  0537035</x:String>
+                        <x:String>ALLEGHANY PHARMACAL CORP                5738588</x:String>
+                        <x:String>ALLEGHANY PHARMACAL CORP                5738588</x:String>
+                        <x:String>ALLEN CANNING COMPANY                   0012609</x:String>
+                        <x:String>ALLEN CANNING COMPANY                   0012609</x:String>
+                        <x:String>ALLERGAN INC                            0740845</x:String>
+                        <x:String>ALLERGAN INC                            0740845</x:String>
+                        <x:String>ALLERGAN INC                            0740845</x:String>
+                        <x:String>ALLTRISTA CORPORATION                   0054908</x:String>
+                        <x:String>ALLTRISTA CORPORATION                   0054908</x:String>
+                        <x:String>Amazing Taste                           7323565</x:String>
+                        <x:String>Amazing Taste                           7323565</x:String>
+                        <x:String>AMERICAN IMPORTING COMPANY INC          0023184</x:String>
+                        <x:String>AMERICAN IMPORTING COMPANY INC          0023184</x:String>
+                        <x:String>AMERICAN NUTRITION INC                  0799023</x:String>
+                        <x:String>AMERICAN NUTRITION INC                  0799023</x:String>
+                      </scg:List>
+                    </ui:SelectItem.Items>
+                    <ui:SelectItem.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="e06576de4545b988d5d3fd9c0c702ea5" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl name='value(vendorId)' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                    </ui:SelectItem.Target>
+                  </ui:SelectItem>
+                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT' on Net Amount" sap:VirtualizedContainerService.HintSize="597.6,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="7c3ea671089d44c75cf80c671ea5f95b" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl idx='2' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                    </ui:Click.Target>
+                  </ui:Click>
+                  <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type into Net Amount" EmptyField="True" sap:VirtualizedContainerService.HintSize="597.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="True" Text="[in_DedAmount]">
+                    <ui:TypeInto.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="476358aa1afa10343f5203f408670f8d" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl name='value(netAmount1)' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                    </ui:TypeInto.Target>
+                  </ui:TypeInto>
+                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click GO" sap:VirtualizedContainerService.HintSize="597.6,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="996b8cb45f040d859ed5c3849f24e25a" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl aaname='Go' tag='BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
+                    </ui:Click.Target>
+                  </ui:Click>
+                  <ui:UiElementExists DisplayName="Document Results Element Exists" Exists="[NoResultFoundExists]" sap:VirtualizedContainerService.HintSize="597.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0b83d45a12021f68972fedd9f2e2c12a" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl parentid='primary-content' tag='TABLE' /&gt;&lt;webctrl tag='TD' innertext='(No results found.) ' /&gt;" TimeoutMS="10000" WaitForReady="INTERACTIVE" />
+                    </ui:UiElementExists.Target>
+                  </ui:UiElementExists>
+                  <If Condition="[NoResultFoundExists]" sap:VirtualizedContainerService.HintSize="597.6,364.8" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="297.6,215.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="259.2,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[documentFound]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:RemoveDataRow RowIndex="{x:Null}" DataTable="[dt_VendorIDs]" DisplayName="Remove data row" sap:VirtualizedContainerService.HintSize="259.2,22.4" sap2010:WorkflowViewState.IdRef="RemoveDataRow_3" Row="[item]" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Assign sap:VirtualizedContainerService.HintSize="259.2,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Boolean">[documentFound]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="216,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="254.4,115.2" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Throw DisplayName="Throw : Business Exception" Exception="[new BusinessRuleException(&quot;SVHarbor : Unable location Document&quot;)]" sap:VirtualizedContainerService.HintSize="216,22.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:CommentOut>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEach>
+  </Sequence>
+</Activity>
