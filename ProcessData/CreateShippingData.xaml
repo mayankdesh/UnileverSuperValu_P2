@@ -6,6 +6,10 @@
     <x:Property Name="in_ProjectConfig" Type="InArgument(scg:Dictionary(x:String, ui:GenericValue))" />
     <x:Property Name="in_SheetName" Type="InArgument(x:String)" />
     <x:Property Name="inout_Top10Added" Type="InOutArgument(x:Boolean)" />
+    <x:Property Name="in_Account" Type="InArgument(x:String)" />
+    <x:Property Name="in_RefNr" Type="InArgument(x:String)" />
+    <x:Property Name="in_DedAmt" Type="InArgument(x:String)" />
+    <x:Property Name="in_UPCCode" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -63,7 +67,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CreateShippingData" sap:VirtualizedContainerService.HintSize="564.8,3272.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CreateShippingData" sap:VirtualizedContainerService.HintSize="564.8,3001.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="shippingData" />
       <Variable x:TypeArguments="x:String" Name="shippingInputExcelPath" />
@@ -81,7 +85,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="542.4,3180" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="542.4,2908.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -89,7 +93,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="524.8,2948.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="524.8,2677.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -113,37 +117,12 @@
               <InArgument x:TypeArguments="x:Boolean">False</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="502.4,231.2" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-            <ui:CommentOut.Body>
-              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="265.6,152.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="Set shippingInputExcelPath" sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_6">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:String">[shippingInputExcelPath]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">[in_ProjectConfig("ShippingExcelPath").ToString]</InArgument>
-                  </Assign.Value>
-                </Assign>
-              </Sequence>
-            </ui:CommentOut.Body>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:CommentOut>
-          <Assign DisplayName="Set shippingInputExcelPath" sap:VirtualizedContainerService.HintSize="502.4,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+          <Assign DisplayName="Set shippingInputExcelPath" sap:VirtualizedContainerService.HintSize="502.4,60" sap2010:WorkflowViewState.IdRef="Assign_6">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[shippingInputExcelPath]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">C:\Users\deshw\Documents\UiPath\UnileverSuperValuDeduction_P2\Data</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_ProjectConfig("ShippingExcelPath").ToString]</InArgument>
             </Assign.Value>
           </Assign>
           <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="502.4,2152" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Directory.GetFiles(shippingInputExcelPath,&quot;*.xlsx&quot;)]">
@@ -158,7 +137,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:ReadRange AddHeaders="True" DataTable="[shippingData]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="464,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="SUPERVALU HPC &amp; HOME" WorkbookPath="[file.ToString]">
+                  <ui:ReadRange AddHeaders="True" DataTable="[shippingData]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="464,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="[in_SheetName]" WorkbookPath="[file.ToString]">
                     <ui:ReadRange.Range>
                       <InArgument x:TypeArguments="x:String">
                         <Literal x:TypeArguments="x:String" Value="" />
@@ -181,7 +160,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:WriteRange AddHeaders="True" DataTable="[filteredData]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="314.4,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="C:\Users\deshw\Documents\UiPath\UnileverSuperValuDeduction_P2\Data\New Excel\My.xlsx" />
+                        <ui:WriteRange AddHeaders="True" DataTable="[filteredData]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="314.4,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[in_ProjectConfig.Item(&quot;CreateNewShippingExcelPath&quot;).ToString &amp; &quot;_&quot; &amp; in_Account &amp; &quot;_&quot; &amp; in_RefNr &amp; &quot;_&quot; &amp; in_DedAmt &amp; &quot;.xlsx&quot;]" />
                         <Assign sap:VirtualizedContainerService.HintSize="314.4,60" sap2010:WorkflowViewState.IdRef="Assign_25">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Boolean">[inout_Top10Added]</OutArgument>
@@ -198,7 +177,7 @@
                       <OutArgument x:TypeArguments="sd:DataTable">[filteredData]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="sd:DataTable">[shippingData.Select("[Column1] like '%5004%'").CopyToDataTable]</InArgument>
+                      <InArgument x:TypeArguments="sd:DataTable">[shippingData.Select("[Column1] like '%" &amp; in_UPCCode.ToString &amp; "%'").CopyToDataTable]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="464,60" sap2010:WorkflowViewState.IdRef="Assign_22">
@@ -229,7 +208,7 @@
                       <OutArgument x:TypeArguments="x:String" x:Key="unexploded">[unexploded]</OutArgument>
                     </ui:InvokeCode.Arguments>
                   </ui:InvokeCode>
-                  <ui:ReadRange AddHeaders="True" DataTable="[createdExcelData]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="464,88" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="Sheet1" WorkbookPath="C:\Users\deshw\Documents\UiPath\UnileverSuperValuDeduction_P2\Data\New Excel\My.xlsx">
+                  <ui:ReadRange AddHeaders="True" DataTable="[createdExcelData]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="464,88" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="Sheet1" WorkbookPath="[in_ProjectConfig.Item(&quot;CreateNewShippingExcelPath&quot;).ToString &amp; &quot;_&quot; &amp; in_Account &amp; &quot;_&quot; &amp; in_RefNr &amp; &quot;_&quot; &amp; in_DedAmt &amp; &quot;.xlsx&quot;]">
                     <ui:ReadRange.Range>
                       <InArgument x:TypeArguments="x:String">
                         <Literal x:TypeArguments="x:String" Value="" />
@@ -252,7 +231,7 @@
                       <InArgument x:TypeArguments="x:Int32">[createdExcelData.Rows.Count]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:WriteRange AddHeaders="False" DataTable="[filteredData]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="464,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Sheet1" StartingCell="[&quot;A&quot; &amp; createdExcelDataRowCount + 1]" WorkbookPath="C:\Users\deshw\Documents\UiPath\UnileverSuperValuDeduction_P2\Data\New Excel\My.xlsx" />
+                  <ui:WriteRange AddHeaders="False" DataTable="[filteredData]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="464,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Sheet1" StartingCell="[&quot;A&quot; &amp; createdExcelDataRowCount + 1]" WorkbookPath="[in_ProjectConfig.Item(&quot;CreateNewShippingExcelPath&quot;).ToString &amp; &quot;_&quot; &amp; in_Account &amp; &quot;_&quot; &amp; in_RefNr &amp; &quot;_&quot; &amp; in_DedAmt &amp; &quot;.xlsx&quot;]" />
                 </Sequence>
               </ActivityAction>
             </ui:ForEach.Body>
