@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1190.4,1759.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1190.4,1764.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Set_Review_Update_Worklist_Search_Criteria_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -59,7 +59,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Set_Review_Update_Worklist_Search_Criteria" sap:VirtualizedContainerService.HintSize="1150.4,1679.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Set_Review_Update_Worklist_Search_Criteria" sap:VirtualizedContainerService.HintSize="1150.4,1684.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="worklistSearchCriteriaExists" />
       <Variable x:TypeArguments="x:String" Name="setManagementGroupName" />
@@ -162,13 +162,13 @@
         <Throw Exception="[new BusinessRuleException(&quot;Unable to find Management Group Value&quot;)]" sap:VirtualizedContainerService.HintSize="216,22.4" sap2010:WorkflowViewState.IdRef="Throw_2" />
       </If.Else>
     </If>
-    <ui:SetValue ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Promotion Number" sap:VirtualizedContainerService.HintSize="330.4,96.8" sap2010:WorkflowViewState.IdRef="SetValue_4" Text="[setManagementGroupName.Substring(2,7)]">
+    <ui:SetValue ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Promotion Number" sap:VirtualizedContainerService.HintSize="1112,96.8" sap2010:WorkflowViewState.IdRef="SetValue_4" Text="[setManagementGroupName.Substring(2,7)]">
       <ui:SetValue.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;html title='Worklist Search Criteria' /&gt;&lt;webctrl name='txtPromotionNbr' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
       </ui:SetValue.Target>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -188,15 +188,15 @@
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="f542cac7b25b4e020aebf74f92951240" Selector="&lt;html title='Worklist Search Criteria' /&gt;&lt;webctrl aaname='Go' tag='BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
       </ui:Click.Target>
     </ui:Click>
-    <ui:UiElementExists DisplayName="No Data found Element Exists" Exists="[noDataFoundExists]" sap:VirtualizedContainerService.HintSize="1112,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+    <ui:UiElementExists DisplayName="No Data found Element Exists" Exists="[noDataFoundExists]" sap:VirtualizedContainerService.HintSize="1112,68.8" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
       <ui:UiElementExists.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="2982dd6b31ed49c49ebaf5cd3ceb1f4c" Selector="&lt;html title='Work List' /&gt;&lt;webctrl aaname='No Data found.' tag='SPAN' /&gt;" TimeoutMS="30000" WaitForReady="INTERACTIVE" />
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;html idx='1' /&gt;&lt;webctrl innertext='View ' idx='2' /&gt;" TimeoutMS="30000" WaitForReady="INTERACTIVE" />
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <If Condition="[noDataFoundExists]" sap:VirtualizedContainerService.HintSize="480,209.6" sap2010:WorkflowViewState.IdRef="If_4">
-      <If.Then>
+    <If Condition="[noDataFoundExists]" sap:VirtualizedContainerService.HintSize="1112,209.6" sap2010:WorkflowViewState.IdRef="If_4">
+      <If.Else>
         <Throw Exception="[new BusinessRuleException(&quot;SVHarbor : Unable to find Management Group Contract&quot;)]" sap:VirtualizedContainerService.HintSize="216,22.4" sap2010:WorkflowViewState.IdRef="Throw_3" />
-      </If.Then>
+      </If.Else>
     </If>
   </Sequence>
 </Activity>

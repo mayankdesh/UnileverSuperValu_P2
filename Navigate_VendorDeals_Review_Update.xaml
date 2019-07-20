@@ -89,7 +89,7 @@
     </ui:Click>
     <ui:UiElementExists DisplayName="Check SV Harbor Screen Exists (Account Payable Services)" Exists="[AccountPayableServiceExists]" sap:VirtualizedContainerService.HintSize="625.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="5d673db1a4df70a2cdab98455ee8c64c" Selector="&lt;html title='SVConnect Portal v1.2' /&gt;&lt;webctrl id='554' tag='DT' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="5d673db1a4df70a2cdab98455ee8c64c" Selector="&lt;html title='SVConnect Portal v1.2' /&gt;&lt;webctrl id='554' tag='DT' /&gt;" TimeoutMS="20000" WaitForReady="INTERACTIVE" />
       </ui:UiElementExists.Target>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
