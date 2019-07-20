@@ -474,20 +474,20 @@
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="464,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;ProcessData : Initialised&quot;]" />
-                                                  <Assign DisplayName="Initialise exception to null" sap:VirtualizedContainerService.HintSize="464,60" sap2010:WorkflowViewState.IdRef="Assign_19">
-                                                    <Assign.To>
-                                                      <OutArgument x:TypeArguments="s:Exception">[systemException]</OutArgument>
-                                                    </Assign.To>
-                                                    <Assign.Value>
-                                                      <InArgument x:TypeArguments="s:Exception">[Nothing]</InArgument>
-                                                    </Assign.Value>
-                                                  </Assign>
                                                   <Assign DisplayName="Initialise succeeded to False" sap:VirtualizedContainerService.HintSize="464,60" sap2010:WorkflowViewState.IdRef="Assign_20">
                                                     <Assign.To>
                                                       <OutArgument x:TypeArguments="x:Boolean">[succeeded]</OutArgument>
                                                     </Assign.To>
                                                     <Assign.Value>
                                                       <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <Assign DisplayName="Initialise exception to null" sap:VirtualizedContainerService.HintSize="464,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="s:Exception">[systemException]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="s:Exception">[Nothing]</InArgument>
                                                     </Assign.Value>
                                                   </Assign>
                                                   <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="464,132.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_10" MethodName="SetCurrentDirectory" TargetType="si:Directory">
