@@ -95,7 +95,7 @@
         </sap:WorkflowViewStateService.ViewState>
         <ui:UiElementExists DisplayName="Element Exists SVHarbor Login" Exists="[SVHarborExists]" sap:VirtualizedContainerService.HintSize="625.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
           <ui:UiElementExists.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0a0be82df53e92c198cf33ef1b309bcd" Selector="&lt;html title='SVHarbor Portal' /&gt;&lt;webctrl parentid='login' tag='A' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0a0be82df53e92c198cf33ef1b309bcd" Selector="&lt;html title='SVHarbor Portal' /&gt;&lt;webctrl parentid='login' tag='A' /&gt;" TimeoutMS="10000" WaitForReady="COMPLETE" />
           </ui:UiElementExists.Target>
         </ui:UiElementExists>
         <If Condition="[SVHarborExists]" sap:VirtualizedContainerService.HintSize="625.6,209.6" sap2010:WorkflowViewState.IdRef="If_1">
@@ -120,7 +120,7 @@
         </ui:Click>
         <ui:UiElementExists DisplayName="Element Exists 'INPUT  ctl00_ContentPla...'" Exists="[userNameExists]" sap:VirtualizedContainerService.HintSize="625.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
           <ui:UiElementExists.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="512fd9c8421f549e4fc53e84f56d4713" Selector="&lt;html title='SiteMinder Password Services' /&gt;&lt;webctrl id='USER' tag='INPUT' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="512fd9c8421f549e4fc53e84f56d4713" Selector="&lt;html title='SiteMinder Password Services' /&gt;&lt;webctrl id='USER' tag='INPUT' /&gt;" TimeoutMS="10000" WaitForReady="INTERACTIVE" />
           </ui:UiElementExists.Target>
         </ui:UiElementExists>
         <If Condition="[userNameExists]" sap:VirtualizedContainerService.HintSize="625.6,734.4" sap2010:WorkflowViewState.IdRef="If_2">
