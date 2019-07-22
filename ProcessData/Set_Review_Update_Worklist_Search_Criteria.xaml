@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Set_Review_Update_Worklist_Search_Criteria" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Set_Review_Update_Worklist_Search_Criteria" this:Set_Review_Update_Worklist_Search_Criteria.in_ReferenceNumber="0792817557" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_ReferenceNumber" Type="InArgument(x:String)" />
     <x:Property Name="in_MappingFilePath" Type="InArgument(x:String)" />
@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1190.4,1764.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1253.6,1905.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Set_Review_Update_Worklist_Search_Criteria_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -59,7 +59,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Set_Review_Update_Worklist_Search_Criteria" sap:VirtualizedContainerService.HintSize="1150.4,1684.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Set_Review_Update_Worklist_Search_Criteria" sap:VirtualizedContainerService.HintSize="1213.6,1825.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="worklistSearchCriteriaExists" />
       <Variable x:TypeArguments="x:String" Name="setManagementGroupName" />
@@ -70,9 +70,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:UiElementExists DisplayName="Element Exists 'TD'" Exists="[worklistSearchCriteriaExists]" sap:VirtualizedContainerService.HintSize="1112,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+    <ui:UiElementExists DisplayName="Element Exists 'TD'" Exists="[worklistSearchCriteriaExists]" sap:VirtualizedContainerService.HintSize="1175.2,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="ab6680b6e2a39f3d58af529f4ff9a6e0" Selector="&lt;html title='Worklist Search Criteria' /&gt;&lt;webctrl css-selector='body&amp;gt;form&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table' tag='TABLE' /&gt;&lt;webctrl tableCol='1' tag='TD' /&gt;" TimeoutMS="10000" WaitForReady="INTERACTIVE" />
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="ab6680b6e2a39f3d58af529f4ff9a6e0" Selector="&lt;html title='Worklist Search Criteria' /&gt;&lt;webctrl css-selector='body&amp;gt;form&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table' tag='TABLE' /&gt;&lt;webctrl tableCol='1' tag='TD' /&gt;" TimeoutMS="30000" WaitForReady="COMPLETE" />
       </ui:UiElementExists.Target>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -81,7 +81,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:UiElementExists>
-    <If Condition="[worklistSearchCriteriaExists]" sap:VirtualizedContainerService.HintSize="1112,802.4" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[worklistSearchCriteriaExists]" sap:VirtualizedContainerService.HintSize="1175.2,943.2" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -89,13 +89,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="855.2,652.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence sap:VirtualizedContainerService.HintSize="918.4,793.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[in_ReferenceNumber.StartsWith(&quot;0&quot;)]" sap:VirtualizedContainerService.HintSize="816.8,560" sap2010:WorkflowViewState.IdRef="If_3">
+          <If Condition="[in_ReferenceNumber.StartsWith(&quot;0&quot;)]" sap:VirtualizedContainerService.HintSize="880,700.8" sap2010:WorkflowViewState.IdRef="If_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -103,22 +103,34 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="368.8,317.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <Sequence sap:VirtualizedContainerService.HintSize="470.4,551.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign sap:VirtualizedContainerService.HintSize="330.4,60" sap2010:WorkflowViewState.IdRef="Assign_5">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:String">[setManagementGroupName]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">[in_ReferenceNumber.TrimStart("0"c)]</InArgument>
-                  </Assign.Value>
-                </Assign>
-                <ui:SetWebAttribute ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Attribute="value" DisplayName="Set Value to Management Group" sap:VirtualizedContainerService.HintSize="330.4,124.8" sap2010:WorkflowViewState.IdRef="SetWebAttribute_2" Value="[setManagementGroupName.Substring(0,2)]">
+                <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="432,22.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="432,231.2" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="297.6,152.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="259.2,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[setManagementGroupName]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[in_ReferenceNumber.TrimStart("0"c)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                </ui:CommentOut>
+                <ui:SetWebAttribute ContinueOnError="{x:Null}" DelayAfter="{x:Null}" Attribute="value" DelayBefore="1000" DisplayName="Set Value to Management Group" sap:VirtualizedContainerService.HintSize="432,124.8" sap2010:WorkflowViewState.IdRef="SetWebAttribute_2" Value="[in_ReferenceNumber.Substring(1,2)]">
                   <ui:SetWebAttribute.Target>
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;html title='Worklist Search Criteria' /&gt;&lt;webctrl name='selRegionNbr' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
                   </ui:SetWebAttribute.Target>
@@ -126,33 +138,27 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence sap:VirtualizedContainerService.HintSize="407.2,410.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <Sequence sap:VirtualizedContainerService.HintSize="368.8,380" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence sap:VirtualizedContainerService.HintSize="368.8,317.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="330.4,60" sap2010:WorkflowViewState.IdRef="Assign_6">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[setManagementGroupName]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[in_ReferenceNumber.TrimStart("0"c)]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <ui:SetWebAttribute ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Attribute="value" DisplayName="Set Value to Management Group" sap:VirtualizedContainerService.HintSize="330.4,124.8" sap2010:WorkflowViewState.IdRef="SetWebAttribute_1" Value="[setManagementGroupName.Substring(0,3)]">
-                    <ui:SetWebAttribute.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;html title='Worklist Search Criteria' /&gt;&lt;webctrl name='selRegionNbr' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
-                    </ui:SetWebAttribute.Target>
-                  </ui:SetWebAttribute>
-                </Sequence>
+                <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="330.4,22.4" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                <Assign sap:VirtualizedContainerService.HintSize="330.4,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[setManagementGroupName]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[in_ReferenceNumber.TrimStart("0"c)]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:SetWebAttribute ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Attribute="value" DisplayName="Set Value to Management Group" sap:VirtualizedContainerService.HintSize="330.4,124.8" sap2010:WorkflowViewState.IdRef="SetWebAttribute_3" Value="[in_ReferenceNumber.Substring(0,2)]">
+                  <ui:SetWebAttribute.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;html title='Worklist Search Criteria' /&gt;&lt;webctrl name='selRegionNbr' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:SetWebAttribute.Target>
+                </ui:SetWebAttribute>
               </Sequence>
             </If.Else>
           </If>
@@ -162,7 +168,7 @@
         <Throw Exception="[new BusinessRuleException(&quot;Unable to find Management Group Value&quot;)]" sap:VirtualizedContainerService.HintSize="216,22.4" sap2010:WorkflowViewState.IdRef="Throw_2" />
       </If.Else>
     </If>
-    <ui:SetValue ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Promotion Number" sap:VirtualizedContainerService.HintSize="1112,96.8" sap2010:WorkflowViewState.IdRef="SetValue_4" Text="[setManagementGroupName.Substring(2,7)]">
+    <ui:SetValue ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Promotion Number" sap:VirtualizedContainerService.HintSize="1175.2,96.8" sap2010:WorkflowViewState.IdRef="SetValue_4" Text="[in_ReferenceNumber.Substring(3,7)]">
       <ui:SetValue.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;html title='Worklist Search Criteria' /&gt;&lt;webctrl name='txtPromotionNbr' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
       </ui:SetValue.Target>
@@ -173,7 +179,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:SetValue>
-    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Go Button" sap:VirtualizedContainerService.HintSize="1112,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Go Button" sap:VirtualizedContainerService.HintSize="1175.2,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
       <ui:Click.CursorPosition>
         <ui:CursorPosition Position="Center">
           <ui:CursorPosition.OffsetX>
@@ -188,12 +194,12 @@
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="f542cac7b25b4e020aebf74f92951240" Selector="&lt;html title='Worklist Search Criteria' /&gt;&lt;webctrl aaname='Go' tag='BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
       </ui:Click.Target>
     </ui:Click>
-    <ui:UiElementExists DisplayName="No Data found Element Exists" Exists="[noDataFoundExists]" sap:VirtualizedContainerService.HintSize="1112,68.8" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+    <ui:UiElementExists DisplayName="No Data found Element Exists" Exists="[noDataFoundExists]" sap:VirtualizedContainerService.HintSize="1175.2,68.8" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
       <ui:UiElementExists.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;html idx='1' /&gt;&lt;webctrl innertext='View ' idx='2' /&gt;" TimeoutMS="30000" WaitForReady="INTERACTIVE" />
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;html title='Work List' /&gt;&lt;webctrl omit:aaname='2817557' parentid='sortableTable0' tag='A' /&gt;" TimeoutMS="30000" WaitForReady="INTERACTIVE" />
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <If Condition="[noDataFoundExists]" sap:VirtualizedContainerService.HintSize="1112,209.6" sap2010:WorkflowViewState.IdRef="If_4">
+    <If Condition="[noDataFoundExists]" sap:VirtualizedContainerService.HintSize="1175.2,209.6" sap2010:WorkflowViewState.IdRef="If_4">
       <If.Else>
         <Throw Exception="[new BusinessRuleException(&quot;SVHarbor : Unable to find Management Group Contract&quot;)]" sap:VirtualizedContainerService.HintSize="216,22.4" sap2010:WorkflowViewState.IdRef="Throw_3" />
       </If.Else>
