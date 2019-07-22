@@ -203,7 +203,7 @@
           </ui:InvokeWorkflowFile>
           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Set_Review_Update_Worklist_Search_Criteria workflow" sap:VirtualizedContainerService.HintSize="330.4,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Set_Review_Update_Worklist_Search_Criteria.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_ReferenceNumber">[custRefNumber]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ReferenceNumber">[invoiceReferenceNumber]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_MappingFilePath">C:\Users\JayveersinhMandora\Downloads\Mapping_20190711.xlsx</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
