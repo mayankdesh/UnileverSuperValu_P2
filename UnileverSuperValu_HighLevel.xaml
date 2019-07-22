@@ -51,7 +51,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID6}" sap2010:Annotation.AnnotationText="- Below is high level of process.&#xA;- Happy Path : Initialize Config file -&gt; Initialize pplication -&gt; Get Data(Process Queue) -&gt; Process Data(Get Data from Queue) -&gt; Close Application(Process Application) -&gt; Finialize&#xA;- Exception : &#xA;1. Exception state will handle all the exceptions&#xA;2. 3 retries to initialize the application(excel) and to load the data in queue." DisplayName="UnileverSuperValu_HighLevel" sap:VirtualizedContainerService.HintSize="2133.6,1021.6" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID7}" sap2010:Annotation.AnnotationText="- Below is high level of process.&#xA;- Happy Path : Initialize Config file -&gt; Initialize pplication -&gt; Get Data(Process Queue) -&gt; Process Data(Get Data from Queue) -&gt; Close Application(Process Application) -&gt; Finialize&#xA;- Exception : &#xA;1. Exception state will handle all the exceptions&#xA;2. 3 retries to initialize the application(excel) and to load the data in queue." DisplayName="UnileverSuperValu_HighLevel" sap:VirtualizedContainerService.HintSize="2133.6,1021.6" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -62,7 +62,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID6" sap2010:Annotation.AnnotationText="* Read project configuration&#xA;* Initialise variales&#xA;* Check assets, queue, etc, are set up" DisplayName="InitConfig" sap:VirtualizedContainerService.HintSize="248.8,192" sap2010:WorkflowViewState.IdRef="State_2">
+    <State x:Name="__ReferenceID7" sap2010:Annotation.AnnotationText="* Read project configuration&#xA;* Initialise variales&#xA;* Check assets, queue, etc, are set up" DisplayName="InitConfig" sap:VirtualizedContainerService.HintSize="248.8,192" sap2010:WorkflowViewState.IdRef="State_2">
       <State.Entry>
         <Sequence DisplayName="InitConfig" sap:VirtualizedContainerService.HintSize="336.8,688" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <sap:WorkflowViewStateService.ViewState>
@@ -138,32 +138,29 @@
           <Transition.To>
             <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="* Handle a System Exception&#xA;* Retry (if max. retry count not exceeded)" DisplayName="Exception" sap:VirtualizedContainerService.HintSize="259.2,184" sap2010:WorkflowViewState.IdRef="State_12">
               <State.Entry>
-                <Sequence DisplayName="InitConfig" sap:VirtualizedContainerService.HintSize="692,1908.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="InitConfig" sap:VirtualizedContainerService.HintSize="740,1871.2" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="653.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_10" Text="[&quot;Exception Called&quot;]" TopMost="True" />
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="653.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Exception : Initialised&quot;]" />
-                  <Assign DisplayName="Increment System Exception Counter" sap:VirtualizedContainerService.HintSize="653.6,60" sap2010:WorkflowViewState.IdRef="Assign_4">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int32">[maxRetriesSystemExceptionCounter]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:Int32">[maxRetriesSystemExceptionCounter + 1]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <If Condition="[maxRetriesSystemExceptionCounter = projectConfig(&quot;MaxProjectRetries&quot;)]" DisplayName="Send Email if max retry reached" sap:VirtualizedContainerService.HintSize="653.6,776" sap2010:WorkflowViewState.IdRef="If_1">
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="701.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_10" Text="[&quot;Exception Called&quot;]" TopMost="True" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="701.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Exception : Initialised&quot;]" />
+                  <If Condition="[maxRetriesSystemExceptionCounter = projectConfig(&quot;MaxProjectRetries&quot;)]" DisplayName="Send Email if max retry reached" sap:VirtualizedContainerService.HintSize="701.6,838.4" sap2010:WorkflowViewState.IdRef="If_1">
                     <If.Then>
-                      <Sequence DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="368.8,626.4" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                      <Sequence DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="368.8,688.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
+                        <ui:SetTransactionStatus ContinueOnError="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" Details="[systemException.Message.ToString]" DisplayName="Set Transaction Status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="330.4,22.4" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_1" Reason="[systemException.Message.ToString]" Status="Failed" TransactionItem="[queueItem]">
+                          <ui:SetTransactionStatus.Output>
+                            <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                          </ui:SetTransactionStatus.Output>
+                        </ui:SetTransactionStatus>
                         <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="330.4,60" sap2010:WorkflowViewState.IdRef="MessageBox_9" Text="[&quot;Send Email&quot;]" TopMost="True" />
                         <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[projectConfig(&quot;MaxRetriesEmailTo&quot;).ToString]" DisplayName="Get Send To Email" sap:VirtualizedContainerService.HintSize="330.4,22.4" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
                           <ui:GetRobotAsset.Value>
@@ -188,9 +185,9 @@
                       </Sequence>
                     </If.Then>
                   </If>
-                  <If Condition="[systemException Is Nothing]" DisplayName="If the does not email" sap:VirtualizedContainerService.HintSize="653.6,209.6" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[systemException Is Nothing]" DisplayName="If the does not email" sap:VirtualizedContainerService.HintSize="701.6,209.6" sap2010:WorkflowViewState.IdRef="If_2">
                     <If.Then>
-                      <Assign DisplayName="Create new exception" sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                      <Assign DisplayName="Create new exception" sap:VirtualizedContainerService.HintSize="259.2,60" sap2010:WorkflowViewState.IdRef="Assign_7">
                         <Assign.To>
                           <OutArgument x:TypeArguments="s:Exception">[systemException]</OutArgument>
                         </Assign.To>
@@ -200,13 +197,13 @@
                       </Assign>
                     </If.Then>
                   </If>
-                  <maes:KeyExistsInDictionary x:TypeArguments="x:String, ui:GenericValue" Dictionary="[projectConfig]" DisplayName="Key exists in dictionary" sap:VirtualizedContainerService.HintSize="653.6,135.2" sap2010:WorkflowViewState.IdRef="KeyExistsInDictionary`2_1" Key="CommonExeptionHandler" Result="[exeptionHandlerInitialised]" />
-                  <If Condition="[exeptionHandlerInitialised]" DisplayName="Check for exceptionHandler" sap:VirtualizedContainerService.HintSize="653.6,242.4" sap2010:WorkflowViewState.IdRef="If_3">
+                  <maes:KeyExistsInDictionary x:TypeArguments="x:String, ui:GenericValue" Dictionary="[projectConfig]" DisplayName="Key exists in dictionary" sap:VirtualizedContainerService.HintSize="701.6,135.2" sap2010:WorkflowViewState.IdRef="KeyExistsInDictionary`2_1" Key="CommonExeptionHandler" Result="[exeptionHandlerInitialised]" />
+                  <If Condition="[exeptionHandlerInitialised]" DisplayName="Check for exceptionHandler" sap:VirtualizedContainerService.HintSize="701.6,242.4" sap2010:WorkflowViewState.IdRef="If_3">
                     <If.Then>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Error" Message="[&quot;Error Occuered : &quot; &amp; systemException.Message.ToString]" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="330.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Error" Message="[&quot;Error Occuered : &quot; &amp; systemException.Message.ToString]" />
                     </If.Then>
                     <If.Else>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Fatal" Message="[&quot;The process has terminated early.&quot;]" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="330.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Fatal" Message="[&quot;The process has terminated early.&quot;]" />
                     </If.Else>
                   </If>
                 </Sequence>
@@ -222,10 +219,10 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <State.Exit>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Exception : Completed&quot;]" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="330.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Exception : Completed&quot;]" />
               </State.Exit>
               <State.Transitions>
-                <Transition DisplayName="Close Apps" sap:VirtualizedContainerService.HintSize="429.6,509.6" sap2010:WorkflowViewState.IdRef="Transition_9">
+                <Transition DisplayName="Close Apps" sap:VirtualizedContainerService.HintSize="445.6,509.6" sap2010:WorkflowViewState.IdRef="Transition_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:PointCollection x:Key="ConnectorLocation">727.6,627.6 757.6,627.6 757.6,560.64 948.4,560.64</av:PointCollection>
@@ -236,14 +233,14 @@
                   <Transition.To>
                     <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="* Cleanly close down all applications" DisplayName="CloseData" sap:VirtualizedContainerService.HintSize="263.2,194.4" sap2010:WorkflowViewState.IdRef="State_14">
                       <State.Entry>
-                        <Sequence DisplayName="Check data fetch should occur -&gt; if so, invoke workflow" sap:VirtualizedContainerService.HintSize="336.8,385.6" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                        <Sequence DisplayName="Check data fetch should occur -&gt; if so, invoke workflow" sap:VirtualizedContainerService.HintSize="518.4,752.8" sap2010:WorkflowViewState.IdRef="Sequence_20">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;GetData : Initialised&quot;]" />
-                          <Assign DisplayName="Initialise exception to null" sap:VirtualizedContainerService.HintSize="314.4,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="480,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;CloseData : Initialised&quot;]" />
+                          <Assign DisplayName="Initialise exception to null" sap:VirtualizedContainerService.HintSize="480,60" sap2010:WorkflowViewState.IdRef="Assign_14">
                             <Assign.To>
                               <OutArgument x:TypeArguments="s:Exception">[systemException]</OutArgument>
                             </Assign.To>
@@ -251,7 +248,28 @@
                               <InArgument x:TypeArguments="s:Exception">[Nothing]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="314.4,60" sap2010:WorkflowViewState.IdRef="MessageBox_11" Text="[&quot;Closed Called&quot;]" TopMost="True" />
+                          <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Chrome" sap:VirtualizedContainerService.HintSize="480,22.4" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="chrome" />
+                          <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill iExplore" sap:VirtualizedContainerService.HintSize="480,22.4" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="iexplore" />
+                          <If Condition="[maxRetriesSystemExceptionCounter = projectConfig(&quot;MaxProjectRetries&quot;)]" DisplayName="reset counter" sap:VirtualizedContainerService.HintSize="480,302.4" sap2010:WorkflowViewState.IdRef="If_16">
+                            <If.Then>
+                              <Sequence DisplayName="reset counter" sap:VirtualizedContainerService.HintSize="297.6,152.8" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign DisplayName="reset counter" sap:VirtualizedContainerService.HintSize="259.2,60" sap2010:WorkflowViewState.IdRef="Assign_39">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Boolean">[getNextItem]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </If.Then>
+                          </If>
                         </Sequence>
                       </State.Entry>
                       <sap:WorkflowViewStateService.ViewState>
@@ -265,7 +283,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <State.Transitions>
-                        <Transition DisplayName="Complete" sap:VirtualizedContainerService.HintSize="429.6,509.6" sap2010:WorkflowViewState.IdRef="Transition_10">
+                        <Transition DisplayName="Complete" sap:VirtualizedContainerService.HintSize="445.6,509.6" sap2010:WorkflowViewState.IdRef="Transition_10">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:PointCollection x:Key="ConnectorLocation">1211.6,550.92 1241.6,550.92 1241.6,535.24 1332.8,535.24</av:PointCollection>
@@ -275,9 +293,9 @@
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.Condition>[processComplete or succeeded]</Transition.Condition>
                           <Transition.To>
-                            <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="* Any process clean up&#xA;* Potentially trigger report/email" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="258.4,191.2" sap2010:WorkflowViewState.IdRef="State_11" IsFinal="True">
+                            <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="* Any process clean up&#xA;* Potentially trigger report/email" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="258.4,191.2" sap2010:WorkflowViewState.IdRef="State_11" IsFinal="True">
                               <State.Entry>
-                                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="314.4,60" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;Job Done&quot;]" TopMost="True" />
+                                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="330.4,60" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;Job Done&quot;]" TopMost="True" />
                               </State.Entry>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -292,7 +310,7 @@
                             </State>
                           </Transition.To>
                         </Transition>
-                        <Transition DisplayName="Max Retries" sap:VirtualizedContainerService.HintSize="470.4,509.6" sap2010:WorkflowViewState.IdRef="Transition_20">
+                        <Transition DisplayName="Max Retries" sap:VirtualizedContainerService.HintSize="583.2,509.6" sap2010:WorkflowViewState.IdRef="Transition_20">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:PointCollection x:Key="ConnectorLocation">948.4,531.48 743.92,531.48 743.92,326</av:PointCollection>
@@ -301,7 +319,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.To>
-                            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="* Initialise applications&#xA;* Ensure applications are open and responsive&#xA;* Log into applications" DisplayName="InitApps" sap:VirtualizedContainerService.HintSize="259.2,200" sap2010:WorkflowViewState.IdRef="State_10">
+                            <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="* Initialise applications&#xA;* Ensure applications are open and responsive&#xA;* Log into applications" DisplayName="InitApps" sap:VirtualizedContainerService.HintSize="259.2,200" sap2010:WorkflowViewState.IdRef="State_10">
                               <State.Entry>
                                 <Sequence DisplayName="Set up and run InitApps" sap:VirtualizedContainerService.HintSize="368.8,688" sap2010:WorkflowViewState.IdRef="Sequence_14">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -350,7 +368,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <State.Exit>
-                                <Sequence DisplayName="InitApps Exit" sap:VirtualizedContainerService.HintSize="336.8,358.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                <Sequence DisplayName="InitApps Exit" sap:VirtualizedContainerService.HintSize="352.8,358.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -363,7 +381,7 @@
                                 </Sequence>
                               </State.Exit>
                               <State.Transitions>
-                                <Transition DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="429.6,511.2" sap2010:WorkflowViewState.IdRef="Transition_5">
+                                <Transition DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="445.6,509.6" sap2010:WorkflowViewState.IdRef="Transition_5">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <av:PointCollection x:Key="ConnectorLocation">653.2,326 653.2,356 585.04,356 585.04,508</av:PointCollection>
@@ -386,9 +404,9 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <Transition.Condition>[succeeded]</Transition.Condition>
                                   <Transition.To>
-                                    <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="* Get input data for next iteration" DisplayName="GetData" sap:VirtualizedContainerService.HintSize="255.2,208" sap2010:WorkflowViewState.IdRef="State_13">
+                                    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="* Get input data for next iteration" DisplayName="GetData" sap:VirtualizedContainerService.HintSize="560,1841.6" sap2010:WorkflowViewState.IdRef="State_13">
                                       <State.Entry>
-                                        <Sequence DisplayName="Check data fetch should occur -&gt; if so, invoke workflow" sap:VirtualizedContainerService.HintSize="518.4,900" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                        <Sequence DisplayName="Check data fetch should occur -&gt; if so, invoke workflow" sap:VirtualizedContainerService.HintSize="518.4,1149.6" sap2010:WorkflowViewState.IdRef="Sequence_16">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -414,8 +432,20 @@
                                           <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="480,132.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_6" MethodName="SetCurrentDirectory" TargetType="si:Directory">
                                             <InArgument x:TypeArguments="x:String">[baseDirectory + "\GetData"]</InArgument>
                                           </InvokeMethod>
+                                          <If Condition="[getNextItem]" DisplayName="If this" sap:VirtualizedContainerService.HintSize="480,209.6" sap2010:WorkflowViewState.IdRef="If_17">
+                                            <If.Then>
+                                              <Assign sap:VirtualizedContainerService.HintSize="259.2,60" sap2010:WorkflowViewState.IdRef="Assign_40">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:Int32">[maxRetriesSystemExceptionCounter]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                            </If.Then>
+                                          </If>
                                           <ui:ShouldStop DisplayName="Check if process cancelled" sap:VirtualizedContainerService.HintSize="480,22.4" sap2010:WorkflowViewState.IdRef="ShouldStop_1" Result="[hasBeenCancelled]" />
-                                          <If Condition="[hasBeenCancelled = False and ((projectConfig.Item(&quot;StopAfterCount&quot;) &lt; 0) OR (processCount &lt; projectConfig.Item(&quot;StopAfterCount&quot;)))]" DisplayName="Check if process cancelled" sap:VirtualizedContainerService.HintSize="480,239.2" sap2010:WorkflowViewState.IdRef="If_4">
+                                          <If Condition="[(hasBeenCancelled = False and ((projectConfig.Item(&quot;StopAfterCount&quot;) &lt; 0) OR (processCount &lt; projectConfig.Item(&quot;StopAfterCount&quot;)))) AND maxRetriesSystemExceptionCounter = 0]" DisplayName="Check if process cancelled" sap:VirtualizedContainerService.HintSize="480,239.2" sap2010:WorkflowViewState.IdRef="If_4">
                                             <If.Then>
                                               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="330.4,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="GetData.xaml">
                                                 <ui:InvokeWorkflowFile.Arguments>
@@ -571,20 +601,7 @@
                                                 </Sequence>
                                               </State.Exit>
                                               <State.Transitions>
-                                                <Transition DisplayName="Process System Exception" sap:VirtualizedContainerService.HintSize="429.6,509.6" sap2010:WorkflowViewState.IdRef="Transition_16">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <av:PointCollection x:Key="ConnectorLocation">1585.6,261.6 1605.04,261.6 1605.04,722 585.04,722 585.04,692</av:PointCollection>
-                                                      <x:Int32 x:Key="SrcConnectionPointIndex">52</x:Int32>
-                                                      <x:Int32 x:Key="DestConnectionPointIndex">35</x:Int32>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                  <Transition.To>
-                                                    <x:Reference>__ReferenceID0</x:Reference>
-                                                  </Transition.To>
-                                                  <Transition.Condition>[systemException isnot nothing]</Transition.Condition>
-                                                </Transition>
-                                                <Transition DisplayName="Succeeded" sap:VirtualizedContainerService.HintSize="429.6,509.6" sap2010:WorkflowViewState.IdRef="Transition_19">
+                                                <Transition DisplayName="Process Exception" sap:VirtualizedContainerService.HintSize="445.6,509.6" sap2010:WorkflowViewState.IdRef="Transition_19">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <av:PointCollection x:Key="ConnectorLocation">1445.24,324 1445.24,354 1241.6,354 1241.6,521.76 1211.6,521.76</av:PointCollection>
@@ -595,7 +612,117 @@
                                                   <Transition.To>
                                                     <x:Reference>__ReferenceID1</x:Reference>
                                                   </Transition.To>
+                                                  <Transition.Condition>[systemException isnot nothing]</Transition.Condition>
+                                                </Transition>
+                                                <Transition DisplayName="Succeeded" sap:VirtualizedContainerService.HintSize="445.6,509.6" sap2010:WorkflowViewState.IdRef="Transition_28">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <av:PointCollection x:Key="ConnectorLocation">1483.52,324 1483.52,337.6 1680.4,337.6 1680.4,217.6 1710.4,217.6</av:PointCollection>
+                                                      <x:Int32 x:Key="SrcConnectionPointIndex">47</x:Int32>
+                                                      <x:Int32 x:Key="DestConnectionPointIndex">37</x:Int32>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
                                                   <Transition.Condition>[succeeded]</Transition.Condition>
+                                                  <Transition.To>
+                                                    <State x:Name="__ReferenceID6" sap2010:Annotation.AnnotationText="* Commit the data to the appropriate system before moving onto the next data" DisplayName="CommitData" sap:VirtualizedContainerService.HintSize="257.6,203.2" sap2010:WorkflowViewState.IdRef="State_16">
+                                                      <State.Entry>
+                                                        <Sequence DisplayName="Check data fetch should occur -&gt; if so, invoke workflow" sap:VirtualizedContainerService.HintSize="368.8,688" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="330.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[&quot;Commit : Initialised&quot;]" />
+                                                          <Assign DisplayName="Initialise exception to null" sap:VirtualizedContainerService.HintSize="330.4,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="s:Exception">[systemException]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="s:Exception">[Nothing]</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                          <Assign DisplayName="Initialise succeeded to False" sap:VirtualizedContainerService.HintSize="330.4,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:Boolean">[succeeded]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                          <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="330.4,132.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_12" MethodName="SetCurrentDirectory" TargetType="si:Directory">
+                                                            <InArgument x:TypeArguments="x:String">[baseDirectory + "\Commit"]</InArgument>
+                                                          </InvokeMethod>
+                                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Commit workflow" sap:VirtualizedContainerService.HintSize="330.4,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Commit.xaml">
+                                                            <ui:InvokeWorkflowFile.Arguments>
+                                                              <OutArgument x:TypeArguments="s:Exception" x:Key="out_SystemException">[systemException]</OutArgument>
+                                                              <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="in_ProjectConfig">[projectConfig]</InArgument>
+                                                              <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_queueItem">[queueItem]</InArgument>
+                                                              <OutArgument x:TypeArguments="x:String" x:Key="out_ExceptionStage">[exceptionStage]</OutArgument>
+                                                              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Succeeded">[succeeded]</OutArgument>
+                                                            </ui:InvokeWorkflowFile.Arguments>
+                                                          </ui:InvokeWorkflowFile>
+                                                        </Sequence>
+                                                      </State.Entry>
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <av:Point x:Key="ShapeLocation">1710.4,116</av:Point>
+                                                          <av:Size x:Key="ShapeSize">257.6,203.2</av:Size>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                          <x:Double x:Key="StateContainerWidth">227.4843311562189</x:Double>
+                                                          <x:Double x:Key="StateContainerHeight">106.39363708571642</x:Double>
+                                                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <State.Exit>
+                                                        <Sequence DisplayName="GetData Exit" sap:VirtualizedContainerService.HintSize="368.8,358.4" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <InvokeMethod DisplayName="Private: Invoke Method" sap:VirtualizedContainerService.HintSize="330.4,132.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_13" MethodName="SetCurrentDirectory" TargetType="si:Directory">
+                                                            <InArgument x:TypeArguments="x:String">[baseDirectory]</InArgument>
+                                                          </InvokeMethod>
+                                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="330.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Info" Message="[&quot;Commit : Completed&quot;]" />
+                                                        </Sequence>
+                                                      </State.Exit>
+                                                      <State.Transitions>
+                                                        <Transition DisplayName="Get Next" sap:VirtualizedContainerService.HintSize="445.6,509.6" sap2010:WorkflowViewState.IdRef="Transition_17">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <av:PointCollection x:Key="ConnectorLocation">1839.2,116 1839.2,86 1010.48,86 1010.48,124</av:PointCollection>
+                                                              <x:Int32 x:Key="SrcConnectionPointIndex">38</x:Int32>
+                                                              <x:Int32 x:Key="DestConnectionPointIndex">30</x:Int32>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <Transition.To>
+                                                            <x:Reference>__ReferenceID2</x:Reference>
+                                                          </Transition.To>
+                                                          <Transition.Condition>[succeeded]</Transition.Condition>
+                                                        </Transition>
+                                                        <Transition DisplayName="Error Commit" sap:VirtualizedContainerService.HintSize="445.6,509.6" sap2010:WorkflowViewState.IdRef="Transition_18">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <av:PointCollection x:Key="ConnectorLocation">1839.2,319.2 1839.2,722 546.16,722 546.16,692</av:PointCollection>
+                                                              <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                                                              <x:Int32 x:Key="DestConnectionPointIndex">23</x:Int32>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <Transition.To>
+                                                            <x:Reference>__ReferenceID0</x:Reference>
+                                                          </Transition.To>
+                                                          <Transition.Condition>[systemException isnot nothing]</Transition.Condition>
+                                                        </Transition>
+                                                      </State.Transitions>
+                                                      <State.Variables>
+                                                        <Variable x:TypeArguments="x:String" Name="businessExceptionEmailTo" />
+                                                        <Variable x:TypeArguments="ss:SecureString" Name="businessExceptionPassword" />
+                                                        <Variable x:TypeArguments="x:String" Name="businessExceptionUserID" />
+                                                        <Variable x:TypeArguments="x:String" Name="businessExceptionPlainPassword" />
+                                                        <Variable x:TypeArguments="x:String" Name="businessExceptionEmailSubject" />
+                                                      </State.Variables>
+                                                    </State>
+                                                  </Transition.To>
                                                 </Transition>
                                               </State.Transitions>
                                               <State.Variables>
@@ -608,7 +735,7 @@
                                             </State>
                                           </Transition.To>
                                         </Transition>
-                                        <Transition DisplayName="No Data" sap:VirtualizedContainerService.HintSize="429.6,509.6" sap2010:WorkflowViewState.IdRef="Transition_12">
+                                        <Transition DisplayName="No Data" sap:VirtualizedContainerService.HintSize="445.6,509.6" sap2010:WorkflowViewState.IdRef="Transition_12">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <av:PointCollection x:Key="ConnectorLocation">1036,332 1036,362 987.88,362 987.88,444</av:PointCollection>
@@ -620,7 +747,7 @@
                                             <x:Reference>__ReferenceID1</x:Reference>
                                           </Transition.To>
                                           <Transition.Action>
-                                            <Assign DisplayName="Assign process complete" sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_28">
+                                            <Assign DisplayName="Assign process complete" sap:VirtualizedContainerService.HintSize="259.2,60" sap2010:WorkflowViewState.IdRef="Assign_28">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:Boolean">[processComplete]</OutArgument>
                                               </Assign.To>
@@ -648,7 +775,7 @@
                                     </State>
                                   </Transition.To>
                                 </Transition>
-                                <Transition DisplayName="Max Retries Exceeded" sap:VirtualizedContainerService.HintSize="470.4,509.6" sap2010:WorkflowViewState.IdRef="Transition_21">
+                                <Transition DisplayName="Max Retries Exceeded" sap:VirtualizedContainerService.HintSize="486.4,509.6" sap2010:WorkflowViewState.IdRef="Transition_21">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <av:PointCollection x:Key="ConnectorLocation">692.08,326 692.08,356 636.88,356 636.88,508</av:PointCollection>
@@ -665,7 +792,7 @@
                             </State>
                           </Transition.To>
                           <Transition.Action>
-                            <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_27">
+                            <Assign sap:VirtualizedContainerService.HintSize="259.2,60" sap2010:WorkflowViewState.IdRef="Assign_27">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Int32">[maxRetriesSystemExceptionCounter]</OutArgument>
                               </Assign.To>
@@ -674,7 +801,7 @@
                               </Assign.Value>
                             </Assign>
                           </Transition.Action>
-                          <Transition.Condition>[maxRetriesSystemExceptionCounter &lt; projectConfig("MaxProjectRetries")]</Transition.Condition>
+                          <Transition.Condition>[(maxRetriesSystemExceptionCounter &lt; projectConfig("MaxProjectRetries")) OR getNextItem]</Transition.Condition>
                         </Transition>
                       </State.Transitions>
                       <State.Variables>
@@ -708,162 +835,19 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <x:Reference>__ReferenceID2</x:Reference>
+            <x:Reference>__ReferenceID3</x:Reference>
           </Transition.To>
           <Transition.Condition>[succeeded]</Transition.Condition>
         </Transition>
       </State.Transitions>
     </State>
-    <x:Reference>__ReferenceID2</x:Reference>
     <x:Reference>__ReferenceID3</x:Reference>
-    <x:Reference>__ReferenceID0</x:Reference>
     <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
     <x:Reference>__ReferenceID1</x:Reference>
     <x:Reference>__ReferenceID5</x:Reference>
-    <State sap2010:Annotation.AnnotationText="* Commit the data to the appropriate system before moving onto the next data" DisplayName="CommitData" sap:VirtualizedContainerService.HintSize="257.6,203.2" sap2010:WorkflowViewState.IdRef="State_16">
-      <State.Entry>
-        <Sequence DisplayName="Check data fetch should occur -&gt; if so, invoke workflow" sap:VirtualizedContainerService.HintSize="486.4,1929.6" sap2010:WorkflowViewState.IdRef="Sequence_27">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="464,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[&quot;GetData : Initialised&quot;]" />
-          <Assign DisplayName="Initialise exception to null" sap:VirtualizedContainerService.HintSize="464,60" sap2010:WorkflowViewState.IdRef="Assign_23">
-            <Assign.To>
-              <OutArgument x:TypeArguments="s:Exception">[systemException]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="s:Exception">[Nothing]</InArgument>
-            </Assign.Value>
-          </Assign>
-          <Assign DisplayName="Initialise succeeded to False" sap:VirtualizedContainerService.HintSize="464,60" sap2010:WorkflowViewState.IdRef="Assign_24">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:Boolean">[succeeded]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-            </Assign.Value>
-          </Assign>
-          <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="464,132.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_12" MethodName="SetCurrentDirectory" TargetType="si:Directory">
-            <InArgument x:TypeArguments="x:String">[baseDirectory + "\GetData"]</InArgument>
-          </InvokeMethod>
-          <ui:ShouldStop DisplayName="Check if process cancelled" sap:VirtualizedContainerService.HintSize="464,22.4" sap2010:WorkflowViewState.IdRef="ShouldStop_4" Result="[hasBeenCancelled]" />
-          <If Condition="[hasBeenCancelled = False and ((projectConfig.Item(&quot;StopAfterCount&quot;) &lt; 0) OR (processCount &lt; projectConfig.Item(&quot;StopAfterCount&quot;)))]" DisplayName="Check if process cancelled" sap:VirtualizedContainerService.HintSize="464,239.2" sap2010:WorkflowViewState.IdRef="If_13">
-            <If.Then>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="314.4,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="GetData.xaml">
-                <ui:InvokeWorkflowFile.Arguments>
-                  <OutArgument x:TypeArguments="s:Exception" x:Key="out_SystemException">[systemException]</OutArgument>
-                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Succeeded">[succeeded]</OutArgument>
-                  <InOutArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="inout_ProjectConfig">[projectConfig]</InOutArgument>
-                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BusinessExceptionOccured">[businessExceptionOccured]</OutArgument>
-                  <OutArgument x:TypeArguments="s:Exception" x:Key="out_BusinessException">[businessException]</OutArgument>
-                </ui:InvokeWorkflowFile.Arguments>
-              </ui:InvokeWorkflowFile>
-            </If.Then>
-          </If>
-          <If Condition="[businessExceptionOccured]" DisplayName="If business exception occured" sap:VirtualizedContainerService.HintSize="464,209.6" sap2010:WorkflowViewState.IdRef="If_14">
-            <If.Then>
-              <Assign DisplayName="Increment Business Exception" sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_25">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:Int32">[businessExceptionCounter]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:Int32">[businessExceptionCounter + 1]</InArgument>
-                </Assign.Value>
-              </Assign>
-            </If.Then>
-          </If>
-          <If Condition="[businessExceptionCounter &gt; 2]" DisplayName="Send Email if business exception  &gt; 2" sap:VirtualizedContainerService.HintSize="464,708" sap2010:WorkflowViewState.IdRef="If_15">
-            <If.Then>
-              <Sequence DisplayName="Send Email Sequence" sap:VirtualizedContainerService.HintSize="336.8,558.4" sap2010:WorkflowViewState.IdRef="Sequence_26">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[projectConfig(&quot;BusinessExceptionEmailTo&quot;).ToString]" DisplayName="Get Send To Email" sap:VirtualizedContainerService.HintSize="314.4,22.4" sap2010:WorkflowViewState.IdRef="GetRobotAsset_9">
-                  <ui:GetRobotAsset.Value>
-                    <OutArgument x:TypeArguments="x:String">[businessExceptionEmailTo]</OutArgument>
-                  </ui:GetRobotAsset.Value>
-                </ui:GetRobotAsset>
-                <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[projectConfig(&quot;BusinessExceptionEmailCredential&quot;).ToString]" DisplayName="Get Email Credential" sap:VirtualizedContainerService.HintSize="314.4,22.4" sap2010:WorkflowViewState.IdRef="GetRobotCredential_5" Password="[businessExceptionPassword]" Username="[businessExceptionUserID]" />
-                <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[projectConfig(&quot;BusinessExceptionEmailSubject&quot;).ToString]" DisplayName="Get Email Subject" sap:VirtualizedContainerService.HintSize="314.4,22.4" sap2010:WorkflowViewState.IdRef="GetRobotAsset_10">
-                  <ui:GetRobotAsset.Value>
-                    <OutArgument x:TypeArguments="x:String">[businessExceptionEmailSubject]</OutArgument>
-                  </ui:GetRobotAsset.Value>
-                </ui:GetRobotAsset>
-                <Assign DisplayName="Convert password to plain text" sap:VirtualizedContainerService.HintSize="314.4,60" sap2010:WorkflowViewState.IdRef="Assign_26">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:String">[businessExceptionPlainPassword]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">[new System.Net.NetworkCredential(String.Empty, businessExceptionPassword).Password]</InArgument>
-                  </Assign.Value>
-                </Assign>
-                <ui:SendExchangeMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Server="{x:Null}" TimeoutMS="{x:Null}" Body="Hi There!!" DisplayName="Send exception email" Domain="xx.xx.COM" EmailAutodiscover="test@xyz.com" ExchangeVersion="Exchange2010" From="my Bot" sap:VirtualizedContainerService.HintSize="314.4,146.4" sap2010:WorkflowViewState.IdRef="SendExchangeMail_5" IsBodyHtml="False" IsDraft="False" Name="UnileverSuperValu Robot" Password="[businessExceptionPlainPassword]" SaveCopy="False" Subject="[businessExceptionEmailSubject]" To="[businessExceptionEmailTo]" User="[businessExceptionUserID]" />
-              </Sequence>
-            </If.Then>
-          </If>
-        </Sequence>
-      </State.Entry>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">1710.4,116</av:Point>
-          <av:Size x:Key="ShapeSize">257.6,203.2</av:Size>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          <x:Double x:Key="StateContainerWidth">227.4843311562189</x:Double>
-          <x:Double x:Key="StateContainerHeight">106.39363708571642</x:Double>
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <State.Exit>
-        <Sequence DisplayName="GetData Exit" sap:VirtualizedContainerService.HintSize="336.8,390.4" sap2010:WorkflowViewState.IdRef="Sequence_28">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <InvokeMethod DisplayName="Private: Invoke Method" sap:VirtualizedContainerService.HintSize="314.4,132.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_13" MethodName="SetCurrentDirectory" TargetType="si:Directory">
-            <InArgument x:TypeArguments="x:String">[baseDirectory]</InArgument>
-          </InvokeMethod>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Info" Message="[&quot;GetData : Completed&quot;]" />
-        </Sequence>
-      </State.Exit>
-      <State.Transitions>
-        <Transition DisplayName="Get Next" sap:VirtualizedContainerService.HintSize="429.6,509.6" sap2010:WorkflowViewState.IdRef="Transition_17">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:PointCollection x:Key="ConnectorLocation">1839.2,116 1839.2,86 1010.48,86 1010.48,124</av:PointCollection>
-              <x:Int32 x:Key="SrcConnectionPointIndex">38</x:Int32>
-              <x:Int32 x:Key="DestConnectionPointIndex">30</x:Int32>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Transition.To>
-            <x:Reference>__ReferenceID4</x:Reference>
-          </Transition.To>
-        </Transition>
-        <Transition DisplayName="Error Commit" sap:VirtualizedContainerService.HintSize="429.6,509.6" sap2010:WorkflowViewState.IdRef="Transition_18">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:PointCollection x:Key="ConnectorLocation">1839.2,319.2 1839.2,722 546.16,722 546.16,692</av:PointCollection>
-              <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
-              <x:Int32 x:Key="DestConnectionPointIndex">23</x:Int32>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Transition.To>
-            <x:Reference>__ReferenceID0</x:Reference>
-          </Transition.To>
-        </Transition>
-      </State.Transitions>
-      <State.Variables>
-        <Variable x:TypeArguments="x:String" Name="businessExceptionEmailTo" />
-        <Variable x:TypeArguments="ss:SecureString" Name="businessExceptionPassword" />
-        <Variable x:TypeArguments="x:String" Name="businessExceptionUserID" />
-        <Variable x:TypeArguments="x:String" Name="businessExceptionPlainPassword" />
-        <Variable x:TypeArguments="x:String" Name="businessExceptionEmailSubject" />
-      </State.Variables>
-    </State>
+    <x:Reference>__ReferenceID6</x:Reference>
     <State sap2010:Annotation.AnnotationText="test" DisplayName="Test" sap:VirtualizedContainerService.HintSize="259.2,152" sap2010:WorkflowViewState.IdRef="State_18">
       <State.Entry>
         <Sequence DisplayName="Set up and run InitApps" sap:VirtualizedContainerService.HintSize="336.8,688" sap2010:WorkflowViewState.IdRef="Sequence_33">
@@ -956,6 +940,7 @@
       <Variable x:TypeArguments="x:Int32" Default="0" Name="maxRetriesSystemExceptionCounter" />
       <Variable x:TypeArguments="x:Boolean" Name="dataFetched" />
       <Variable x:TypeArguments="ui:QueueItem" Name="queueItem" />
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="getNextItem" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>
