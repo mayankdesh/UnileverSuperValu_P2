@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>819.2,3588</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>819.2,3548</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Numerator_Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -95,7 +95,7 @@
         </sap:WorkflowViewStateService.ViewState>
         <ui:UiElementExists DisplayName="Element Exists 'IMG  https://www4.numer...'" Exists="[numeratorExists]" sap:VirtualizedContainerService.HintSize="625.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
           <ui:UiElementExists.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0e8b1d4577e97121b6b1a5c28baa7082" Selector="&lt;html app='chrome.exe' title='Numerator Promotions Intel' /&gt;&lt;webctrl parentid='divNewLeftContent' tag='IMG' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0e8b1d4577e97121b6b1a5c28baa7082" Selector="&lt;html app='chrome.exe' title='Numerator Promotions Intel' /&gt;&lt;webctrl parentid='divNewLeftContent' tag='IMG' /&gt;" TimeoutMS="10000" WaitForReady="INTERACTIVE" />
           </ui:UiElementExists.Target>
         </ui:UiElementExists>
         <If Condition="[numeratorExists]" sap:VirtualizedContainerService.HintSize="625.6,209.6" sap2010:WorkflowViewState.IdRef="If_1">
@@ -105,7 +105,7 @@
         </If>
         <ui:UiElementExists DisplayName="Element Exists 'INPUT  ctl00_ContentPla...'" Exists="[userNameExists]" sap:VirtualizedContainerService.HintSize="625.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
           <ui:UiElementExists.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="e06173e82d565c7d49636c5e196998e2" Selector="&lt;html app='chrome.exe' title='Numerator Promotions Intel' /&gt;&lt;webctrl id='ctl00_ContentPlaceHolder1_EmailAddress' tag='INPUT' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="e06173e82d565c7d49636c5e196998e2" Selector="&lt;html app='chrome.exe' title='Numerator Promotions Intel' /&gt;&lt;webctrl id='ctl00_ContentPlaceHolder1_EmailAddress' tag='INPUT' /&gt;" TimeoutMS="10000" WaitForReady="INTERACTIVE" />
           </ui:UiElementExists.Target>
         </ui:UiElementExists>
         <If Condition="[userNameExists]" sap:VirtualizedContainerService.HintSize="625.6,734.4" sap2010:WorkflowViewState.IdRef="If_2">
@@ -164,12 +164,12 @@
         </sap:WorkflowViewStateService.ViewState>
         <ui:UiElementExists DisplayName="Element Exists 'DIV  dvTitle1'" Exists="[announcementExists]" sap:VirtualizedContainerService.HintSize="664,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
           <ui:UiElementExists.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="1573bb8bde26c6240f33347a3696cf9a" Selector="&lt;html app='chrome.exe' title='Welcome To Numerator Promotions Intel For Advantage Sales &amp;amp; Mark*' /&gt;&lt;webctrl id='dvTitle1' tag='DIV' /&gt;" TimeoutMS="10000" WaitForReady="INTERACTIVE" />
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="1573bb8bde26c6240f33347a3696cf9a" Selector="&lt;html app='chrome.exe' title='Welcome To Numerator Promotions Intel For Advantage Sales &amp;amp; Mark*' /&gt;&lt;webctrl id='dvTitle1' tag='DIV' /&gt;" TimeoutMS="20000" WaitForReady="INTERACTIVE" />
           </ui:UiElementExists.Target>
         </ui:UiElementExists>
         <If Condition="[announcementExists]" sap:VirtualizedContainerService.HintSize="664,256.8" sap2010:WorkflowViewState.IdRef="If_3">
           <If.Then>
-            <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click 'INPUT  btn1no0'" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+            <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click 'INPUT  btn1no0'" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -186,7 +186,7 @@
             </ui:Click>
           </If.Then>
         </If>
-        <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click 'BUTTON  baseexpand'" sap:VirtualizedContainerService.HintSize="664,107.2" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click 'BUTTON  baseexpand'" sap:VirtualizedContainerService.HintSize="664,107.2" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
           <ui:Click.CursorPosition>
             <ui:CursorPosition Position="Center">
               <ui:CursorPosition.OffsetX>
@@ -198,10 +198,10 @@
             </ui:CursorPosition>
           </ui:Click.CursorPosition>
           <ui:Click.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="828fc256ca92a7e841dc80043caac56e" Selector="&lt;html app='chrome.exe' title='Welcome To Numerator Promotions Intel For Advantage Sales &amp;amp; Mark*' /&gt;&lt;webctrl parentid='baseexpand' tag='I' /&gt;" WaitForReady="INTERACTIVE" />
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="828fc256ca92a7e841dc80043caac56e" Selector="&lt;html app='chrome.exe' title='Numerator Promotions Intel - Product Image Thumbnails For Curren*' /&gt;&lt;webctrl parentid='baseexpand' tag='I' /&gt;" WaitForReady="INTERACTIVE" />
           </ui:Click.Target>
         </ui:Click>
-        <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click 'A'" sap:VirtualizedContainerService.HintSize="664,107.2" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click Search Ads" sap:VirtualizedContainerService.HintSize="664,107.2" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
           <ui:Click.CursorPosition>
             <ui:CursorPosition Position="Center">
               <ui:CursorPosition.OffsetX>
@@ -213,10 +213,10 @@
             </ui:CursorPosition>
           </ui:Click.CursorPosition>
           <ui:Click.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="3cc3d360c6e68e2dfd32f4b92a58d70e" Selector="&lt;html app='chrome.exe' title='Welcome To Numerator Promotions Intel For Advantage Sales &amp;amp; Mark*' /&gt;&lt;webctrl aaname='         Search Ads     ' tag='A' /&gt;" WaitForReady="INTERACTIVE" />
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="3cc3d360c6e68e2dfd32f4b92a58d70e" Selector="&lt;html app='chrome.exe' title='Numerator Promotions Intel - Product Image Thumbnails For Curren*' /&gt;&lt;webctrl aaname='         Ad Details     ' tag='A' /&gt;" WaitForReady="INTERACTIVE" />
           </ui:Click.Target>
         </ui:Click>
-        <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click 'A'" sap:VirtualizedContainerService.HintSize="664,107.2" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click Ads Details" sap:VirtualizedContainerService.HintSize="664,107.2" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
           <ui:Click.CursorPosition>
             <ui:CursorPosition Position="Center">
               <ui:CursorPosition.OffsetX>
@@ -253,7 +253,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="5000" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="5000" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                   <ui:Click.CursorPosition>
                     <ui:CursorPosition Position="Center">
                       <ui:CursorPosition.OffsetX>
@@ -268,7 +268,7 @@
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="f49ff5d4591e96f0a76f4d7902c87370" Selector="&lt;html app='chrome.exe' title='Numerator Promotions Intel - Product Image Thumbnails For Curren*' /&gt;&lt;webctrl aaname='                          My Search                      ' parentid='form1' tag='A' /&gt;" WaitForReady="INTERACTIVE" />
                   </ui:Click.Target>
                 </ui:Click>
-                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                   <ui:Click.CursorPosition>
                     <ui:CursorPosition Position="Center">
                       <ui:CursorPosition.OffsetX>

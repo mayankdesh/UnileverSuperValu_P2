@@ -103,7 +103,7 @@
             <Throw Exception="[new SystemException(&quot;SVHarobr failed to Launch.&quot;)]" sap:VirtualizedContainerService.HintSize="216,22.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
           </If.Else>
         </If>
-        <ui:Click DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DisplayName="Click on Login Button" sap:VirtualizedContainerService.HintSize="625.6,107.2" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DisplayName="Click on Login Button" sap:VirtualizedContainerService.HintSize="625.6,107.2" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
           <ui:Click.CursorPosition>
             <ui:CursorPosition Position="Center">
               <ui:CursorPosition.OffsetX>
@@ -146,7 +146,7 @@
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="78c5a4350cb2d40a144d5667c1077f32" Selector="&lt;html title='SiteMinder Password Services' /&gt;&lt;webctrl id='PASSWORD' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
                 </ui:TypeSecureText.Target>
               </ui:TypeSecureText>
-              <ui:Click DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="2000" DisplayName="Click 'INPUT  ctl00_ContentPla...'" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+              <ui:Click DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="2000" DisplayName="Click 'INPUT  ctl00_ContentPla...'" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                 <ui:Click.CursorPosition>
                   <ui:CursorPosition Position="Center">
                     <ui:CursorPosition.OffsetX>
@@ -180,7 +180,7 @@
         </sap:WorkflowViewStateService.ViewState>
         <ui:UiElementExists DisplayName="Element Exists 'INPUT  ctl00_ContentPla...'" Exists="[supervaluWholeSaleExists]" sap:VirtualizedContainerService.HintSize="625.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
           <ui:UiElementExists.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="954e920baf7c88ed6ac2e2367357a9fc" Selector="&lt;html title='SVHarbor Home' /&gt;&lt;webctrl aaname='SUPERVALU Wholesale' parentid='page_container' tag='A' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="954e920baf7c88ed6ac2e2367357a9fc" Selector="&lt;html title='SVHarbor Home' /&gt;&lt;webctrl aaname='SUPERVALU Wholesale' parentid='page_container' tag='A' /&gt;" TimeoutMS="20000" WaitForReady="INTERACTIVE" />
           </ui:UiElementExists.Target>
         </ui:UiElementExists>
         <If Condition="[supervaluWholeSaleExists]" sap:VirtualizedContainerService.HintSize="625.6,349.6" sap2010:WorkflowViewState.IdRef="If_3">
@@ -191,7 +191,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click on SUPERVALU Wholesale" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+              <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click on SUPERVALU Wholesale" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                 <ui:Click.CursorPosition>
                   <ui:CursorPosition Position="Center">
                     <ui:CursorPosition.OffsetX>

@@ -84,7 +84,7 @@
           </ui:SendHotkey>
           <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Invoice File Path" EmptyField="True" sap:VirtualizedContainerService.HintSize="816.8,96.8" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="True" Text="[in_InvoiceFilePath]">
             <ui:TypeInto.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;wnd app='acrord32.exe' cls='#32770' title='Save As' /&gt;&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" WaitForReady="INTERACTIVE" />
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;wnd omit:app='acrord32.exe' omit:cls='#32770' title='Save*' /&gt;&lt;wnd omit:aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' omit:cls='ComboBox' /&gt;&lt;wnd omit:ctrlid='1001' /&gt;" WaitForReady="INTERACTIVE" />
             </ui:TypeInto.Target>
           </ui:TypeInto>
           <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click on SAVE Button" sap:VirtualizedContainerService.HintSize="816.8,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
@@ -99,7 +99,7 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0c970d1637107eced428e9c77bb88410" Selector="&lt;wnd app='acrord32.exe' cls='#32770' title='Save As' /&gt;&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;" WaitForReady="INTERACTIVE" />
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0c970d1637107eced428e9c77bb88410" Selector="&lt;wnd omit:app='acrord32.exe' omit:cls='#32770' title='Save*' /&gt;&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;" WaitForReady="INTERACTIVE" />
             </ui:Click.Target>
           </ui:Click>
           <ui:UiElementExists DisplayName="File Already Exists" Exists="[FileAlreadyExists]" sap:VirtualizedContainerService.HintSize="816.8,68.8" sap2010:WorkflowViewState.IdRef="UiElementExists_2">

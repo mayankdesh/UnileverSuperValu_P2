@@ -277,7 +277,7 @@
                   </ui:Click>
                   <ui:UiElementExists DisplayName="Document Results Element Exists" Exists="[NoResultFoundExists]" sap:VirtualizedContainerService.HintSize="707.2,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                     <ui:UiElementExists.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0b83d45a12021f68972fedd9f2e2c12a" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl parentid='primary-content' tag='TABLE' /&gt;&lt;webctrl innertext='View ' idx='2' /&gt;" TimeoutMS="10000" WaitForReady="INTERACTIVE" />
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0b83d45a12021f68972fedd9f2e2c12a" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl parentid='primary-content' tag='TABLE' /&gt;&lt;webctrl innertext='View ' idx='2' /&gt;" TimeoutMS="30000" WaitForReady="INTERACTIVE" />
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
                   <If Condition="[NoResultFoundExists]" sap:VirtualizedContainerService.HintSize="707.2,574.4" sap2010:WorkflowViewState.IdRef="If_3">

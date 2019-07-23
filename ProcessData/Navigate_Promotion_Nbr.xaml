@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>588,1656.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>588,1719.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Navigate_Promotion_Nbr_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -60,7 +60,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Navigate_Promotion_Nbr" sap:VirtualizedContainerService.HintSize="548,1576.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence DisplayName="Navigate_Promotion_Nbr" sap:VirtualizedContainerService.HintSize="548,1639.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="PromotionNumberExists" />
       <Variable x:TypeArguments="x:String" Name="BeginDate" />
@@ -85,6 +85,7 @@
         <InArgument x:TypeArguments="x:String">["&lt;html title='Work List' /&gt;&lt;webctrl aaname='"&amp; in_ReferenceNumber.Substring(3,7) &amp;"' parentid='sortableTable0' tag='A' /&gt;"]</InArgument>
       </Assign.Value>
     </Assign>
+    <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="509.6,22.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
     <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Select Promotion Nbr" sap:VirtualizedContainerService.HintSize="509.6,68.8" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
       <ui:Click.CursorPosition>
         <ui:CursorPosition Position="Center">
