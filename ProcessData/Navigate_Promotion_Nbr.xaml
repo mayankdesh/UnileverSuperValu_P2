@@ -82,7 +82,7 @@
         <OutArgument x:TypeArguments="x:String">[dynamicPromotionNbr]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">["&lt;html title='Work List' /&gt;&lt;webctrl aaname='"&amp; in_ReferenceNumber.Substring(3,7) &amp;"' parentid='sortableTable0' tag='A' /&gt;"]</InArgument>
+        <InArgument x:TypeArguments="x:String">["&lt;html title='Work List' /&gt;&lt;webctrl aaname='"&amp; in_ReferenceNumber.Trim.Substring(3,7) &amp;"' parentid='sortableTable0' tag='A' /&gt;"]</InArgument>
       </Assign.Value>
     </Assign>
     <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="509.6,22.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
@@ -106,7 +106,7 @@
         <OutArgument x:TypeArguments="x:String">[dynamicBeginDate]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">["&lt;html title='Work List' /&gt;&lt;webctrl id='sortableTable0' tag='TABLE' /&gt;&lt;webctrl isleaf='1' tag='TD' colName='Begin Date' innertext='"&amp; in_BeginDate &amp;"' /&gt;"]</InArgument>
+        <InArgument x:TypeArguments="x:String">["&lt;html title='Work List' /&gt;&lt;webctrl id='sortableTable0' tag='TABLE' /&gt;&lt;webctrl isleaf='1' tag='TD' colName='Begin Date' innertext='"&amp; in_BeginDate.Trim &amp;"' /&gt;"]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:UiElementExists DisplayName="Check Begin Date Exists on Screen" Exists="[beginDateExists]" sap:VirtualizedContainerService.HintSize="509.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
@@ -119,7 +119,7 @@
         <OutArgument x:TypeArguments="x:String">[dynamicEndDate]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">["&lt;html title='Work List' /&gt;&lt;webctrl id='sortableTable0' tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableCol='9' tag='TD' aaname='09/06/19' colName='"&amp; in_EndDate &amp;"' /&gt;"]</InArgument>
+        <InArgument x:TypeArguments="x:String">["&lt;html title='Work List' /&gt;&lt;webctrl id='sortableTable0' tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableCol='9' tag='TD' aaname='09/06/19' colName='"&amp; in_EndDate.Trim &amp;"' /&gt;"]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:UiElementExists DisplayName="Check End Date Exists on Screen" Exists="[beginDateExists]" sap:VirtualizedContainerService.HintSize="509.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
