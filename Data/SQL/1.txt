@@ -1,0 +1,15 @@
+Create Database UnileverDeduction
+
+USE UnileverDeduction
+
+Create Table UnileverDeduction(
+UnileverID int IDENTITY(1,1),
+RefNumber bigint Not null PRIMARY KEY,
+Account int not null,
+CustRefNumber bigint Not null,
+DedAmount Decimal(18,4),
+Age Int not null,
+ReceiveDate nvarchar(20))
+
+
+

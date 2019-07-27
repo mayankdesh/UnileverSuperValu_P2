@@ -1,0 +1,13 @@
+Create PROCEDURE [dbo].[procInsertUnileverDeduction]
+(
+	@RefNumber bigint, @Account int, @CustRefNumber bigint, @DedAmount decimal(18, 4), @Age int, @ReceiveDate nvarchar(20)
+)
+
+AS
+BEGIN
+    INSERT INTO UnileverDeduction.UnileverDeduction
+           (RefNumber, Account, CustRefNumber, DedAmount, Age, ReceiveDate)
+     VALUES
+           (@RefNumber, @Account, @CustRefNumber, @DedAmount, @Age, @ReceiveDate)
+END
+GO
