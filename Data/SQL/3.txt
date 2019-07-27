@@ -1,0 +1,26 @@
+ALTER TABLE dbo.UnileverDeduction
+ADD Screenshot nvarchar(MAX), Status varchar(50), Remark nvarchar(MAX), Email_Sent varchar(20), Created Datetime, Modified Datetime;
+
+
+
+Create PROCEDURE [dbo].[procUpdateUnileverDeduction]
+(
+	@RefNumber nvarchar(50), @ColumnName varchar(20), @ColumnValue nvarchar(MAX)
+)
+
+AS
+BEGIN
+    
+	declare @sql nvarchar(4000);
+    set @sql='UPDATE dbo.UnileverDeduction SET ['+@ColumnName+'] = '''+ @ColumnValue+''', Modified = GETDATE() WHERE RefNumber = ''' + @RefNumber + '''';
+	exec sp_executesql @sql;
+
+END
+GO
+
+
+
+
+
+
+

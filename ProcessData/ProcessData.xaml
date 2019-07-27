@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>660,3888.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>660,4695.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -65,7 +65,7 @@
       <AssemblyReference>UiPath.Database</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ProcessData" sap:VirtualizedContainerService.HintSize="620,3768.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ProcessData" sap:VirtualizedContainerService.HintSize="620,4615.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="age" />
       <Variable x:TypeArguments="x:String" Name="account" />
@@ -80,16 +80,17 @@
       <Variable x:TypeArguments="x:String" Name="invoiceEndDate" />
       <Variable x:TypeArguments="sd:DataTable" Name="invoiceUPCCode" />
       <Variable x:TypeArguments="sd:DataTable" Name="invoiceSalesAmount" />
-      <Variable x:TypeArguments="x:String" Default="C:\Users\JayveersinhMandora\Downloads\Mapping_20190711.xlsx" Name="mappingFilePath" />
+      <Variable x:TypeArguments="x:String" Name="mappingFilePath" />
       <Variable x:TypeArguments="x:Boolean" Name="invoiceContainsADDate" />
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="top10Added" />
+      <Variable x:TypeArguments="x:String" Name="refrencePath" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="581.6,3676" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="581.6,4522.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -97,7 +98,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="548,3444.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="548,4291.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -127,10 +128,10 @@
               <InArgument x:TypeArguments="x:Boolean">False</InArgument>
             </Assign.Value>
           </Assign>
-          <Sequence DisplayName="Fetch Data" sap:VirtualizedContainerService.HintSize="509.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Fetch Data" sap:VirtualizedContainerService.HintSize="509.6,652.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -193,13 +194,30 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:DatabaseConnect DatabaseConnection="[dbConnect]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="330.4,60" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=DESKTOP-TBGO3TV;Initial Catalog=UnileverDeduction;Persist Security Info=True;User ID=sa;Password=Mak@sql#1" />
-            <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[dbConnect]" sap:VirtualizedContainerService.HintSize="330.4,89.6" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_1" Sql="[&quot;EXECUTE &quot; &amp; in_ProjectConfig.Item(&quot;StoredProcedureName&quot;).ToString &amp; &quot; &quot; &amp; refNumber.ToString &amp; &quot;,&quot; &amp; account.ToString &amp; &quot;,&quot; &amp; custRefNumber.ToString &amp; &quot;,&quot; &amp; dedAmt.ToString &amp; &quot;,&quot; &amp; age.ToString &amp; &quot;,&quot; &amp; receiveDt.ToString]">
+            <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[dbConnect]" sap:VirtualizedContainerService.HintSize="330.4,89.6" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_1" Sql="[&quot;EXECUTE &quot; &amp; in_ProjectConfig.Item(&quot;Unilever_insertStoredProcedureName&quot;).ToString &amp; &quot; &quot; &amp; refNumber.ToString &amp; &quot;,&quot; &amp; account.ToString &amp; &quot;,&quot; &amp; custRefNumber.ToString &amp; &quot;,&quot; &amp; dedAmt.ToString &amp; &quot;,&quot; &amp; age.ToString &amp; &quot;,&quot; &amp; receiveDt.ToString]">
               <ui:ExecuteNonQuery.Parameters>
                 <scg:Dictionary x:TypeArguments="x:String, Argument" />
               </ui:ExecuteNonQuery.Parameters>
             </ui:ExecuteNonQuery>
             <ui:DatabaseDisconnect DatabaseConnection="[dbConnect]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="330.4,22.4" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
           </Sequence>
+          <Assign sap:VirtualizedContainerService.HintSize="509.6,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[refrencePath]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[in_ProjectConfig.Item("Unilever_refrencePath").ToString &amp; refNumber.ToString.Trim]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Directory" sap:VirtualizedContainerService.HintSize="509.6,22.4" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[refrencePath]" />
+          <Assign sap:VirtualizedContainerService.HintSize="509.6,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[refrencePath]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[refrencePath &amp; "\" &amp; refNumber &amp; "_mapping.xlsx"]</InArgument>
+            </Assign.Value>
+          </Assign>
           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Navigate_Document_Search workflow" sap:VirtualizedContainerService.HintSize="509.6,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Navigate_Document_Search.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <scg:Dictionary x:TypeArguments="x:String, Argument" />
@@ -219,7 +237,7 @@
           </ui:InvokeWorkflowFile>
           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Download_Document workflow" sap:VirtualizedContainerService.HintSize="509.6,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Download_Document.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_InvoiceFilePath">["C:\Users\JayveersinhMandora\Documents\advantage\UAT_Invoice\invoice_"+refNumber+".pdf"]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_InvoiceFilePath">[refrencePath &amp; "\" &amp; refNumber &amp; "_invoice.pdf"]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
           <ui:InvokeWorkflowFile ContinueOnError="True" DisplayName="Invoke Extract_pdf_Invoice workflow" sap:VirtualizedContainerService.HintSize="509.6,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Extract_Data_Invoice.xaml">
@@ -231,7 +249,7 @@
               <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_SalesAmount">[invoiceSalesAmount]</OutArgument>
               <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_UPC">[invoiceUPCCode]</OutArgument>
               <OutArgument x:TypeArguments="x:String" x:Key="out_AdDate">[invoiceAdDate]</OutArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_InvoiceFilePath">["C:\Users\JayveersinhMandora\Documents\advantage\UAT_Invoice\invoice_"+refNumber+".pdf"]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_InvoiceFilePath">[refrencePath &amp; "\" &amp; refNumber &amp; "_invoice.pdf"]</InArgument>
               <OutArgument x:TypeArguments="x:String" x:Key="out_ProductName">[invoiceProductName]</OutArgument>
               <OutArgument x:TypeArguments="x:Boolean" x:Key="out_invoiceContainsADDate">[invoiceContainsADDate]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
@@ -261,7 +279,7 @@
           </ui:InvokeWorkflowFile>
           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Navigate_Print_Deal workflow" sap:VirtualizedContainerService.HintSize="509.6,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Navigate_Print_Deal.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_DealRecapFilePath">C:\Users\JayveersinhMandora\Documents\advantage\UAT_Invoice\deal1.pdf</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_DealRecapFilePath">[refrencePath &amp; "\" &amp; refNumber &amp; "_deal.pdf"]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
           <If Condition="[invoiceAdDate.Trim.Length &gt; 0]" sap:VirtualizedContainerService.HintSize="509.6,1109.6" sap2010:WorkflowViewState.IdRef="If_2">

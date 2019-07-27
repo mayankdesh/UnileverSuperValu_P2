@@ -5,9 +5,9 @@ Create PROCEDURE [dbo].[procInsertUnileverDeduction]
 
 AS
 BEGIN
-    INSERT INTO UnileverDeduction.UnileverDeduction
-           (RefNumber, Account, CustRefNumber, DedAmount, Age, ReceiveDate)
+    INSERT INTO dbo.UnileverDeduction
+           (RefNumber, Account, CustRefNumber, DedAmount, Age, ReceiveDate, Created)
      VALUES
-           (@RefNumber, @Account, @CustRefNumber, @DedAmount, @Age, @ReceiveDate)
+           (@RefNumber, @Account, @CustRefNumber, @DedAmount, @Age, @ReceiveDate, GETDATE())
 END
 GO
