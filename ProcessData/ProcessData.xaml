@@ -342,6 +342,7 @@
               <InArgument x:TypeArguments="x:String" x:Key="refNumber">[refNumber]</InArgument>
               <InArgument x:TypeArguments="sd:DataTable" x:Key="invoiceUPCCode">[invoiceUPCCode]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="invoiceAdDate">[invoiceAdDate]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="account">[account]</InArgument>
             </ui:AddQueueItem.ItemInformation>
           </ui:AddQueueItem>
           <Assign sap:VirtualizedContainerService.HintSize="509.6,60" sap2010:WorkflowViewState.IdRef="Assign_14">
