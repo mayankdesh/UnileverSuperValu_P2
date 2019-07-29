@@ -5,11 +5,13 @@ USE UnileverDeduction
 Create Table UnileverDeduction(
 UnileverID int IDENTITY(1,1),
 RefNumber bigint Not null PRIMARY KEY,
-Account int not null,
+Account nvarchar(MAX) not null,
 CustRefNumber bigint Not null,
 DedAmount Decimal(18,4),
 Age Int not null,
-ReceiveDate nvarchar(20))
+ReceiveDate nvarchar(20));
 
 
+ALTER TABLE dbo.UnileverDeduction
+ADD Screenshot nvarchar(MAX), Status varchar(50), Remark nvarchar(MAX), Email_Sent varchar(20), Created Datetime, Modified Datetime;
 

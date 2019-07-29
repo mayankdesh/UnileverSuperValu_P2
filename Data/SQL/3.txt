@@ -1,11 +1,17 @@
-ALTER TABLE dbo.UnileverDeduction
-ADD Screenshot nvarchar(MAX), Status varchar(50), Remark nvarchar(MAX), Email_Sent varchar(20), Created Datetime, Modified Datetime;
+USE [UnileverDeduction]
+GO
 
+/****** Object:  StoredProcedure [dbo].[procUpdateUnileverDeduction]    Script Date: 29/07/2019 23:03:04 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
 
 
 Create PROCEDURE [dbo].[procUpdateUnileverDeduction]
 (
-	@RefNumber nvarchar(50), @ColumnName varchar(20), @ColumnValue nvarchar(MAX)
+	@RefNumber nvarchar(50), @ColumnName varchar(100), @ColumnValue nvarchar(MAX)
 )
 
 AS
@@ -17,10 +23,5 @@ BEGIN
 
 END
 GO
-
-
-
-
-
 
 

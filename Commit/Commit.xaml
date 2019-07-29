@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>519.2,1204</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>519.2,1296.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Commit_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="42">
@@ -64,7 +64,7 @@
       <AssemblyReference>UiPath.Database</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Commit" sap:VirtualizedContainerService.HintSize="479.2,1124" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Commit" sap:VirtualizedContainerService.HintSize="479.2,1216.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="refNumber" />
       <Variable x:TypeArguments="ui:DatabaseConnection" Name="dbConnect" />
@@ -74,7 +74,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="440.8,1031.2" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="440.8,1124" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -82,7 +82,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Commit Data" sap:VirtualizedContainerService.HintSize="407.2,800" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Commit Data" sap:VirtualizedContainerService.HintSize="407.2,892.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -102,7 +102,7 @@
               <scg:Dictionary x:TypeArguments="x:String, InArgument" />
             </ui:SetTransactionStatus.Output>
           </ui:SetTransactionStatus>
-          <Sequence DisplayName="Database" sap:VirtualizedContainerService.HintSize="368.8,444.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Database" sap:VirtualizedContainerService.HintSize="368.8,537.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -117,7 +117,25 @@
                 <InArgument x:TypeArguments="x:String">[in_queueItem.SpecificContent("Ref Nr").ToString]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:DatabaseConnect DatabaseConnection="[dbConnect]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="330.4,60" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=DESKTOP-TBGO3TV;Initial Catalog=UnileverDeduction;Persist Security Info=True;User ID=sa;Password=Mak@sql#1" />
+            <ui:CommentOut DisplayName="Mayank Connection" sap:VirtualizedContainerService.HintSize="330.4,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="368.8,152.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:DatabaseConnect DatabaseConnection="[dbConnect]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="330.4,60" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=DESKTOP-TBGO3TV;Initial Catalog=UnileverDeduction;Persist Security Info=True;User ID=sa;Password=Mak@sql#1" />
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:DatabaseConnect DatabaseConnection="[dbConnect]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="330.4,60" sap2010:WorkflowViewState.IdRef="DatabaseConnect_2" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=LAPTOP-97HGK01L;Initial Catalog=UnileverDeduction;Integrated Security=True" />
             <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Update Status" ExistingDbConnection="[dbConnect]" sap:VirtualizedContainerService.HintSize="330.4,89.6" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_2" Sql="[&quot;EXECUTE &quot; &amp; in_ProjectConfig.Item(&quot;Unilever_updateStoredProcedureName&quot;).ToString.Trim &amp; &quot; &quot; &amp; refNumber.ToString.Trim &amp; &quot;, 'Status', 'Completed'&quot;]">
               <ui:ExecuteNonQuery.Parameters>
                 <scg:Dictionary x:TypeArguments="x:String, Argument" />

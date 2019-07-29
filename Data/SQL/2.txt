@@ -1,6 +1,16 @@
+USE [UnileverDeduction]
+GO
+
+/****** Object:  StoredProcedure [dbo].[procInsertUnileverDeduction]    Script Date: 29/07/2019 23:02:24 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
 Create PROCEDURE [dbo].[procInsertUnileverDeduction]
 (
-	@RefNumber bigint, @Account int, @CustRefNumber bigint, @DedAmount decimal(18, 4), @Age int, @ReceiveDate nvarchar(20)
+	@RefNumber bigint, @Account nvarchar(MAX), @CustRefNumber bigint, @DedAmount decimal(18, 4), @Age int, @ReceiveDate nvarchar(20)
 )
 
 AS
@@ -11,3 +21,5 @@ BEGIN
            (@RefNumber, @Account, @CustRefNumber, @DedAmount, @Age, @ReceiveDate, GETDATE())
 END
 GO
+
+
