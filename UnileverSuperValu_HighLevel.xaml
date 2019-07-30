@@ -91,7 +91,7 @@
           <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="330.4,132.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="SetCurrentDirectory" TargetType="si:Directory">
             <InArgument x:TypeArguments="x:String">[baseDirectory + "\InitConfig"]</InArgument>
           </InvokeMethod>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InitConfig workflow" sap:VirtualizedContainerService.HintSize="314.4,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="InitConfig.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InitConfig workflow" sap:VirtualizedContainerService.HintSize="330.4,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="InitConfig.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <OutArgument x:TypeArguments="s:Exception" x:Key="out_SystemException">[systemException]</OutArgument>
               <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Succeeded">[succeeded]</OutArgument>
@@ -430,7 +430,7 @@
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.Condition>[processComplete or succeeded]</Transition.Condition>
                           <Transition.To>
-                            <State x:Name="__ReferenceID5" sap2010:Annotation.AnnotationText="* Any process clean up&#xA;* Potentially trigger report/email" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="372,268" sap2010:WorkflowViewState.IdRef="State_11" IsFinal="True">
+                            <State x:Name="__ReferenceID5" sap2010:Annotation.AnnotationText="* Any process clean up&#xA;* Potentially trigger report/email" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="258.4,191.2" sap2010:WorkflowViewState.IdRef="State_11" IsFinal="True">
                               <State.Entry>
                                 <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="330.4,60" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;Job Done&quot;]" TopMost="True" />
                               </State.Entry>
@@ -610,7 +610,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <Transition.Condition>[succeeded]</Transition.Condition>
                   <Transition.To>
-                    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="* Get input data for next iteration" DisplayName="GetData" sap:VirtualizedContainerService.HintSize="560,1589.6" sap2010:WorkflowViewState.IdRef="State_13">
+                    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="* Get input data for next iteration" DisplayName="GetData" sap:VirtualizedContainerService.HintSize="255.2,208" sap2010:WorkflowViewState.IdRef="State_13">
                       <State.Entry>
                         <Sequence DisplayName="Check data fetch should occur -&gt; if so, invoke workflow" sap:VirtualizedContainerService.HintSize="518.4,897.6" sap2010:WorkflowViewState.IdRef="Sequence_16">
                           <sap:WorkflowViewStateService.ViewState>

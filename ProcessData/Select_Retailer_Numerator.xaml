@@ -76,7 +76,7 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:UiElementExists DisplayName="Retailer Element Exists" Exists="[retailerElementExists]" sap:VirtualizedContainerService.HintSize="618.4,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="d87f6d57183fd4068c951551ce73a73b" Selector="&lt;html app='chrome.exe' omit:title='Numerator Promotions Intel -*' idx='8' /&gt;&lt;webctrl tag='A' innertext=' Retailer *' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="d87f6d57183fd4068c951551ce73a73b" Selector="&lt;html app='chrome.exe' title='Numerator Promotions Intel - *' /&gt;&lt;webctrl parentid='li_1' tag='A' colName='Edit Search×' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
       </ui:UiElementExists.Target>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -254,7 +254,7 @@
               </ui:CommentOut>
               <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="509.6,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
                 <ui:CommentOut.Body>
-                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="254.4,145.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="368.8,145.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -282,7 +282,7 @@
               </ui:CommentOut>
               <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="509.6,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_3">
                 <ui:CommentOut.Body>
-                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="254.4,145.6" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="368.8,145.6" sap2010:WorkflowViewState.IdRef="Sequence_12">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -329,7 +329,7 @@
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="330.4,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_4">
                       <ui:CommentOut.Body>
-                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="254.4,145.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="368.8,145.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>

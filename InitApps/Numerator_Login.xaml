@@ -274,7 +274,7 @@
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="f49ff5d4591e96f0a76f4d7902c87370" Selector="&lt;html app='chrome.exe' title='Numerator Promotions Intel*' /&gt;&lt;webctrl aaname='*My Search*                ' parentid='form1' tag='A' /&gt;" WaitForReady="INTERACTIVE" />
                   </ui:Click.Target>
                 </ui:Click>
-                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                   <ui:Click.CursorPosition>
                     <ui:CursorPosition Position="Center">
                       <ui:CursorPosition.OffsetX>
@@ -286,7 +286,7 @@
                     </ui:CursorPosition>
                   </ui:Click.CursorPosition>
                   <ui:Click.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="ec29802c8547eda8bee67baa6e9eb00f" Selector="&lt;html app='chrome.exe' title='Numerator Promotions Intel - Product Image Thumbnails For Curren*' /&gt;&lt;webctrl aaname='Clear All' parentid='mainTop' tag='BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="ec29802c8547eda8bee67baa6e9eb00f" Selector="&lt;html app='chrome.exe' title='Numerator Promotions Intel*' /&gt;&lt;webctrl aaname='Clear All' omit:parentid='mainTop' tag='BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
                   </ui:Click.Target>
                 </ui:Click>
               </Sequence>
