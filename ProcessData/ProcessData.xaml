@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>660,5016</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>660,5052.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -63,9 +63,10 @@
       <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ProcessData" sap:VirtualizedContainerService.HintSize="620,4936" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ProcessData" sap:VirtualizedContainerService.HintSize="620,4972.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="age" />
       <Variable x:TypeArguments="x:String" Name="account" />
@@ -90,7 +91,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="581.6,4843.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="581.6,4880" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -98,7 +99,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="548,4612" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="548,4648.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -273,37 +274,20 @@
               <OutArgument x:TypeArguments="x:Boolean" x:Key="out_invoiceContainsADDate">[invoiceContainsADDate]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="509.6,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-            <ui:CommentOut.Body>
-              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="368.8,182.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CreateShippingData workflow" sap:VirtualizedContainerService.HintSize="330.4,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="CreateShippingData.xaml">
-                  <ui:InvokeWorkflowFile.Arguments>
-                    <OutArgument x:TypeArguments="s:Exception" x:Key="out_SystemException">[out_SystemException]</OutArgument>
-                    <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Succeeded">[out_Succeeded]</OutArgument>
-                    <OutArgument x:TypeArguments="x:String" x:Key="out_ExceptionStage">[out_ExceptionStage]</OutArgument>
-                    <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="in_ProjectConfig">[in_ProjectConfig]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">[in_ProjectConfig.Item("SippingSheetName").ToString]</InArgument>
-                    <InOutArgument x:TypeArguments="x:Boolean" x:Key="inout_Top10Added">[top10Added]</InOutArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Account">[account]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_RefNr">[refNumber]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_DedAmt">[dedAmt]</InArgument>
-                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_UPCCode">[invoiceUPCCode]</InArgument>
-                  </ui:InvokeWorkflowFile.Arguments>
-                </ui:InvokeWorkflowFile>
-              </Sequence>
-            </ui:CommentOut.Body>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:CommentOut>
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CreateShippingData workflow" sap:VirtualizedContainerService.HintSize="509.6,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="CreateShippingData.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <OutArgument x:TypeArguments="s:Exception" x:Key="out_SystemException">[out_SystemException]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Succeeded">[out_Succeeded]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_ExceptionStage">[out_ExceptionStage]</OutArgument>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="in_ProjectConfig">[in_ProjectConfig]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">[in_ProjectConfig.Item("ShippingSheetName").ToString]</InArgument>
+              <InOutArgument x:TypeArguments="x:Boolean" x:Key="inout_Top10Added">[top10Added]</InOutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Account">[account]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_RefNr">[refNumber]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_DedAmt">[dedAmt]</InArgument>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_UPCCode">[invoiceUPCCode]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
           <If Condition="[invoiceContainsADDate]" sap:VirtualizedContainerService.HintSize="509.6,209.6" sap2010:WorkflowViewState.IdRef="If_1">
             <If.Else>
               <Throw Exception="[New BusinessRuleException(&quot;Process Data : Invoice AD Date's date not found.&quot;)]" sap:VirtualizedContainerService.HintSize="216,22.4" sap2010:WorkflowViewState.IdRef="Throw_1" />

@@ -43,7 +43,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="22">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="44">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -66,6 +66,7 @@
       <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="CreateShippingData" sap:VirtualizedContainerService.HintSize="745.6,2900.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -141,7 +142,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:ReadRange AddHeaders="True" DataTable="[shippingData]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="564.8,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="[in_SheetName]" WorkbookPath="[file.ToString]">
+                  <ui:ReadRange AddHeaders="True" DataTable="[shippingData]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="564.8,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="[in_Account.Trim]" WorkbookPath="[file.ToString]">
                     <ui:ReadRange.Range>
                       <InArgument x:TypeArguments="x:String">
                         <Literal x:TypeArguments="x:String" Value="" />
@@ -156,7 +157,7 @@
                       <InArgument x:TypeArguments="sd:DataTable">[shippingData.AsEnumerable().Take(9).CopyToDataTable]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:WriteRange AddHeaders="True" DataTable="[filteredData]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="564.8,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[in_ProjectConfig.Item(&quot;CreateNewShippingExcelPath&quot;).ToString &amp; &quot;_&quot; &amp; in_Account &amp; &quot;_&quot; &amp; in_RefNr &amp; &quot;_&quot; &amp; in_DedAmt &amp; &quot;.xlsx&quot;]" />
+                  <ui:WriteRange AddHeaders="True" DataTable="[filteredData]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="564.8,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[in_ProjectConfig(&quot;ShippingSheetName&quot;).ToString]" StartingCell="A1" WorkbookPath="[in_ProjectConfig.Item(&quot;CreateNewShippingExcelPath&quot;).ToString &amp; &quot;\&quot; &amp; in_RefNr &amp; &quot;\&quot; &amp; &quot;Shipping_&quot; &amp; in_Account.Trim &amp; &quot;.xlsx&quot;]" />
                   <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[in_UPCCode]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="564.8,1440" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                     <ui:ForEachRow.Body>
                       <ActivityAction x:TypeArguments="sd:DataRow">
@@ -205,7 +206,7 @@
                               <OutArgument x:TypeArguments="x:String" x:Key="unexploded">[unexploded]</OutArgument>
                             </ui:InvokeCode.Arguments>
                           </ui:InvokeCode>
-                          <ui:ReadRange AddHeaders="True" DataTable="[createdExcelData]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="480,88" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="Sheet1" WorkbookPath="[in_ProjectConfig.Item(&quot;CreateNewShippingExcelPath&quot;).ToString &amp; &quot;_&quot; &amp; in_Account &amp; &quot;_&quot; &amp; in_RefNr &amp; &quot;_&quot; &amp; in_DedAmt &amp; &quot;.xlsx&quot;]">
+                          <ui:ReadRange AddHeaders="True" DataTable="[createdExcelData]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="480,88" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="[in_ProjectConfig(&quot;ShippingSheetName&quot;).ToString]" WorkbookPath="[in_ProjectConfig.Item(&quot;CreateNewShippingExcelPath&quot;).ToString &amp; &quot;\&quot; &amp; in_RefNr &amp; &quot;\&quot; &amp; &quot;Shipping_&quot; &amp; in_Account.Trim &amp; &quot;.xlsx&quot;]">
                             <ui:ReadRange.Range>
                               <InArgument x:TypeArguments="x:String">
                                 <Literal x:TypeArguments="x:String" Value="" />
@@ -228,7 +229,7 @@
                               <InArgument x:TypeArguments="x:Int32">[createdExcelData.Rows.Count]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ui:WriteRange AddHeaders="False" DataTable="[filteredData]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="480,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Sheet1" StartingCell="[&quot;A&quot; &amp; createdExcelDataRowCount + 1]" WorkbookPath="[in_ProjectConfig.Item(&quot;CreateNewShippingExcelPath&quot;).ToString &amp; &quot;_&quot; &amp; in_Account &amp; &quot;_&quot; &amp; in_RefNr &amp; &quot;_&quot; &amp; in_DedAmt &amp; &quot;.xlsx&quot;]" />
+                          <ui:WriteRange AddHeaders="False" DataTable="[filteredData]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="480,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="[in_ProjectConfig(&quot;ShippingSheetName&quot;).ToString]" StartingCell="[&quot;A&quot; &amp; createdExcelDataRowCount + 1]" WorkbookPath="[in_ProjectConfig.Item(&quot;CreateNewShippingExcelPath&quot;).ToString &amp; &quot;\&quot; &amp; in_RefNr &amp; &quot;\&quot; &amp; &quot;Shipping_&quot; &amp; in_Account.Trim &amp; &quot;.xlsx&quot;]" />
                         </Sequence>
                       </ActivityAction>
                     </ui:ForEachRow.Body>
