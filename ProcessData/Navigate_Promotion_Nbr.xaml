@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>588,1719.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>588,1642.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Navigate_Promotion_Nbr_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -35,7 +35,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="22">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="44">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -58,16 +58,15 @@
       <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Navigate_Promotion_Nbr" sap:VirtualizedContainerService.HintSize="548,1639.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence DisplayName="Navigate_Promotion_Nbr" sap:VirtualizedContainerService.HintSize="548,1562.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:Boolean" Name="PromotionNumberExists" />
+      <Variable x:TypeArguments="x:String" Name="PromotionNumberExists" />
       <Variable x:TypeArguments="x:String" Name="BeginDate" />
       <Variable x:TypeArguments="x:String" Name="EndDate" />
       <Variable x:TypeArguments="x:Int64" Name="addDateDifference" />
-      <Variable x:TypeArguments="x:Boolean" Name="beginDateExists" />
-      <Variable x:TypeArguments="x:Boolean" Name="endDateExists" />
       <Variable x:TypeArguments="x:String" Name="dynamicPromotionNbr" />
       <Variable x:TypeArguments="x:String" Name="dynamicBeginDate" />
       <Variable x:TypeArguments="x:String" Name="dynamicEndDate" />
@@ -82,25 +81,18 @@
         <OutArgument x:TypeArguments="x:String">[dynamicPromotionNbr]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">["&lt;html title='Work List' /&gt;&lt;webctrl aaname='"&amp; in_ReferenceNumber.Trim.Substring(3,7) &amp;"' parentid='sortableTable0' tag='A' /&gt;"]</InArgument>
+        <InArgument x:TypeArguments="x:String">["&lt;html title='Work List' /&gt;&lt;webctrl aaname='"&amp; in_ReferenceNumber.Trim.Substring(5,5) &amp;"' parentid='sortableTable0' tag='A' /&gt;"]</InArgument>
       </Assign.Value>
     </Assign>
-    <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="509.6,22.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
-    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Select Promotion Nbr" sap:VirtualizedContainerService.HintSize="509.6,68.8" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
-      <ui:Click.CursorPosition>
-        <ui:CursorPosition Position="Center">
-          <ui:CursorPosition.OffsetX>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:CursorPosition.OffsetX>
-          <ui:CursorPosition.OffsetY>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:CursorPosition.OffsetY>
-        </ui:CursorPosition>
-      </ui:Click.CursorPosition>
-      <ui:Click.Target>
+    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Read Promo Number" sap:VirtualizedContainerService.HintSize="509.6,68.8" sap2010:WorkflowViewState.IdRef="GetValue_1">
+      <ui:GetValue.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="[dynamicPromotionNbr]" WaitForReady="INTERACTIVE" />
-      </ui:Click.Target>
-    </ui:Click>
+      </ui:GetValue.Target>
+      <ui:GetValue.Value>
+        <OutArgument x:TypeArguments="x:String">[PromotionNumberExists]</OutArgument>
+      </ui:GetValue.Value>
+    </ui:GetValue>
+    <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="509.6,22.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
     <Assign DisplayName="Set Dynamic Begin Date element" sap:VirtualizedContainerService.HintSize="509.6,60" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[dynamicBeginDate]</OutArgument>
@@ -109,25 +101,31 @@
         <InArgument x:TypeArguments="x:String">["&lt;html title='Work List' /&gt;&lt;webctrl id='sortableTable0' tag='TABLE' /&gt;&lt;webctrl isleaf='1' tag='TD' colName='Begin Date' innertext='"&amp; in_BeginDate.Trim &amp;"' /&gt;"]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:UiElementExists DisplayName="Check Begin Date Exists on Screen" Exists="[beginDateExists]" sap:VirtualizedContainerService.HintSize="509.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
-      <ui:UiElementExists.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="ffb9eb351cf41dd5719ffb98fc729831" Selector="[dynamicBeginDate]" TimeoutMS="10000" WaitForReady="INTERACTIVE" />
-      </ui:UiElementExists.Target>
-    </ui:UiElementExists>
+    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Read Promo Begin Date" sap:VirtualizedContainerService.HintSize="509.6,68.8" sap2010:WorkflowViewState.IdRef="GetValue_2">
+      <ui:GetValue.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="[dynamicBeginDate]" WaitForReady="INTERACTIVE" />
+      </ui:GetValue.Target>
+      <ui:GetValue.Value>
+        <OutArgument x:TypeArguments="x:String">[dynamicBeginDate]</OutArgument>
+      </ui:GetValue.Value>
+    </ui:GetValue>
     <Assign DisplayName="Set Dynamic End Date element" sap:VirtualizedContainerService.HintSize="509.6,60" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[dynamicEndDate]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">["&lt;html title='Work List' /&gt;&lt;webctrl id='sortableTable0' tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableCol='9' tag='TD' aaname='09/06/19' colName='"&amp; in_EndDate.Trim &amp;"' /&gt;"]</InArgument>
+        <InArgument x:TypeArguments="x:String">["&lt;html title='Work List' /&gt;&lt;webctrl id='sortableTable0' tag='TABLE' /&gt;&lt;webctrl isleaf='1' tag='TD' colName='End Date' innertext='"&amp; in_EndDate.Trim &amp;"' /&gt;"]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:UiElementExists DisplayName="Check End Date Exists on Screen" Exists="[beginDateExists]" sap:VirtualizedContainerService.HintSize="509.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
-      <ui:UiElementExists.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f85dff19da137ff8a25de6d9c7197471" Selector="&lt;html title='Work List' /&gt;&lt;webctrl id='sortableTable0' tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableCol='9' tag='TD' aaname='09/06/19' colName='End Date' /&gt;" TimeoutMS="10000" WaitForReady="INTERACTIVE" />
-      </ui:UiElementExists.Target>
-    </ui:UiElementExists>
-    <If Condition="[PromotionNumberExists or beginDateExists or endDateExists]" sap:VirtualizedContainerService.HintSize="509.6,780.8" sap2010:WorkflowViewState.IdRef="If_2">
+    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get EndDate" sap:VirtualizedContainerService.HintSize="509.6,68.8" sap2010:WorkflowViewState.IdRef="GetValue_3">
+      <ui:GetValue.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="[dynamicEndDate]" WaitForReady="INTERACTIVE" />
+      </ui:GetValue.Target>
+      <ui:GetValue.Value>
+        <OutArgument x:TypeArguments="x:String">[dynamicEndDate]</OutArgument>
+      </ui:GetValue.Value>
+    </ui:GetValue>
+    <If Condition="[PromotionNumberExists.Contains(in_ReferenceNumber) or dynamicBeginDate.Contains(in_BeginDate) or dynamicEndDate.Contains(in_EndDate)]" sap:VirtualizedContainerService.HintSize="509.6,780.8" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="368.8,631.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
@@ -158,7 +156,7 @@
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="c2843edb7bf50ab90827d1fec25401b0" Selector="&lt;wnd app='iexplore.exe' cls='IEFrame' omit:title='Work List - Internet Explorer' /&gt;&lt;wnd cls='DirectUIHWND' /&gt;&lt;ctrl name='Tab Row' role='page tab list' /&gt;&lt;ctrl name='Waiting for epromotions.svharbor.com' role='page tab' /&gt;" TimeoutMS="50000" WaitForReady="INTERACTIVE" />
             </ui:WaitUiElementVanish.Target>
           </ui:WaitUiElementVanish>
-          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Text Promotion Nbr" sap:VirtualizedContainerService.HintSize="330.4,68.8" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Text Promotion Nbr" sap:VirtualizedContainerService.HintSize="330.4,68.8" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
             <ui:Click.CursorPosition>
               <ui:CursorPosition Position="Center">
                 <ui:CursorPosition.OffsetX>
@@ -173,7 +171,7 @@
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="[dynamicPromotionNbr]" WaitForReady="INTERACTIVE" />
             </ui:Click.Target>
           </ui:Click>
-          <ui:WaitUiElementVanish ContinueOnError="True" DisplayName="Wait Element loading Vanish" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementVanish_3" WaitNotActive="False" WaitNotVisible="False">
+          <ui:WaitUiElementVanish ContinueOnError="True" DisplayName="Wait Element loading Vanish" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementVanish_4" WaitNotActive="False" WaitNotVisible="False">
             <ui:WaitUiElementVanish.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="ffe5b41c63659e844c4b20a2f4600c96" Selector="&lt;wnd app='iexplore.exe' cls='IEFrame' title='Work List - Internet Explorer' /&gt;&lt;wnd cls='DirectUIHWND' /&gt;&lt;ctrl omit:name='Tab Row' role='page tab list' /&gt;&lt;ctrl name='Waiting for epromotions.svharbor.com' role='page tab' /&gt;" WaitForReady="INTERACTIVE" />
             </ui:WaitUiElementVanish.Target>

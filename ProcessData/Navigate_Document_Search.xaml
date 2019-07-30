@@ -125,7 +125,7 @@
     </If>
     <ui:UiElementExists DisplayName="Check Document Search Page" Exists="[DocumentSearchLinkExists]" sap:VirtualizedContainerService.HintSize="625.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
       <ui:UiElementExists.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0cc34f8588b9343c7171ef17c26006ff" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl aaname='Document Search' parentid='primary-content' tag='A' /&gt;" TimeoutMS="30000" WaitForReady="COMPLETE" />
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0cc34f8588b9343c7171ef17c26006ff" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl aaname='Document Search' parentid='primary-content' tag='A' /&gt;" TimeoutMS="10000" WaitForReady="COMPLETE" />
       </ui:UiElementExists.Target>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">

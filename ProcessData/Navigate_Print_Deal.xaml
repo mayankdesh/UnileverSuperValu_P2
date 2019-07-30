@@ -69,7 +69,7 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:UiElementExists DisplayName="Check Print Element Exists" Exists="[printElementExists]" sap:VirtualizedContainerService.HintSize="1392.8,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="71338fe2655ef28218cff53313d897fc" Selector="&lt;html title='Deal Summary' /&gt;&lt;webctrl id='print' tag='A' /&gt;" TimeoutMS="15000" WaitForReady="INTERACTIVE" />
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="71338fe2655ef28218cff53313d897fc" Selector="&lt;html title='Deal Summary' /&gt;&lt;webctrl id='print' tag='A' /&gt;" TimeoutMS="60000" WaitForReady="INTERACTIVE" />
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
     <If Condition="[printElementExists]" sap:VirtualizedContainerService.HintSize="1392.8,3356.8" sap2010:WorkflowViewState.IdRef="If_1">
