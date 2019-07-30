@@ -153,7 +153,7 @@
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="51be7a6f22436e0a0f58c802f277fc2d" Selector="&lt;html title='Work List' /&gt;&lt;webctrl tag='SELECT' /&gt;" WaitForReady="COMPLETE" />
             </ui:SelectItem.Target>
           </ui:SelectItem>
-          <ui:WaitUiElementVanish DisplayName="Wait Element Vanish 'page tab'" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementVanish_2" WaitNotActive="False" WaitNotVisible="False">
+          <ui:WaitUiElementVanish ContinueOnError="True" DisplayName="Wait Element Vanish 'page tab'" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementVanish_2" WaitNotActive="False" WaitNotVisible="False">
             <ui:WaitUiElementVanish.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="c2843edb7bf50ab90827d1fec25401b0" Selector="&lt;wnd app='iexplore.exe' cls='IEFrame' omit:title='Work List - Internet Explorer' /&gt;&lt;wnd cls='DirectUIHWND' /&gt;&lt;ctrl name='Tab Row' role='page tab list' /&gt;&lt;ctrl name='Waiting for epromotions.svharbor.com' role='page tab' /&gt;" TimeoutMS="50000" WaitForReady="INTERACTIVE" />
             </ui:WaitUiElementVanish.Target>
@@ -173,7 +173,7 @@
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="[dynamicPromotionNbr]" WaitForReady="INTERACTIVE" />
             </ui:Click.Target>
           </ui:Click>
-          <ui:WaitUiElementVanish DisplayName="Wait Element loading Vanish" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementVanish_3" WaitNotActive="False" WaitNotVisible="False">
+          <ui:WaitUiElementVanish ContinueOnError="True" DisplayName="Wait Element loading Vanish" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementVanish_3" WaitNotActive="False" WaitNotVisible="False">
             <ui:WaitUiElementVanish.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="ffe5b41c63659e844c4b20a2f4600c96" Selector="&lt;wnd app='iexplore.exe' cls='IEFrame' title='Work List - Internet Explorer' /&gt;&lt;wnd cls='DirectUIHWND' /&gt;&lt;ctrl omit:name='Tab Row' role='page tab list' /&gt;&lt;ctrl name='Waiting for epromotions.svharbor.com' role='page tab' /&gt;" WaitForReady="INTERACTIVE" />
             </ui:WaitUiElementVanish.Target>

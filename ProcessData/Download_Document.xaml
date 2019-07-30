@@ -69,7 +69,7 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:UiElementExists DisplayName="Element Exists 'text LOCATION'" Exists="[InvoiceExists]" sap:VirtualizedContainerService.HintSize="1112,68.8" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='iexplore.exe' cls='IEFrame' title='https://www.svharbor.com/epass/loadDocument.do?*' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;" TimeoutMS="60000" WaitForReady="INTERACTIVE" />
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='iexplore.exe' cls='IEFrame' title='https://www.svharbor.com/epass/loadDocument.do?*' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;" TimeoutMS="70000" WaitForReady="INTERACTIVE" />
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
     <If Condition="[InvoiceExists]" sap:VirtualizedContainerService.HintSize="1112,1499.2" sap2010:WorkflowViewState.IdRef="If_1">
@@ -110,7 +110,7 @@
           </ui:Click>
           <ui:UiElementExists DisplayName="File Already Exists" Exists="[FileAlreadyExists]" sap:VirtualizedContainerService.HintSize="816.8,68.8" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
             <ui:UiElementExists.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='acrord32.exe' cls='#32770' title='Confirm Save As' /&gt;&lt;wnd aaname='Confirm Save As' cls='DirectUIHWND' /&gt;&lt;ctrl name='Confirm Save As' role='pane' /&gt;&lt;ctrl name='sample1.pdf already exists.  Do you want to replace it?' role='text' /&gt;" TimeoutMS="4000" WaitForReady="INTERACTIVE" />
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='acrord32.exe' cls='#32770' title='Confirm Save As' /&gt;&lt;wnd aaname='Confirm Save As' cls='DirectUIHWND' /&gt;&lt;ctrl name='Confirm Save As' role='pane' /&gt;&lt;ctrl name='sample1.pdf already exists.  Do you want to replace it?' role='text' /&gt;" TimeoutMS="9000" WaitForReady="INTERACTIVE" />
             </ui:UiElementExists.Target>
           </ui:UiElementExists>
           <If Condition="[FileAlreadyExists]" sap:VirtualizedContainerService.HintSize="816.8,706.4" sap2010:WorkflowViewState.IdRef="If_2">
@@ -200,7 +200,7 @@
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="a294da805a8b8f117bb5ea20532bfd54" Selector="&lt;wnd omit:app='iexplore.exe' omit:cls='IEFrame' title='https://www.svharbor.com/epass/loadDocument.do?*' /&gt;&lt;wnd omit:cls='DirectUIHWND' idx='20' /&gt;&lt;ctrl omit:name='Tab Row' role='page tab list' /&gt;&lt;ctrl omit:name='svharbor.com Tab Group *' role='page tab' idx='2' /&gt;&lt;ctrl omit:name='Close Tab (Ctrl+W)' role='push button' /&gt;" WaitForReady="INTERACTIVE" />
                     </ui:Click.Target>
                   </ui:Click>
-                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'IMG  https://www.svharb...'" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                  <ui:Click DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="3000" DisplayName="Click 'IMG  https://www.svharb...'" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>

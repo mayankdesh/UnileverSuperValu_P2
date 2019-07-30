@@ -64,7 +64,7 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:UiElementExists DisplayName="Check SV Harbor Screen Exists (Account Payable Services)" Exists="[AccountPayableServiceExists]" sap:VirtualizedContainerService.HintSize="625.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="5d673db1a4df70a2cdab98455ee8c64c" Selector="&lt;html title='SVConnect Portal v1.2' /&gt;&lt;webctrl id='554' tag='DT' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="5d673db1a4df70a2cdab98455ee8c64c" Selector="&lt;html title='SVConnect Portal v1.2' /&gt;&lt;webctrl id='554' tag='DT' /&gt;" TimeoutMS="30000" WaitForReady="INTERACTIVE" />
       </ui:UiElementExists.Target>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -125,7 +125,7 @@
     </If>
     <ui:UiElementExists DisplayName="Check Document Search Page" Exists="[DocumentSearchLinkExists]" sap:VirtualizedContainerService.HintSize="625.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
       <ui:UiElementExists.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0cc34f8588b9343c7171ef17c26006ff" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl aaname='Document Search' parentid='primary-content' tag='A' /&gt;" TimeoutMS="10000" WaitForReady="COMPLETE" />
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0cc34f8588b9343c7171ef17c26006ff" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl aaname='Document Search' parentid='primary-content' tag='A' /&gt;" TimeoutMS="30000" WaitForReady="COMPLETE" />
       </ui:UiElementExists.Target>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -142,7 +142,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click On Document Search Link" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click On Document Search Link" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
           <ui:Click.CursorPosition>
             <ui:CursorPosition Position="Center">
               <ui:CursorPosition.OffsetX>
@@ -164,7 +164,7 @@
     </If>
     <ui:UiElementExists DisplayName="Check Document Search Screen Exist" Exists="[DocumentSearchExists]" sap:VirtualizedContainerService.HintSize="625.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
       <ui:UiElementExists.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="51f14eaf16968f8281ba7d615cf2f384" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl tag='H1' /&gt;" TimeoutMS="10000" WaitForReady="INTERACTIVE" />
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="51f14eaf16968f8281ba7d615cf2f384" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl tag='H1' /&gt;" TimeoutMS="30000" WaitForReady="INTERACTIVE" />
       </ui:UiElementExists.Target>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">

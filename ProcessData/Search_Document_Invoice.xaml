@@ -79,7 +79,7 @@
     </Assign>
     <ui:UiElementExists DisplayName="Show All Element Exists" Exists="[showAllExists]" sap:VirtualizedContainerService.HintSize="625.6,68.8" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;html title='ePASS Version 3.6' /&gt;&#xA;&lt;webctrl name='showAll' tag='INPUT' type='checkbox' /&gt;" TimeoutMS="10000" WaitForReady="INTERACTIVE" />
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;html title='ePASS Version 3.6' /&gt;&#xA;&lt;webctrl name='showAll' tag='INPUT' type='checkbox' /&gt;" TimeoutMS="6000" WaitForReady="INTERACTIVE" />
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
     <If Condition="[showAllExists]" sap:VirtualizedContainerService.HintSize="625.6,256.8" sap2010:WorkflowViewState.IdRef="If_2">

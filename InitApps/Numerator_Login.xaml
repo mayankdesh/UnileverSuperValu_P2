@@ -286,7 +286,7 @@
                     </ui:CursorPosition>
                   </ui:Click.CursorPosition>
                   <ui:Click.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="7f7f565b8118508ae2b4e345c5dd8e61" Selector="&lt;html app='chrome.exe' title='Numerator Promotions Intel*' /&gt;&lt;webctrl aaname='My Search' omit:parentid='form1' tag='SPAN' /&gt;" WaitForReady="INTERACTIVE" />
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="ec29802c8547eda8bee67baa6e9eb00f" Selector="&lt;html app='chrome.exe' title='Numerator Promotions Intel - Product Image Thumbnails For Curren*' /&gt;&lt;webctrl aaname='Clear All' parentid='mainTop' tag='BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
                   </ui:Click.Target>
                 </ui:Click>
               </Sequence>
