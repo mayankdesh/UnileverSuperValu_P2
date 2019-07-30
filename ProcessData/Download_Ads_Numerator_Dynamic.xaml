@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Download_Ads_Numerator_Dynamic" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Download_Ads_Numerator_Dynamic" this:Download_Ads_Numerator_Dynamic.in_AdDate="06/29/2019" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_AdDate" Type="InArgument(x:String)" />
   </x:Members>
@@ -90,7 +90,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID35</x:Reference>
+      <x:Reference>__ReferenceID36</x:Reference>
     </Flowchart.StartNode>
     <FlowStep x:Name="__ReferenceID0">
       <sap:WorkflowViewStateService.ViewState>
@@ -643,6 +643,7 @@
                                                                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                           <av:Point x:Key="ShapeLocation">1000,2333.6</av:Point>
                                                                                                                           <av:Size x:Key="ShapeSize">216,52.8</av:Size>
+                                                                                                                          <av:PointCollection x:Key="ConnectorLocation">1108,2333.6 1108,2303.6 1100,2303.6 1100,2274.4</av:PointCollection>
                                                                                                                         </scg:Dictionary>
                                                                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                                                                       <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click close popup" sap:VirtualizedContainerService.HintSize="216,52.8" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
@@ -665,6 +666,41 @@
                                                                                                                           </scg:Dictionary>
                                                                                                                         </sap:WorkflowViewStateService.ViewState>
                                                                                                                       </ui:Click>
+                                                                                                                      <FlowStep.Next>
+                                                                                                                        <FlowStep x:Name="__ReferenceID35">
+                                                                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                              <av:Point x:Key="ShapeLocation">992,2205.6</av:Point>
+                                                                                                                              <av:Size x:Key="ShapeSize">216,68.8</av:Size>
+                                                                                                                            </scg:Dictionary>
+                                                                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                                                                          <Sequence sap:VirtualizedContainerService.HintSize="368.8,200" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                                                                                                                            <Sequence.Variables>
+                                                                                                                              <Variable x:TypeArguments="x:Boolean" Name="FileAlreadyExists" />
+                                                                                                                            </Sequence.Variables>
+                                                                                                                            <sap:WorkflowViewStateService.ViewState>
+                                                                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                                              </scg:Dictionary>
+                                                                                                                            </sap:WorkflowViewStateService.ViewState>
+                                                                                                                            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click on SAVE Button" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                                                                                                              <ui:Click.CursorPosition>
+                                                                                                                                <ui:CursorPosition Position="Center">
+                                                                                                                                  <ui:CursorPosition.OffsetX>
+                                                                                                                                    <InArgument x:TypeArguments="x:Int32" />
+                                                                                                                                  </ui:CursorPosition.OffsetX>
+                                                                                                                                  <ui:CursorPosition.OffsetY>
+                                                                                                                                    <InArgument x:TypeArguments="x:Int32" />
+                                                                                                                                  </ui:CursorPosition.OffsetY>
+                                                                                                                                </ui:CursorPosition>
+                                                                                                                              </ui:Click.CursorPosition>
+                                                                                                                              <ui:Click.Target>
+                                                                                                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0c970d1637107eced428e9c77bb88410" Selector="&lt;wnd omit:app='acrord32.exe' omit:cls='#32770' title='Save*' /&gt;&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;" WaitForReady="INTERACTIVE" />
+                                                                                                                              </ui:Click.Target>
+                                                                                                                            </ui:Click>
+                                                                                                                          </Sequence>
+                                                                                                                        </FlowStep>
+                                                                                                                      </FlowStep.Next>
                                                                                                                     </FlowStep>
                                                                                                                   </FlowStep.Next>
                                                                                                                 </FlowStep>
@@ -872,7 +908,7 @@
     </FlowStep>
     <x:Reference>__ReferenceID25</x:Reference>
     <x:Reference>__ReferenceID26</x:Reference>
-    <FlowStep x:Name="__ReferenceID35">
+    <FlowStep x:Name="__ReferenceID36">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">392,127.6</av:Point>
@@ -898,5 +934,6 @@
     <x:Reference>__ReferenceID32</x:Reference>
     <x:Reference>__ReferenceID33</x:Reference>
     <x:Reference>__ReferenceID34</x:Reference>
+    <x:Reference>__ReferenceID35</x:Reference>
   </Flowchart>
 </Activity>

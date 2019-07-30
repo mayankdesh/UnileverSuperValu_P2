@@ -81,7 +81,7 @@
         <OutArgument x:TypeArguments="x:String">[dynamicPromotionNbr]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">["&lt;html title='Work List' /&gt;&lt;webctrl aaname='"&amp; in_ReferenceNumber.Trim.Substring(5,5) &amp;"' parentid='sortableTable0' tag='A' /&gt;"]</InArgument>
+        <InArgument x:TypeArguments="x:String">["&lt;html title='Work List' /&gt;&lt;webctrl aaname='*"&amp; in_ReferenceNumber.Trim.Substring(5,5) &amp;"*' parentid='sortableTable0' tag='A' /&gt;"]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Read Promo Number" sap:VirtualizedContainerService.HintSize="509.6,68.8" sap2010:WorkflowViewState.IdRef="GetValue_1">
