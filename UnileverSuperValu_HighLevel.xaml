@@ -49,7 +49,6 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <StateMachine InitialState="{x:Reference __ReferenceID0}" sap2010:Annotation.AnnotationText="- Below is high level of process.&#xA;- Happy Path : Initialize Config file -&gt; Initialize pplication -&gt; Get Data(Process Queue) -&gt; Process Data(Get Data from Queue) -&gt; Close Application(Process Application) -&gt; Finialize&#xA;- Exception : &#xA;1. Exception state will handle all the exceptions&#xA;2. 3 retries to initialize the application(excel) and to load the data in queue." DisplayName="UnileverSuperValu_HighLevel" sap:VirtualizedContainerService.HintSize="2133.6,1021.6" sap2010:WorkflowViewState.IdRef="StateMachine_1">
@@ -528,15 +527,15 @@
           <Transition.To>
             <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="* Initialise applications&#xA;* Ensure applications are open and responsive&#xA;* Log into applications" DisplayName="InitApps" sap:VirtualizedContainerService.HintSize="259.2,200" sap2010:WorkflowViewState.IdRef="State_10">
               <State.Entry>
-                <Sequence DisplayName="Set up and run InitApps" sap:VirtualizedContainerService.HintSize="376.8,696" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                <Sequence DisplayName="Set up and run InitApps" sap:VirtualizedContainerService.HintSize="368.8,688" sap2010:WorkflowViewState.IdRef="Sequence_14">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;InitApps : Initialised&quot;]" />
-                  <Assign DisplayName="Initialise exception to null" sap:VirtualizedContainerService.HintSize="338.4,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="330.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;InitApps : Initialised&quot;]" />
+                  <Assign DisplayName="Initialise exception to null" sap:VirtualizedContainerService.HintSize="330.4,60" sap2010:WorkflowViewState.IdRef="Assign_8">
                     <Assign.To>
                       <OutArgument x:TypeArguments="s:Exception">[systemException]</OutArgument>
                     </Assign.To>
@@ -544,7 +543,7 @@
                       <InArgument x:TypeArguments="s:Exception">[Nothing]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign DisplayName="Initialise succeeded to False" sap:VirtualizedContainerService.HintSize="338.4,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                  <Assign DisplayName="Initialise succeeded to False" sap:VirtualizedContainerService.HintSize="330.4,60" sap2010:WorkflowViewState.IdRef="Assign_9">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Boolean">[succeeded]</OutArgument>
                     </Assign.To>
@@ -552,10 +551,10 @@
                       <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="338.4,132.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_4" MethodName="SetCurrentDirectory" TargetType="si:Directory">
+                  <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="330.4,132.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_4" MethodName="SetCurrentDirectory" TargetType="si:Directory">
                     <InArgument x:TypeArguments="x:String">[baseDirectory + "\InitApps"]</InArgument>
                   </InvokeMethod>
-                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InitConfig workflow" sap:VirtualizedContainerService.HintSize="338.4,97.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="InitApps.xaml">
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InitConfig workflow" sap:VirtualizedContainerService.HintSize="330.4,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="InitApps.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <OutArgument x:TypeArguments="s:Exception" x:Key="out_SystemException">[systemException]</OutArgument>
                       <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Succeeded">[succeeded]</OutArgument>
@@ -611,7 +610,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <Transition.Condition>[succeeded]</Transition.Condition>
                   <Transition.To>
-                    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="* Get input data for next iteration" DisplayName="GetData" sap:VirtualizedContainerService.HintSize="560,1841.6" sap2010:WorkflowViewState.IdRef="State_13">
+                    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="* Get input data for next iteration" DisplayName="GetData" sap:VirtualizedContainerService.HintSize="255.2,208" sap2010:WorkflowViewState.IdRef="State_13">
                       <State.Entry>
                         <Sequence DisplayName="Check data fetch should occur -&gt; if so, invoke workflow" sap:VirtualizedContainerService.HintSize="518.4,1149.6" sap2010:WorkflowViewState.IdRef="Sequence_16">
                           <sap:WorkflowViewStateService.ViewState>
@@ -702,7 +701,7 @@
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.Condition>[succeeded]</Transition.Condition>
                           <Transition.To>
-                            <State x:Name="__ReferenceID6" sap2010:Annotation.AnnotationText="* Process the Data" DisplayName="ProcessData" sap:VirtualizedContainerService.HintSize="255.2,208" sap2010:WorkflowViewState.IdRef="State_15">
+                            <State x:Name="__ReferenceID6" sap2010:Annotation.AnnotationText="* Process the Data" DisplayName="ProcessData" sap:VirtualizedContainerService.HintSize="589.6,2318.4" sap2010:WorkflowViewState.IdRef="State_15">
                               <State.Entry>
                                 <Sequence DisplayName="Set up and run process Data" sap:VirtualizedContainerService.HintSize="548,1653.6" sap2010:WorkflowViewState.IdRef="Sequence_24">
                                   <sap:WorkflowViewStateService.ViewState>
