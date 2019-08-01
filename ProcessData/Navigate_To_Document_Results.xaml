@@ -105,7 +105,7 @@
     </ui:ExcelApplicationScope>
     <ui:UiElementExists DisplayName="SELECT Vendor ID # DropDown Exists" Exists="[VendorIDDropDownExists]" sap:VirtualizedContainerService.HintSize="1288.8,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="e06576de4545b988d5d3fd9c0c702ea5" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl name='value(vendorId)' tag='SELECT' /&gt;" TimeoutMS="10000" WaitForReady="INTERACTIVE" />
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="e06576de4545b988d5d3fd9c0c702ea5" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl name='value(vendorId)' tag='SELECT' /&gt;" TimeoutMS="90000" WaitForReady="INTERACTIVE" />
       </ui:UiElementExists.Target>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -277,7 +277,7 @@
                   </ui:Click>
                   <ui:UiElementExists DisplayName="Document Results Element Exists" Exists="[NoResultFoundExists]" sap:VirtualizedContainerService.HintSize="707.2,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                     <ui:UiElementExists.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0b83d45a12021f68972fedd9f2e2c12a" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl parentid='primary-content' tag='TABLE' /&gt;&lt;webctrl innertext='View ' idx='2' /&gt;" TimeoutMS="60000" WaitForReady="INTERACTIVE" />
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0b83d45a12021f68972fedd9f2e2c12a" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl parentid='primary-content' tag='TABLE' /&gt;&lt;webctrl innertext='View ' idx='2' /&gt;" TimeoutMS="1600000" WaitForReady="INTERACTIVE" />
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
                   <If Condition="[NoResultFoundExists]" sap:VirtualizedContainerService.HintSize="707.2,574.4" sap2010:WorkflowViewState.IdRef="If_3">

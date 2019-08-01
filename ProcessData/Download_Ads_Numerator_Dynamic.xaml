@@ -1,6 +1,7 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Download_Ads_Numerator_Dynamic" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_AdDate" Type="InArgument(x:String)" />
+    <x:Property Name="in_NumeratorFilePath" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -34,7 +35,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="24">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="23">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -351,7 +352,7 @@
                                                           </sap:WorkflowViewStateService.ViewState>
                                                           <ui:UiElementExists DisplayName="Product Ads Element Exists" Exists="[addExists]" sap:VirtualizedContainerService.HintSize="216,52.8" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                                                             <ui:UiElementExists.Target>
-                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="[selectDynamicDate]" TimeoutMS="3000" WaitForReady="COMPLETE" />
+                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="[selectDynamicDate]" TimeoutMS="10000" WaitForReady="COMPLETE" />
                                                             </ui:UiElementExists.Target>
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -643,7 +644,7 @@
                                                                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                           <av:Point x:Key="ShapeLocation">1000,2333.6</av:Point>
                                                                                                                           <av:Size x:Key="ShapeSize">216,52.8</av:Size>
-                                                                                                                          <av:PointCollection x:Key="ConnectorLocation">1108,2333.6 1108,2303.6 1100,2303.6 1100,2274.4</av:PointCollection>
+                                                                                                                          <av:PointCollection x:Key="ConnectorLocation">1108,2333.6 1108,2248.8</av:PointCollection>
                                                                                                                         </scg:Dictionary>
                                                                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                                                                       <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click close popup" sap:VirtualizedContainerService.HintSize="216,52.8" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
@@ -670,34 +671,108 @@
                                                                                                                         <FlowStep x:Name="__ReferenceID35">
                                                                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                                              <av:Point x:Key="ShapeLocation">1082,2185.6</av:Point>
+                                                                                                                              <av:Point x:Key="ShapeLocation">1000,2180</av:Point>
                                                                                                                               <av:Size x:Key="ShapeSize">216,68.8</av:Size>
                                                                                                                             </scg:Dictionary>
                                                                                                                           </sap:WorkflowViewStateService.ViewState>
-                                                                                                                          <Sequence sap:VirtualizedContainerService.HintSize="368.8,200" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                                                                                                                          <Sequence DisplayName="Download_Document" sap:VirtualizedContainerService.HintSize="216,68.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
                                                                                                                             <Sequence.Variables>
-                                                                                                                              <Variable x:TypeArguments="x:Boolean" Name="FileAlreadyExists" />
+                                                                                                                              <Variable x:TypeArguments="x:Boolean" Name="saveAsExists" />
                                                                                                                             </Sequence.Variables>
                                                                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                                                                               </scg:Dictionary>
                                                                                                                             </sap:WorkflowViewStateService.ViewState>
-                                                                                                                            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click on SAVE Button" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
-                                                                                                                              <ui:Click.CursorPosition>
-                                                                                                                                <ui:CursorPosition Position="Center">
-                                                                                                                                  <ui:CursorPosition.OffsetX>
-                                                                                                                                    <InArgument x:TypeArguments="x:Int32" />
-                                                                                                                                  </ui:CursorPosition.OffsetX>
-                                                                                                                                  <ui:CursorPosition.OffsetY>
-                                                                                                                                    <InArgument x:TypeArguments="x:Int32" />
-                                                                                                                                  </ui:CursorPosition.OffsetY>
-                                                                                                                                </ui:CursorPosition>
-                                                                                                                              </ui:Click.CursorPosition>
-                                                                                                                              <ui:Click.Target>
-                                                                                                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0c970d1637107eced428e9c77bb88410" Selector="&lt;wnd omit:app='acrord32.exe' omit:cls='#32770' title='Save*' /&gt;&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;" WaitForReady="INTERACTIVE" />
-                                                                                                                              </ui:Click.Target>
-                                                                                                                            </ui:Click>
+                                                                                                                            <ui:UiElementExists DisplayName="Element Exists 'text LOCATION'" Exists="[saveAsExists]" sap:VirtualizedContainerService.HintSize="688.8,68.8" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                                                                                                                              <ui:UiElementExists.Target>
+                                                                                                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='splwow64.exe' omit:cls='#32770' title='Save*' /&gt;&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;" TimeoutMS="30000" WaitForReady="INTERACTIVE" />
+                                                                                                                              </ui:UiElementExists.Target>
+                                                                                                                            </ui:UiElementExists>
+                                                                                                                            <If Condition="[saveAsExists]" sap:VirtualizedContainerService.HintSize="688.8,1132" sap2010:WorkflowViewState.IdRef="If_2">
+                                                                                                                              <If.Then>
+                                                                                                                                <Sequence sap:VirtualizedContainerService.HintSize="548,982.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                                                                                                                  <Sequence.Variables>
+                                                                                                                                    <Variable x:TypeArguments="x:Boolean" Name="FileAlreadyExists" />
+                                                                                                                                  </Sequence.Variables>
+                                                                                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                                                    </scg:Dictionary>
+                                                                                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                                                                                  <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" ContinueOnError="False" DisplayName="Type Invoice File Path" EmptyField="True" sap:VirtualizedContainerService.HintSize="509.6,96.8" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="True" Text="[in_NumeratorFilePath]">
+                                                                                                                                    <ui:TypeInto.Target>
+                                                                                                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;wnd app='*.exe' cls='#32770' title='Save *As' /&gt;&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" WaitForReady="INTERACTIVE" />
+                                                                                                                                    </ui:TypeInto.Target>
+                                                                                                                                  </ui:TypeInto>
+                                                                                                                                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click on SAVE Button" sap:VirtualizedContainerService.HintSize="509.6,107.2" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                                                                                                                    <ui:Click.CursorPosition>
+                                                                                                                                      <ui:CursorPosition Position="Center">
+                                                                                                                                        <ui:CursorPosition.OffsetX>
+                                                                                                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                                                                                                        </ui:CursorPosition.OffsetX>
+                                                                                                                                        <ui:CursorPosition.OffsetY>
+                                                                                                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                                                                                                        </ui:CursorPosition.OffsetY>
+                                                                                                                                      </ui:CursorPosition>
+                                                                                                                                    </ui:Click.CursorPosition>
+                                                                                                                                    <ui:Click.Target>
+                                                                                                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0c970d1637107eced428e9c77bb88410" Selector="&lt;wnd app='*.exe' omit:cls='#32770' title='Save*' /&gt;&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;" WaitForReady="INTERACTIVE" />
+                                                                                                                                    </ui:Click.Target>
+                                                                                                                                  </ui:Click>
+                                                                                                                                  <ui:UiElementExists DisplayName="File Already Exists" Exists="[FileAlreadyExists]" sap:VirtualizedContainerService.HintSize="509.6,68.8" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
+                                                                                                                                    <ui:UiElementExists.Target>
+                                                                                                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='*.exe' cls='#32770' title='Confirm Save As' /&gt;&lt;wnd aaname='Confirm Save As' cls='DirectUIHWND' /&gt;&lt;ctrl name='Confirm Save As' role='pane' /&gt;&lt;ctrl name='*1.pdf already exists.  Do you want to replace it?' role='text' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                                                                                                                                    </ui:UiElementExists.Target>
+                                                                                                                                  </ui:UiElementExists>
+                                                                                                                                  <If Condition="[FileAlreadyExists]" sap:VirtualizedContainerService.HintSize="509.6,496.8" sap2010:WorkflowViewState.IdRef="If_1">
+                                                                                                                                    <If.Then>
+                                                                                                                                      <Sequence sap:VirtualizedContainerService.HintSize="368.8,347.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                                                                                                                                        <Sequence.Variables>
+                                                                                                                                          <Variable x:TypeArguments="ui:Browser" Name="closeTab" />
+                                                                                                                                        </Sequence.Variables>
+                                                                                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                                                          </scg:Dictionary>
+                                                                                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                                                                                        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click No Button on Popup" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                                                                                                                          <ui:Click.CursorPosition>
+                                                                                                                                            <ui:CursorPosition Position="Center">
+                                                                                                                                              <ui:CursorPosition.OffsetX>
+                                                                                                                                                <InArgument x:TypeArguments="x:Int32" />
+                                                                                                                                              </ui:CursorPosition.OffsetX>
+                                                                                                                                              <ui:CursorPosition.OffsetY>
+                                                                                                                                                <InArgument x:TypeArguments="x:Int32" />
+                                                                                                                                              </ui:CursorPosition.OffsetY>
+                                                                                                                                            </ui:CursorPosition>
+                                                                                                                                          </ui:Click.CursorPosition>
+                                                                                                                                          <ui:Click.Target>
+                                                                                                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6b418d717642451f14b57655490eda03" Selector="&lt;wnd app='*.exe' cls='#32770' title='Confirm Save As' /&gt;&lt;wnd aaname='Confirm Save As' cls='DirectUIHWND' /&gt;&lt;wnd aaname='No' cls='Button' title='&amp;amp;No' /&gt;" WaitForReady="INTERACTIVE" />
+                                                                                                                                          </ui:Click.Target>
+                                                                                                                                        </ui:Click>
+                                                                                                                                        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Close Save As" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                                                                                                                          <ui:Click.CursorPosition>
+                                                                                                                                            <ui:CursorPosition Position="Center">
+                                                                                                                                              <ui:CursorPosition.OffsetX>
+                                                                                                                                                <InArgument x:TypeArguments="x:Int32" />
+                                                                                                                                              </ui:CursorPosition.OffsetX>
+                                                                                                                                              <ui:CursorPosition.OffsetY>
+                                                                                                                                                <InArgument x:TypeArguments="x:Int32" />
+                                                                                                                                              </ui:CursorPosition.OffsetY>
+                                                                                                                                            </ui:CursorPosition>
+                                                                                                                                          </ui:Click.CursorPosition>
+                                                                                                                                          <ui:Click.Target>
+                                                                                                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="5d4ecdf6a26e1b7f7570798235f69ae1" Selector="&lt;wnd app='*.exe' cls='#32770' title='Save *As' /&gt;&lt;ctrl name='Close' role='push button' idx='1' /&gt;" WaitForReady="INTERACTIVE" />
+                                                                                                                                          </ui:Click.Target>
+                                                                                                                                        </ui:Click>
+                                                                                                                                      </Sequence>
+                                                                                                                                    </If.Then>
+                                                                                                                                  </If>
+                                                                                                                                </Sequence>
+                                                                                                                              </If.Then>
+                                                                                                                            </If>
                                                                                                                           </Sequence>
                                                                                                                         </FlowStep>
                                                                                                                       </FlowStep.Next>

@@ -69,6 +69,7 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.Word</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Extract_pdf_test" sap:VirtualizedContainerService.HintSize="924,4813.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -379,7 +380,7 @@
                           <OutArgument x:TypeArguments="x:String">[ProductName]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(item.ToString,"^([\w\-]+)").Value.Trim]</InArgument>
+                          <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(item.ToString,"^(&amp;[\w\-]+)|^([\w\-]+)").Value.Trim]</InArgument>
                         </Assign.Value>
                       </Assign>
                       <Assign sap:VirtualizedContainerService.HintSize="259.2,60" sap2010:WorkflowViewState.IdRef="Assign_33">
