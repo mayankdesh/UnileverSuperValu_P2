@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Navigate_VendorDeals_Review_Update" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="704,1366.4" sap2010:WorkflowViewState.IdRef="Navigate_VendorDeals_Review_Update_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Navigate_VendorDeals_Review_Update" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="704,1428.8" sap2010:WorkflowViewState.IdRef="Navigate_VendorDeals_Review_Update_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
       <x:String>System.Activities</x:String>
@@ -44,7 +44,7 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Navigate_VendorDeals_Review_Update" sap:VirtualizedContainerService.HintSize="664,1286.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Navigate_VendorDeals_Review_Update" sap:VirtualizedContainerService.HintSize="664,1348.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="https://myhome.svharbor.com/content/svhb/home.html" Name="urlSVHarborHome" />
       <Variable x:TypeArguments="x:Boolean" Name="AccountPayableServiceExists" />
@@ -73,7 +73,7 @@
       </ui:BrowserScope.Body>
     </ui:BrowserScope>
     <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="625.6,22.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
-    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click SUPERVALU Wholesale" sap:VirtualizedContainerService.HintSize="625.6,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+    <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click on SUPERVALU Wholesale" sap:VirtualizedContainerService.HintSize="625.6,107.2" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
       <ui:Click.CursorPosition>
         <ui:CursorPosition Position="Center">
           <ui:CursorPosition.OffsetX>
@@ -85,9 +85,10 @@
         </ui:CursorPosition>
       </ui:Click.CursorPosition>
       <ui:Click.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="954e920baf7c88ed6ac2e2367357a9fc" Selector="&lt;html title='SVHarbor Home' /&gt;&lt;webctrl aaname='*SUPERVALU Wholesale*' parentid='page_container' tag='A' /&gt;" WaitForReady="INTERACTIVE" />
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="30cd8a57753cdd0cc3516a61212b1b43" Selector="&lt;html title='SVHarbor Home' /&gt;&lt;webctrl aaname='SUPERVALU Wholesale*' parentid='page_container' tag='A' /&gt;" WaitForReady="INTERACTIVE" />
       </ui:Click.Target>
     </ui:Click>
+    <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="625.6,22.4" sap2010:WorkflowViewState.IdRef="Delay_2" />
     <ui:UiElementExists DisplayName="Check SV Harbor Screen Exists (Account Payable Services)" Exists="[AccountPayableServiceExists]" sap:VirtualizedContainerService.HintSize="625.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="5d673db1a4df70a2cdab98455ee8c64c" Selector="&lt;html title='SVConnect Portal v1.2' /&gt;&lt;webctrl id='554' tag='DT' /&gt;" TimeoutMS="20000" WaitForReady="INTERACTIVE" />

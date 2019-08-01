@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1190.4,1780.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1190.4,1718.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Download_Document_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -58,7 +58,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Download_Document" sap:VirtualizedContainerService.HintSize="1150.4,1700.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Download_Document" sap:VirtualizedContainerService.HintSize="1150.4,1638.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="InvoiceExists" />
     </Sequence.Variables>
@@ -72,9 +72,9 @@
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='iexplore.exe' cls='IEFrame' title='https://www.svharbor.com/epass/loadDocument.do?*' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;" TimeoutMS="70000" WaitForReady="INTERACTIVE" />
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <If Condition="[InvoiceExists]" sap:VirtualizedContainerService.HintSize="1112,1499.2" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[InvoiceExists]" sap:VirtualizedContainerService.HintSize="1112,1436.8" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="855.2,1349.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="855.2,1287.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="FileAlreadyExists" />
           </Sequence.Variables>
@@ -113,9 +113,9 @@
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='acrord32.exe' cls='#32770' title='Confirm Save As' /&gt;&lt;wnd aaname='Confirm Save As' cls='DirectUIHWND' /&gt;&lt;ctrl name='Confirm Save As' role='pane' /&gt;&lt;ctrl name='sample1.pdf already exists.  Do you want to replace it?' role='text' /&gt;" TimeoutMS="9000" WaitForReady="INTERACTIVE" />
             </ui:UiElementExists.Target>
           </ui:UiElementExists>
-          <If Condition="[FileAlreadyExists]" sap:VirtualizedContainerService.HintSize="816.8,706.4" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[FileAlreadyExists]" sap:VirtualizedContainerService.HintSize="816.8,644" sap2010:WorkflowViewState.IdRef="If_2">
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="368.8,556.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence sap:VirtualizedContainerService.HintSize="368.8,494.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="ui:Browser" Name="closeTab" />
                 </Sequence.Variables>
@@ -169,7 +169,6 @@
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="a294da805a8b8f117bb5ea20532bfd54" Selector="&lt;wnd omit:app='iexplore.exe' omit:cls='IEFrame' title='https://www.svharbor.com/epass/loadDocument.do?*' /&gt;&lt;wnd omit:cls='DirectUIHWND' idx='20' /&gt;&lt;ctrl omit:name='Tab Row' role='page tab list' /&gt;&lt;ctrl omit:name='svharbor.com Tab Group *' role='page tab' idx='2' /&gt;&lt;ctrl omit:name='Close Tab (Ctrl+W)' role='push button' /&gt;" WaitForReady="INTERACTIVE" />
                   </ui:Click.Target>
                 </ui:Click>
-                <Throw Exception="[new BusinessRuleException(&quot;SVHarbor : Invoice with same name already exists on location&quot;)]" sap:VirtualizedContainerService.HintSize="330.4,22.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
               </Sequence>
             </If.Then>
             <If.Else>

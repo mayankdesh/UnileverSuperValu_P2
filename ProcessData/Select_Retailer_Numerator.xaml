@@ -216,7 +216,7 @@
               </Assign>
               <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="509.6,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
                 <ui:CommentOut.Body>
-                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="254.4,145.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="368.8,145.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>

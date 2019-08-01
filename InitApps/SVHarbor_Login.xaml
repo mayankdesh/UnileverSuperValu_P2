@@ -209,7 +209,7 @@
                   </ui:CursorPosition>
                 </ui:Click.CursorPosition>
                 <ui:Click.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="30cd8a57753cdd0cc3516a61212b1b43" Selector="&lt;html title='SVHarbor Home' /&gt;&lt;webctrl aaname='SUPERVALU Wholesale ' parentid='page_container' tag='A' /&gt;" WaitForReady="INTERACTIVE" />
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="30cd8a57753cdd0cc3516a61212b1b43" Selector="&lt;html title='SVHarbor Home' /&gt;&lt;webctrl aaname='SUPERVALU Wholesale*' parentid='page_container' tag='A' /&gt;" WaitForReady="INTERACTIVE" />
                 </ui:Click.Target>
               </ui:Click>
             </Sequence>
