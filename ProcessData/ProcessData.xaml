@@ -287,6 +287,7 @@
               <InArgument x:TypeArguments="x:String" x:Key="in_RefNr">[refNumber]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_DedAmt">[dedAmt]</InArgument>
               <InArgument x:TypeArguments="sd:DataTable" x:Key="in_UPCCode">[invoiceUPCCode]</InArgument>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_SalesAmount">[invoiceSalesAmount]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
           <If Condition="[invoiceContainsADDate]" sap:VirtualizedContainerService.HintSize="509.6,209.6" sap2010:WorkflowViewState.IdRef="If_1">
