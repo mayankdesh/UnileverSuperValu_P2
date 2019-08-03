@@ -1,6 +1,6 @@
 {
-  "name": "UnileverSuperValuDeduction_P2",
-  "description": "UnileverSuperValuDeduction_P2",
+  "name": "Unilever_Deduction",
+  "description": "Unilever_Deduction",
   "main": "UnileverSuperValu_HighLevel.xaml",
   "dependencies": {
     "Microsoft.Activities.Extensions": "[2.0.6.9]",
