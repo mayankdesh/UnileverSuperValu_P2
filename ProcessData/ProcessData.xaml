@@ -5,14 +5,15 @@
     <x:Property Name="in_ProjectConfig" Type="InArgument(scg:Dictionary(x:String, ui:GenericValue))" />
     <x:Property Name="out_ExceptionStage" Type="OutArgument(x:String)" />
     <x:Property Name="in_QueueItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property Name="out_UPCMainData" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>660,5152.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>660,5252.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="23">
+    <scg:List x:TypeArguments="x:String" Capacity="46">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -36,10 +37,11 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.Database</x:String>
+      <x:String>Newtonsoft.Json</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="23">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="46">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -63,9 +65,11 @@
       <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ProcessData" sap:VirtualizedContainerService.HintSize="620,5072.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ProcessData" sap:VirtualizedContainerService.HintSize="620,5172.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="age" />
       <Variable x:TypeArguments="x:String" Name="account" />
@@ -85,13 +89,14 @@
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="top10Added" />
       <Variable x:TypeArguments="x:String" Name="refrencePath" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtProductName" />
+      <Variable x:TypeArguments="x:String" Name="invoiceUPCCodeData" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="581.6,4980" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="581.6,5080" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -99,7 +104,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="548,4748.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="548,4848.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -288,6 +293,7 @@
               <InArgument x:TypeArguments="x:String" x:Key="in_DedAmt">[dedAmt]</InArgument>
               <InArgument x:TypeArguments="sd:DataTable" x:Key="in_UPCCode">[invoiceUPCCode]</InArgument>
               <InArgument x:TypeArguments="sd:DataTable" x:Key="in_SalesAmount">[invoiceSalesAmount]</InArgument>
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_UPCMainData">[out_UPCMainData]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
           <If Condition="[invoiceContainsADDate]" sap:VirtualizedContainerService.HintSize="509.6,209.6" sap2010:WorkflowViewState.IdRef="If_1">
@@ -363,12 +369,20 @@
               </Sequence>
             </If.Then>
           </If>
+          <Assign DisplayName="Assign invoiceUPCCodeString" sap:VirtualizedContainerService.HintSize="509.6,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[invoiceUPCCodeData]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[Newtonsoft.Json.JsonConvert.SerializeObject(out_UPCMainData)]</InArgument>
+            </Assign.Value>
+          </Assign>
           <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="509.6,22.4" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_ProjectConfig.Item(&quot;USVD_QueueName_Deduction&quot;).ToString]" Reference="[refNumber]">
             <ui:AddQueueItem.ItemInformation>
               <InArgument x:TypeArguments="x:String" x:Key="refNumber">[refNumber]</InArgument>
-              <InArgument x:TypeArguments="sd:DataTable" x:Key="invoiceUPCCode">[invoiceUPCCode]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="invoiceAdDate">[invoiceAdDate]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="account">[account]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="invoiceUPCCodeData">[invoiceUPCCodeData]</InArgument>
             </ui:AddQueueItem.ItemInformation>
           </ui:AddQueueItem>
           <Assign sap:VirtualizedContainerService.HintSize="509.6,60" sap2010:WorkflowViewState.IdRef="Assign_14">
