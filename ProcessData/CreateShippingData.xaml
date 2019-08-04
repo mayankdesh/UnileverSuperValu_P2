@@ -294,17 +294,6 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </ui:ExcelApplicationScope>
-                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{masterFamily, salesAmount}]" DataTable="[sumAmountTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="480,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
-                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{row.Item(&quot;upcFamily&quot;).ToString, planName, masterFamily, planFamily, salesAmount}]" DataTable="[out_UPCFamilyTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="480,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
-                                <ui:MergeDataTable Destination="[finalFilteredData]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="480,22.4" sap2010:WorkflowViewState.IdRef="MergeDataTable_3" MissingSchemaAction="Add" Source="[sheetData]" />
-                                <Assign sap:VirtualizedContainerService.HintSize="480,60" sap2010:WorkflowViewState.IdRef="Assign_50">
-                                  <Assign.To>
-                                    <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
-                                  </Assign.To>
-                                  <Assign.Value>
-                                    <InArgument x:TypeArguments="x:Int32">[counter + 1]</InArgument>
-                                  </Assign.Value>
-                                </Assign>
                                 <Assign sap:VirtualizedContainerService.HintSize="480,60" sap2010:WorkflowViewState.IdRef="Assign_51">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[salesAmount]</OutArgument>
@@ -313,6 +302,17 @@
                                     <InArgument x:TypeArguments="x:String">[in_salesAmount.Rows(counter).Item("salesAmount").ToString]</InArgument>
                                   </Assign.Value>
                                 </Assign>
+                                <Assign sap:VirtualizedContainerService.HintSize="480,60" sap2010:WorkflowViewState.IdRef="Assign_50">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Int32">[counter + 1]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <ui:MergeDataTable Destination="[finalFilteredData]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="480,22.4" sap2010:WorkflowViewState.IdRef="MergeDataTable_3" MissingSchemaAction="Add" Source="[sheetData]" />
+                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{row.Item(&quot;upcFamily&quot;).ToString, planName, masterFamily, planFamily, salesAmount}]" DataTable="[out_UPCFamilyTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="480,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
+                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{masterFamily, salesAmount}]" DataTable="[sumAmountTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="480,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
                               </Sequence>
                             </TryCatch.Try>
                             <TryCatch.Catches>
