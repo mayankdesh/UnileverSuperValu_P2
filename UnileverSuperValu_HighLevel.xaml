@@ -50,7 +50,6 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <StateMachine InitialState="{x:Reference __ReferenceID0}" sap2010:Annotation.AnnotationText="- Below is high level of process.&#xA;- Happy Path : Initialize Config file -&gt; Initialize pplication -&gt; Get Data(Process Queue) -&gt; Process Data(Get Data from Queue) -&gt; Close Application(Process Application) -&gt; Finialize&#xA;- Exception : &#xA;1. Exception state will handle all the exceptions&#xA;2. 3 retries to initialize the application(excel) and to load the data in queue." DisplayName="UnileverSuperValu_HighLevel" sap:VirtualizedContainerService.HintSize="2133.6,1021.6" sap2010:WorkflowViewState.IdRef="StateMachine_1">
@@ -819,7 +818,7 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <Transition.Condition>[succeeded]</Transition.Condition>
                                   <Transition.To>
-                                    <State x:Name="__ReferenceID7" sap2010:Annotation.AnnotationText="* Commit the data to the appropriate system before moving onto the next data" DisplayName="CommitData" sap:VirtualizedContainerService.HintSize="560,2100.8" sap2010:WorkflowViewState.IdRef="State_16">
+                                    <State x:Name="__ReferenceID7" sap2010:Annotation.AnnotationText="* Commit the data to the appropriate system before moving onto the next data" DisplayName="CommitData" sap:VirtualizedContainerService.HintSize="257.6,203.2" sap2010:WorkflowViewState.IdRef="State_16">
                                       <State.Entry>
                                         <Sequence DisplayName="Check data fetch should occur -&gt; if so, invoke workflow" sap:VirtualizedContainerService.HintSize="518.4,1303.2" sap2010:WorkflowViewState.IdRef="Sequence_27">
                                           <sap:WorkflowViewStateService.ViewState>
@@ -898,7 +897,7 @@
                                         </Sequence>
                                       </State.Exit>
                                       <State.Transitions>
-                                        <Transition DisplayName="Get Next" sap:VirtualizedContainerService.HintSize="445.6,509.6" sap2010:WorkflowViewState.IdRef="Transition_17">
+                                        <Transition DisplayName="Get Next" sap:VirtualizedContainerService.HintSize="445.6,511.2" sap2010:WorkflowViewState.IdRef="Transition_17">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <av:PointCollection x:Key="ConnectorLocation">1839.2,116 1839.2,86 1010.48,86 1010.48,124</av:PointCollection>
@@ -1025,39 +1024,6 @@
     <x:Reference>__ReferenceID3</x:Reference>
     <x:Reference>__ReferenceID6</x:Reference>
     <x:Reference>__ReferenceID7</x:Reference>
-    <State sap2010:Annotation.AnnotationText="test" DisplayName="Test" sap:VirtualizedContainerService.HintSize="259.2,152" sap2010:WorkflowViewState.IdRef="State_18">
-      <State.Entry>
-        <Sequence DisplayName="Set up and run InitApps" sap:VirtualizedContainerService.HintSize="368.8,527.2" sap2010:WorkflowViewState.IdRef="Sequence_33">
-          <Sequence.Variables>
-            <Variable x:TypeArguments="ui:Image" Name="test" />
-          </Sequence.Variables>
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="330.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="Info" Message="[&quot;Test : Initialised&quot;]" />
-          <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot" sap:VirtualizedContainerService.HintSize="330.4,68.8" sap2010:WorkflowViewState.IdRef="TakeScreenshot_2" Screenshot="[test]">
-            <ui:TakeScreenshot.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
-            </ui:TakeScreenshot.Target>
-          </ui:TakeScreenshot>
-          <ui:SaveImage DisplayName="Save Image" FileName="C:\Users\deshw\Desktop\AdvantageSolutions\Screen.png" sap:VirtualizedContainerService.HintSize="330.4,92.8" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[test]" />
-          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="330.4,60" sap2010:WorkflowViewState.IdRef="MessageBox_12" Text="[&quot;_&quot; &amp; Environment.UserName &amp; &quot;_&quot; &amp; now.ToString.Replace(&quot;/&quot;, &quot;&quot;).Replace(&quot;:&quot;, &quot;&quot;).Replace(&quot; &quot;, &quot;&quot;).ToString]" TopMost="True" />
-        </Sequence>
-      </State.Entry>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">48.4,540</av:Point>
-          <av:Size x:Key="ShapeSize">259.2,152</av:Size>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          <x:Double x:Key="StateContainerWidth">228.94775204254205</x:Double>
-          <x:Double x:Key="StateContainerHeight">87.284042249621848</x:Double>
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </State>
     <StateMachine.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="succeeded" />
       <Variable x:TypeArguments="s:Exception" Default="[Nothing]" Name="systemException" />
