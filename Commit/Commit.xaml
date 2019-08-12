@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>519.2,1296.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>519.2,1930.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Commit_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="42">
@@ -62,9 +62,10 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Commit" sap:VirtualizedContainerService.HintSize="479.2,1216.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Commit" sap:VirtualizedContainerService.HintSize="479.2,1850.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="refNumber" />
       <Variable x:TypeArguments="ui:DatabaseConnection" Name="dbConnect" />
@@ -74,7 +75,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="440.8,1124" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="440.8,1757.6" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -82,13 +83,14 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Commit Data" sap:VirtualizedContainerService.HintSize="407.2,892.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Commit Data" sap:VirtualizedContainerService.HintSize="407.2,1526.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="368.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;In Commit Page...&quot;]" />
           <Assign sap:VirtualizedContainerService.HintSize="368.8,60" sap2010:WorkflowViewState.IdRef="Assign_11">
             <Assign.To>
               <OutArgument x:TypeArguments="s:Exception">[out_SystemException]</OutArgument>
@@ -97,12 +99,14 @@
               <InArgument x:TypeArguments="s:Exception">[Nothing]</InArgument>
             </Assign.Value>
           </Assign>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="368.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Commit queue item...&quot;]" />
           <ui:SetTransactionStatus ContinueOnError="{x:Null}" Reason="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Set Transaction Status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="368.8,22.4" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_1" Status="Successful" TransactionItem="[in_queueItem]">
             <ui:SetTransactionStatus.Output>
               <scg:Dictionary x:TypeArguments="x:String, InArgument" />
             </ui:SetTransactionStatus.Output>
           </ui:SetTransactionStatus>
-          <Sequence DisplayName="Database" sap:VirtualizedContainerService.HintSize="368.8,537.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="368.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Database Calling...&quot;]" />
+          <Sequence DisplayName="Database" sap:VirtualizedContainerService.HintSize="368.8,640" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -136,6 +140,7 @@
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
             <ui:DatabaseConnect DatabaseConnection="[dbConnect]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="330.4,60" sap2010:WorkflowViewState.IdRef="DatabaseConnect_2" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=LAPTOP-97HGK01L;Initial Catalog=UnileverDeduction;Integrated Security=True" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="330.4,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;EXECUTE &quot; &amp; in_ProjectConfig.Item(&quot;Unilever_updateStoredProcedureName&quot;).ToString.Trim &amp; &quot; &quot; &amp; refNumber.ToString.Trim &amp; &quot;, 'Status', 'Completed'&quot;]" />
             <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Update Status" ExistingDbConnection="[dbConnect]" sap:VirtualizedContainerService.HintSize="330.4,89.6" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_2" Sql="[&quot;EXECUTE &quot; &amp; in_ProjectConfig.Item(&quot;Unilever_updateStoredProcedureName&quot;).ToString.Trim &amp; &quot; &quot; &amp; refNumber.ToString.Trim &amp; &quot;, 'Status', 'Completed'&quot;]">
               <ui:ExecuteNonQuery.Parameters>
                 <scg:Dictionary x:TypeArguments="x:String, Argument" />
@@ -143,6 +148,7 @@
             </ui:ExecuteNonQuery>
             <ui:DatabaseDisconnect DatabaseConnection="[dbConnect]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="330.4,22.4" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
           </Sequence>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="368.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Succeeded True in Commit Page...&quot;]" />
           <Assign sap:VirtualizedContainerService.HintSize="368.8,60" sap2010:WorkflowViewState.IdRef="Assign_12">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[out_Succeeded]</OutArgument>
