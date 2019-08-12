@@ -69,7 +69,7 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:UiElementExists DisplayName="Element Exists 'text LOCATION'" Exists="[InvoiceExists]" sap:VirtualizedContainerService.HintSize="1112,68.8" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='iexplore.exe' cls='IEFrame' title='https://www.svharbor.com/epass/loadDocument.do?*' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;" TimeoutMS="120000" WaitForReady="INTERACTIVE" />
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='iexplore.exe' cls='IEFrame' title='https://www.svharbor.com/epass/loadDocument.do?*' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;" TimeoutMS="160000" WaitForReady="INTERACTIVE" />
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
     <If Condition="[InvoiceExists]" sap:VirtualizedContainerService.HintSize="1112,1483.2" sap2010:WorkflowViewState.IdRef="If_1">

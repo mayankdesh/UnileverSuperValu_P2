@@ -85,7 +85,7 @@
     </Assign>
     <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Read Promo Number" sap:VirtualizedContainerService.HintSize="509.6,68.8" sap2010:WorkflowViewState.IdRef="GetValue_1">
       <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="[dynamicPromotionNbr]" TimeoutMS="120000" WaitForReady="INTERACTIVE" />
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="[dynamicPromotionNbr]" TimeoutMS="160000" WaitForReady="INTERACTIVE" />
       </ui:GetValue.Target>
       <ui:GetValue.Value>
         <OutArgument x:TypeArguments="x:String">[PromotionNumberExists]</OutArgument>

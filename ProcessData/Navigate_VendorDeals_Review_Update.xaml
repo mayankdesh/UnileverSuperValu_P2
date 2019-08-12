@@ -56,7 +56,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="IE" ContinueOnError="True" DisplayName="Attach Browser 'iexplore.exe SVHarbor'" sap:VirtualizedContainerService.HintSize="625.6,300" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="06181aa866037887f5f0a11353badca3" Selector="&lt;html title='SVHarbor Home' /&gt;" UiBrowser="[attachBrowser]">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="IE" ContinueOnError="True" DisplayName="Attach Browser 'iexplore.exe SVHarbor'" sap:VirtualizedContainerService.HintSize="625.6,300" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="06181aa866037887f5f0a11353badca3" Selector="&lt;html title='SV*' /&gt;" UiBrowser="[attachBrowser]">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
