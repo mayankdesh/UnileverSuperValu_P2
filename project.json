@@ -3,21 +3,20 @@
   "description": "Unilever_Deduction",
   "main": "UnileverSuperValu_HighLevel.xaml",
   "dependencies": {
-    "Microsoft.Activities.Extensions": "[2.0.6.9]",
+    "Microsoft.Activities.Extensions": "2.0.6.9",
     "SQLiteDatabaseForUiPath": "[1.0.17]",
-    "UiPath.Database.Activities": "[1.2.6863.32528]",
-    "UiPath.Excel.Activities": "[2.6.2]",
-    "UiPath.MachineLearningExtractor": "[1.0.0-beta.381605]",
-    "UiPath.Mail.Activities": "[1.5.0]",
-    "UiPath.PDF.Activities": "[2.2.0-alpha.417424]",
-    "UiPath.System.Activities": "[19.5.0]",
-    "UiPath.UIAutomation.Activities": "[19.5.0]",
-    "UiPath.WebAPI.Activities": "[1.4.2]"
+    "UiPath.Database.Activities": "1.2.6863.32528",
+    "UiPath.Excel.Activities": "2.6.2",
+    "UiPath.Mail.Activities": "1.5.1",
+    "UiPath.PDF.Activities": "2.1.0",
+    "UiPath.System.Activities": "19.7.0",
+    "UiPath.UIAutomation.Activities": "19.7.0",
+    "UiPath.WebAPI.Activities": "1.4.2"
   },
   "webServices": [],
   "schemaVersion": "4.0",
   "studioVersion": "19.7.0.74",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.2",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -36,6 +35,10 @@
       "includeOriginalXaml": false,
       "privateWorkflows": []
     }
+  },
+  "arguments": {
+    "input": [],
+    "output": []
   },
   "expressionLanguage": "VisualBasic"
 }

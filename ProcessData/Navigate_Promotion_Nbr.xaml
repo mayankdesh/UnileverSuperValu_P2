@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Navigate_Promotion_Nbr" this:Navigate_Promotion_Nbr.in_ReferenceNumber="0299405610" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Navigate_Promotion_Nbr" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_ReferenceNumber" Type="InArgument(x:String)" />
     <x:Property Name="in_BeginDate" Type="InArgument(x:String)" />
@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>588,1642.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>704,1642.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Navigate_Promotion_Nbr_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -58,9 +58,10 @@
       <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Navigate_Promotion_Nbr" sap:VirtualizedContainerService.HintSize="548,1562.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence DisplayName="Navigate_Promotion_Nbr" sap:VirtualizedContainerService.HintSize="664,1562.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="PromotionNumberExists" />
       <Variable x:TypeArguments="x:String" Name="BeginDate" />
@@ -75,7 +76,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign DisplayName="Set Dynamic Promotion Nbr element" sap:VirtualizedContainerService.HintSize="509.6,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Set Dynamic Promotion Nbr element" sap:VirtualizedContainerService.HintSize="625.6,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[dynamicPromotionNbr]</OutArgument>
       </Assign.To>
@@ -83,16 +84,16 @@
         <InArgument x:TypeArguments="x:String">["&lt;html title='Work List' /&gt;&lt;webctrl aaname='*"&amp; in_ReferenceNumber.Trim.Substring(5,5) &amp;"*' parentid='sortableTable0' tag='A' /&gt;"]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Read Promo Number" sap:VirtualizedContainerService.HintSize="509.6,68.8" sap2010:WorkflowViewState.IdRef="GetValue_1">
+    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Read Promo Number" sap:VirtualizedContainerService.HintSize="625.6,68.8" sap2010:WorkflowViewState.IdRef="GetValue_1">
       <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="[dynamicPromotionNbr]" TimeoutMS="160000" WaitForReady="INTERACTIVE" />
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="[dynamicPromotionNbr]" TimeoutMS="10000" WaitForReady="INTERACTIVE" />
       </ui:GetValue.Target>
       <ui:GetValue.Value>
         <OutArgument x:TypeArguments="x:String">[PromotionNumberExists]</OutArgument>
       </ui:GetValue.Value>
     </ui:GetValue>
-    <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="509.6,22.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
-    <Assign DisplayName="Set Dynamic Begin Date element" sap:VirtualizedContainerService.HintSize="509.6,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="625.6,22.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
+    <Assign DisplayName="Set Dynamic Begin Date element" sap:VirtualizedContainerService.HintSize="625.6,60" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[dynamicBeginDate]</OutArgument>
       </Assign.To>
@@ -100,7 +101,7 @@
         <InArgument x:TypeArguments="x:String">["&lt;html title='Work List' /&gt;&lt;webctrl id='sortableTable0' tag='TABLE' /&gt;&lt;webctrl isleaf='1' tag='TD' colName='Begin Date' innertext='"&amp; in_BeginDate.Trim &amp;"' /&gt;"]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:GetValue ContinueOnError="True" DisplayName="Read Promo Begin Date" sap:VirtualizedContainerService.HintSize="509.6,68.8" sap2010:WorkflowViewState.IdRef="GetValue_2">
+    <ui:GetValue ContinueOnError="True" DisplayName="Read Promo Begin Date" sap:VirtualizedContainerService.HintSize="625.6,68.8" sap2010:WorkflowViewState.IdRef="GetValue_2">
       <ui:GetValue.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="[dynamicBeginDate]" WaitForReady="INTERACTIVE" />
       </ui:GetValue.Target>
@@ -108,7 +109,7 @@
         <OutArgument x:TypeArguments="x:String">[dynamicBeginDate]</OutArgument>
       </ui:GetValue.Value>
     </ui:GetValue>
-    <Assign DisplayName="Set Dynamic End Date element" sap:VirtualizedContainerService.HintSize="509.6,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign DisplayName="Set Dynamic End Date element" sap:VirtualizedContainerService.HintSize="625.6,60" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[dynamicEndDate]</OutArgument>
       </Assign.To>
@@ -116,7 +117,7 @@
         <InArgument x:TypeArguments="x:String">["&lt;html title='Work List' /&gt;&lt;webctrl id='sortableTable0' tag='TABLE' /&gt;&lt;webctrl isleaf='1' tag='TD' colName='End Date' innertext='"&amp; in_EndDate.Trim &amp;"' /&gt;"]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:GetValue ContinueOnError="True" DisplayName="Get EndDate" sap:VirtualizedContainerService.HintSize="509.6,68.8" sap2010:WorkflowViewState.IdRef="GetValue_3">
+    <ui:GetValue ContinueOnError="True" DisplayName="Get EndDate" sap:VirtualizedContainerService.HintSize="625.6,68.8" sap2010:WorkflowViewState.IdRef="GetValue_3">
       <ui:GetValue.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="[dynamicEndDate]" WaitForReady="INTERACTIVE" />
       </ui:GetValue.Target>
@@ -124,7 +125,7 @@
         <OutArgument x:TypeArguments="x:String">[dynamicEndDate]</OutArgument>
       </ui:GetValue.Value>
     </ui:GetValue>
-    <If Condition="[PromotionNumberExists.Contains(in_ReferenceNumber) or dynamicBeginDate.Contains(in_BeginDate) or dynamicEndDate.Contains(in_EndDate)]" sap:VirtualizedContainerService.HintSize="509.6,780.8" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[PromotionNumberExists.Contains(in_ReferenceNumber) or dynamicBeginDate.Contains(in_BeginDate) or dynamicEndDate.Contains(in_EndDate)]" sap:VirtualizedContainerService.HintSize="625.6,780.8" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="368.8,631.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
@@ -177,6 +178,9 @@
           </ui:WaitUiElementVanish>
         </Sequence>
       </If.Then>
+      <If.Else>
+        <Throw Exception="[new BusinessRuleException(&quot;Contract not in SVHarbor when searching by management group and promo '&quot;&amp; in_ReferenceNumber.Trim.Substring(2,7) &amp;&quot;'&quot;)]" sap:VirtualizedContainerService.HintSize="216,22.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
+      </If.Else>
     </If>
   </Sequence>
 </Activity>

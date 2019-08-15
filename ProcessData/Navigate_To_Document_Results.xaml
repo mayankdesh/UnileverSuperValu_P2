@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1656,3104.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1772,2840</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Navigate_To_Invoice_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -62,20 +62,21 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Navigate_To_Invoice" sap:VirtualizedContainerService.HintSize="1616,3024.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This Workflow Navigate Document to the document search screen. gets vendor id from mapping file and amount from queue data.&#xD;&#xA;Arguments :&#xD;&#xA;In_MappingFilePath : String&#xD;&#xA;In_MappingSheetName : String&#xD;&#xA;In_DedAmount : String&#xD;&#xA;" DisplayName="Navigate_To_Invoice" sap:VirtualizedContainerService.HintSize="1732,2760" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_VendorIDs" />
       <Variable x:TypeArguments="x:Boolean" Name="VendorIDDropDownExists" />
       <Variable x:TypeArguments="x:String" Name="VendorID" />
       <Variable x:TypeArguments="scg:List(sd:DataRow)" Name="listRowRemove" />
-      <Variable x:TypeArguments="x:Boolean" Default="False" Name="documentFound" />
+      <Variable x:TypeArguments="x:Boolean" Name="documentFound" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope for Mapping File" sap:VirtualizedContainerService.HintSize="1577.6,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" Visible="False" WorkbookPath="[in_MappingFilePath]">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope for Mapping File" sap:VirtualizedContainerService.HintSize="1693.6,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" Visible="False" WorkbookPath="[in_MappingFilePath]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
@@ -105,7 +106,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <ui:UiElementExists DisplayName="SELECT Vendor ID # DropDown Exists" Exists="[VendorIDDropDownExists]" sap:VirtualizedContainerService.HintSize="1577.6,52.8" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+    <ui:UiElementExists DisplayName="SELECT Vendor ID # DropDown Exists" Exists="[VendorIDDropDownExists]" sap:VirtualizedContainerService.HintSize="1693.6,52.8" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="e06576de4545b988d5d3fd9c0c702ea5" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl name='value(vendorId)' tag='SELECT' /&gt;" TimeoutMS="90000" WaitForReady="INTERACTIVE" />
       </ui:UiElementExists.Target>
@@ -116,7 +117,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:UiElementExists>
-    <Assign sap:VirtualizedContainerService.HintSize="1577.6,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="1693.6,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(sd:DataRow)">[listRowRemove]</OutArgument>
       </Assign.To>
@@ -124,7 +125,7 @@
         <InArgument x:TypeArguments="scg:List(sd:DataRow)">[new List(Of System.Data.DataRow)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_VendorIDs]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1577.6,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_VendorIDs]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1693.6,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -148,24 +149,24 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}" DisplayName="For each" sap:VirtualizedContainerService.HintSize="1577.6,2553.6" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[listRowRemove]">
+    <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}" DisplayName="For each" sap:VirtualizedContainerService.HintSize="1693.6,2180.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[listRowRemove]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1545.6,2419.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1661.6,2046.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="VendorID" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="1507.2,64.8" sap2010:WorkflowViewState.IdRef="GetRowItem_2" Row="[item]">
+            <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="VendorID" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="1623.2,64.8" sap2010:WorkflowViewState.IdRef="GetRowItem_2" Row="[item]">
               <ui:GetRowItem.Value>
                 <OutArgument x:TypeArguments="x:String">[VendorID]</OutArgument>
               </ui:GetRowItem.Value>
             </ui:GetRowItem>
-            <If Condition="[VendorIDDropDownExists = True  AND documentFound = False]" sap:VirtualizedContainerService.HintSize="1507.2,2221.6" sap2010:WorkflowViewState.IdRef="If_4">
+            <If Condition="[VendorIDDropDownExists = True  AND documentFound = False]" sap:VirtualizedContainerService.HintSize="1623.2,1848.8" sap2010:WorkflowViewState.IdRef="If_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -173,7 +174,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="1034.4,2072" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <Sequence sap:VirtualizedContainerService.HintSize="1150.4,1699.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="NoResultFoundExists" />
                   </Sequence.Variables>
@@ -183,7 +184,7 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item from Vendor ID #" sap:VirtualizedContainerService.HintSize="996,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_3" Item="[VendorID]">
+                  <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item from Vendor ID #" sap:VirtualizedContainerService.HintSize="1112,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_3" Item="[VendorID]">
                     <ui:SelectItem.Items>
                       <scg:List x:TypeArguments="x:String" Capacity="50">
                         <x:String>18 Rabbits                              7580148</x:String>
@@ -242,7 +243,7 @@
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="e06576de4545b988d5d3fd9c0c702ea5" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl name='value(vendorId)' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
                     </ui:SelectItem.Target>
                   </ui:SelectItem>
-                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT' on Net Amount" sap:VirtualizedContainerService.HintSize="996,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT' on Net Amount" sap:VirtualizedContainerService.HintSize="1112,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -257,12 +258,12 @@
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="7c3ea671089d44c75cf80c671ea5f95b" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl idx='2' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
                     </ui:Click.Target>
                   </ui:Click>
-                  <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type into Net Amount" EmptyField="True" sap:VirtualizedContainerService.HintSize="996,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="True" Text="[in_DedAmount]">
+                  <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type into Net Amount" EmptyField="True" sap:VirtualizedContainerService.HintSize="1112,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="True" Text="[in_DedAmount]">
                     <ui:TypeInto.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="476358aa1afa10343f5203f408670f8d" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl name='value(netAmount1)' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
                     </ui:TypeInto.Target>
                   </ui:TypeInto>
-                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click GO" sap:VirtualizedContainerService.HintSize="996,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click GO" sap:VirtualizedContainerService.HintSize="1112,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -277,12 +278,12 @@
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="996b8cb45f040d859ed5c3849f24e25a" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl aaname='Go' tag='BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
                     </ui:Click.Target>
                   </ui:Click>
-                  <ui:UiElementExists DisplayName="Document Results Element Exists" Exists="[NoResultFoundExists]" sap:VirtualizedContainerService.HintSize="996,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                  <ui:UiElementExists DisplayName="Document Results Element Exists" Exists="[NoResultFoundExists]" sap:VirtualizedContainerService.HintSize="1112,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                     <ui:UiElementExists.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0b83d45a12021f68972fedd9f2e2c12a" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl parentid='pagefooter' tag='STRONG' innertext='1*' /&gt;" TimeoutMS="100000" WaitForReady="INTERACTIVE" />
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0b83d45a12021f68972fedd9f2e2c12a" Selector="&lt;html title='ePASS Version 3.6' /&gt;&lt;webctrl parentid='pagefooter' tag='STRONG' innertext='1*' /&gt;" TimeoutMS="10000" WaitForReady="INTERACTIVE" />
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[NoResultFoundExists]" sap:VirtualizedContainerService.HintSize="996,1187.2" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If Condition="[NoResultFoundExists]" sap:VirtualizedContainerService.HintSize="1112,814.4" sap2010:WorkflowViewState.IdRef="If_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -290,47 +291,36 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="586.4,1037.6" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <Sequence sap:VirtualizedContainerService.HintSize="702.4,664.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence sap:VirtualizedContainerService.HintSize="548,944.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <Sequence sap:VirtualizedContainerService.HintSize="664,572" sap2010:WorkflowViewState.IdRef="Sequence_11">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <If Condition="[documentFound]" sap:VirtualizedContainerService.HintSize="509.6,237.6" sap2010:WorkflowViewState.IdRef="If_6">
+                          <If Condition="[documentFound]" sap:VirtualizedContainerService.HintSize="625.6,479.2" sap2010:WorkflowViewState.IdRef="If_6">
+                            <If.Then>
+                              <ui:Break sap:VirtualizedContainerService.HintSize="216,22.4" sap2010:WorkflowViewState.IdRef="Break_1" />
+                            </If.Then>
                             <If.Else>
-                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Search_Document_Invoice workflow" sap:VirtualizedContainerService.HintSize="330.4,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Search_Document_Invoice.xaml">
-                                <ui:InvokeWorkflowFile.Arguments>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_CustomerRefNr">[in_CustomerRefNr]</InArgument>
-                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_documentExists">[documentFound]</OutArgument>
-                                </ui:InvokeWorkflowFile.Arguments>
-                              </ui:InvokeWorkflowFile>
-                            </If.Else>
-                          </If>
-                          <If Condition="[documentFound]" sap:VirtualizedContainerService.HintSize="509.6,574.4" sap2010:WorkflowViewState.IdRef="If_5">
-                            <If.Else>
-                              <Sequence sap:VirtualizedContainerService.HintSize="368.8,424.8" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                              <Sequence sap:VirtualizedContainerService.HintSize="368.8,329.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:RemoveDataRow RowIndex="{x:Null}" DataTable="[dt_VendorIDs]" DisplayName="Remove data row" sap:VirtualizedContainerService.HintSize="330.4,22.4" sap2010:WorkflowViewState.IdRef="RemoveDataRow_2" Row="[item]" />
-                                <Assign sap:VirtualizedContainerService.HintSize="330.4,60" sap2010:WorkflowViewState.IdRef="Assign_5">
-                                  <Assign.To>
-                                    <OutArgument x:TypeArguments="x:Boolean">[documentFound]</OutArgument>
-                                  </Assign.To>
-                                  <Assign.Value>
-                                    <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                                  </Assign.Value>
-                                </Assign>
-                                <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="330.4,22.4" sap2010:WorkflowViewState.IdRef="Delay_2" />
-                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click on Document Search" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Search_Document_Invoice workflow" sap:VirtualizedContainerService.HintSize="330.4,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Search_Document_Invoice.xaml">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_CustomerRefNr">[in_CustomerRefNr]</InArgument>
+                                    <OutArgument x:TypeArguments="x:Boolean" x:Key="out_documentExists">[documentFound]</OutArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                </ui:InvokeWorkflowFile>
+                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click on Document Search" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                                   <ui:Click.CursorPosition>
                                     <ui:CursorPosition Position="Center">
                                       <ui:CursorPosition.OffsetX>

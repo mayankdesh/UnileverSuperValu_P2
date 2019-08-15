@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1471.2,3676.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1471.2,3614.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Navigate_Print_Deal_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -58,7 +58,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Navigate_Print_Deal" sap:VirtualizedContainerService.HintSize="1431.2,3596.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Navigate_Print_Deal" sap:VirtualizedContainerService.HintSize="1431.2,3534.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="printElementExists" />
     </Sequence.Variables>
@@ -72,9 +72,9 @@
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="71338fe2655ef28218cff53313d897fc" Selector="&lt;html title='Deal Summary' /&gt;&lt;webctrl id='print' tag='A' /&gt;" TimeoutMS="60000" WaitForReady="INTERACTIVE" />
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <If Condition="[printElementExists]" sap:VirtualizedContainerService.HintSize="1392.8,3356.8" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[printElementExists]" sap:VirtualizedContainerService.HintSize="1392.8,3294.4" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="1252,3207.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="1252,3144.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="printPopUpExists" />
             <Variable x:TypeArguments="x:Boolean" Name="printWinPopUpExists" />
@@ -119,9 +119,9 @@
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="b5f09459b02a77ecf08d74ccb23a544a" Selector="&lt;wnd app='iexplore.exe' cls='#32770' title='Print' /&gt;" TimeoutMS="30000" WaitForReady="INTERACTIVE" />
             </ui:UiElementExists.Target>
           </ui:UiElementExists>
-          <If Condition="[printWinPopUpExists]" sap:VirtualizedContainerService.HintSize="1213.6,2276" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[printWinPopUpExists]" sap:VirtualizedContainerService.HintSize="1213.6,2213.6" sap2010:WorkflowViewState.IdRef="If_2">
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="1072.8,2126.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence sap:VirtualizedContainerService.HintSize="1072.8,2064" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -172,7 +172,7 @@
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="acde56bc85c4461aa3199d5dc2616447" Selector="&lt;wnd app='iexplore.exe' cls='#32770' title='Print' /&gt;&lt;wnd ctrlid='1' title='&amp;amp;Print' /&gt;" WaitForReady="INTERACTIVE" />
                   </ui:Click.Target>
                 </ui:Click>
-                <Sequence DisplayName="Download_Document" sap:VirtualizedContainerService.HintSize="1034.4,1592" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <Sequence DisplayName="Download_Document" sap:VirtualizedContainerService.HintSize="1034.4,1529.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="saveAsExists" />
                   </Sequence.Variables>
@@ -186,9 +186,9 @@
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='splwow64.exe' omit:cls='#32770' title='Save*' /&gt;&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;" TimeoutMS="30000" WaitForReady="INTERACTIVE" />
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[saveAsExists]" sap:VirtualizedContainerService.HintSize="996,1390.4" sap2010:WorkflowViewState.IdRef="If_5">
+                  <If Condition="[saveAsExists]" sap:VirtualizedContainerService.HintSize="996,1328" sap2010:WorkflowViewState.IdRef="If_5">
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="855.2,1240.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <Sequence sap:VirtualizedContainerService.HintSize="855.2,1178.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:Boolean" Name="FileAlreadyExists" />
                         </Sequence.Variables>
@@ -202,7 +202,7 @@
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;wnd app='*.exe' cls='#32770' title='Save *As' /&gt;&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" WaitForReady="INTERACTIVE" />
                           </ui:TypeInto.Target>
                         </ui:TypeInto>
-                        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click on SAVE Button" sap:VirtualizedContainerService.HintSize="816.8,107.2" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="False" DisplayName="Click on SAVE Button" sap:VirtualizedContainerService.HintSize="816.8,107.2" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                           <ui:Click.CursorPosition>
                             <ui:CursorPosition Position="Center">
                               <ui:CursorPosition.OffsetX>
@@ -222,9 +222,9 @@
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='*.exe' cls='#32770' title='Confirm Save As' /&gt;&lt;wnd aaname='Confirm Save As' cls='DirectUIHWND' /&gt;&lt;ctrl name='Confirm Save As' role='pane' /&gt;&lt;ctrl name='*1.pdf already exists.  Do you want to replace it?' role='text' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
                           </ui:UiElementExists.Target>
                         </ui:UiElementExists>
-                        <If Condition="[FileAlreadyExists]" sap:VirtualizedContainerService.HintSize="816.8,755.2" sap2010:WorkflowViewState.IdRef="If_4">
+                        <If Condition="[FileAlreadyExists]" sap:VirtualizedContainerService.HintSize="816.8,692.8" sap2010:WorkflowViewState.IdRef="If_4">
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="368.8,605.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                            <Sequence sap:VirtualizedContainerService.HintSize="368.8,543.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="ui:Browser" Name="closeTab" />
                               </Sequence.Variables>
@@ -233,7 +233,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click No Button on Popup" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="False" DisplayName="Click No Button on Popup" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                                 <ui:Click.CursorPosition>
                                   <ui:CursorPosition Position="Center">
                                     <ui:CursorPosition.OffsetX>
@@ -248,7 +248,7 @@
                                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6b418d717642451f14b57655490eda03" Selector="&lt;wnd app='*.exe' cls='#32770' title='Confirm Save As' /&gt;&lt;wnd aaname='Confirm Save As' cls='DirectUIHWND' /&gt;&lt;wnd aaname='No' cls='Button' title='&amp;amp;No' /&gt;" WaitForReady="INTERACTIVE" />
                                 </ui:Click.Target>
                               </ui:Click>
-                              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Close Save As" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="False" DisplayName="Close Save As" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                                 <ui:Click.CursorPosition>
                                   <ui:CursorPosition Position="Center">
                                     <ui:CursorPosition.OffsetX>
@@ -263,12 +263,11 @@
                                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="5d4ecdf6a26e1b7f7570798235f69ae1" Selector="&lt;wnd app='*.exe' cls='#32770' title='Save *As' /&gt;&lt;ctrl name='Close' role='push button' idx='1' /&gt;" WaitForReady="INTERACTIVE" />
                                 </ui:Click.Target>
                               </ui:Click>
-                              <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey 'push button  Minimize'" EmptyField="False" sap:VirtualizedContainerService.HintSize="330.4,156" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="f4" KeyModifiers="Alt" SendWindowMessages="False" SpecialKey="True">
+                              <ui:SendHotkey DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" ContinueOnError="False" DelayBefore="1000" DisplayName="Send Hotkey 'push button  Minimize'" EmptyField="False" sap:VirtualizedContainerService.HintSize="330.4,156" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="f4" KeyModifiers="Alt" SendWindowMessages="False" SpecialKey="True">
                                 <ui:SendHotkey.Target>
                                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="f163ceed721575de06e739c1ce42a3c4" Selector="&lt;wnd app='iexplore.exe' cls='IEFrame' title='Deal Recap - Internet Explorer' /&gt;&lt;ctrl idx='1' name='Minimize' role='push button' /&gt;" WaitForReady="INTERACTIVE" />
                                 </ui:SendHotkey.Target>
                               </ui:SendHotkey>
-                              <Throw Exception="[new BusinessRuleException(&quot;SVHarbor : Deal Recap file with same name already exists on location&quot;)]" sap:VirtualizedContainerService.HintSize="330.4,22.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
                             </Sequence>
                           </If.Then>
                           <If.Else>
