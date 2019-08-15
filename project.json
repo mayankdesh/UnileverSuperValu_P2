@@ -1,7 +1,7 @@
 {
-  "name": "Unilever_Deduction",
-  "description": "Unilever_Deduction",
-  "main": "UnileverSuperValu_HighLevel.xaml",
+  "name": "Deductions_UnileverSuperValu_Deduction",
+  "description": "Deductions_UnileverSuperValu_Deduction",
+  "main": "Deductions_UnileverSuperValu_Deduction .xaml",
   "dependencies": {
     "Microsoft.Activities.Extensions": "2.0.6.9",
     "SQLiteDatabaseForUiPath": "[1.0.17]",
