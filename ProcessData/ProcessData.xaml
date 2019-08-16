@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ProcessData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ProcessData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="out_SystemException" Type="OutArgument(s:Exception)" />
     <x:Property Name="out_Succeeded" Type="OutArgument(x:Boolean)" />
@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>698.4,5724.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>508.8,1066.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -67,9 +67,10 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Database</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ProcessData" sap:VirtualizedContainerService.HintSize="658.4,5644.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ProcessData" sap:VirtualizedContainerService.HintSize="468.8,986.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="age" />
       <Variable x:TypeArguments="x:String" Name="account" />
@@ -94,13 +95,14 @@
       <Variable x:TypeArguments="x:String" Name="productName" />
       <Variable x:TypeArguments="sd:DataTable" Name="refData" />
       <Variable x:TypeArguments="ui:DatabaseConnection" Name="dbConnect" />
+      <Variable x:TypeArguments="x:String" Name="incomplePackagePath" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="620,5552" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="430.4,893.6" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -108,13 +110,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="586.4,5320.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="702.4,5550.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="548,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;In PorcessData...&quot;]">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="664,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;In PorcessData...&quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -122,7 +124,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <Assign DisplayName="Initialise exception to null" sap:VirtualizedContainerService.HintSize="548,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign DisplayName="Initialise exception to null" sap:VirtualizedContainerService.HintSize="664,60" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="s:Exception">[out_SystemException]</OutArgument>
             </Assign.To>
@@ -130,7 +132,7 @@
               <InArgument x:TypeArguments="s:Exception">[Nothing]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign DisplayName="Set Succeeded to False" sap:VirtualizedContainerService.HintSize="548,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign DisplayName="Set Succeeded to False" sap:VirtualizedContainerService.HintSize="664,60" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[out_Succeeded]</OutArgument>
             </Assign.To>
@@ -138,7 +140,7 @@
               <InArgument x:TypeArguments="x:Boolean">False</InArgument>
             </Assign.Value>
           </Assign>
-          <Sequence DisplayName="Fetch Data" sap:VirtualizedContainerService.HintSize="548,652.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Fetch Data" sap:VirtualizedContainerService.HintSize="664,652.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -194,7 +196,7 @@
               </Assign.Value>
             </Assign>
           </Sequence>
-          <Sequence DisplayName="Database" sap:VirtualizedContainerService.HintSize="548,819.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Database" sap:VirtualizedContainerService.HintSize="664,819.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -245,12 +247,12 @@
             </If>
             <ui:DatabaseDisconnect DatabaseConnection="[dbConnect]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="509.6,22.4" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
           </Sequence>
-          <If Condition="[convert.ToDouble(dedAmt) &lt; 400]" sap:VirtualizedContainerService.HintSize="548,209.6" sap2010:WorkflowViewState.IdRef="If_4">
+          <If Condition="[convert.ToDouble(dedAmt) &lt; 400]" sap:VirtualizedContainerService.HintSize="664,209.6" sap2010:WorkflowViewState.IdRef="If_4">
             <If.Then>
               <Throw Exception="[new BusinessRuleException(&quot;Unable to Process less 400 DedAmount&quot;)]" sap:VirtualizedContainerService.HintSize="216,22.4" sap2010:WorkflowViewState.IdRef="Throw_2" />
             </If.Then>
           </If>
-          <Assign sap:VirtualizedContainerService.HintSize="548,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+          <Assign sap:VirtualizedContainerService.HintSize="664,60" sap2010:WorkflowViewState.IdRef="Assign_12">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[refrencePath]</OutArgument>
             </Assign.To>
@@ -258,8 +260,16 @@
               <InArgument x:TypeArguments="x:String">[in_ProjectConfig.Item("Unilever_refrencePath").ToString &amp; refNumber.ToString.Trim]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Directory" sap:VirtualizedContainerService.HintSize="548,22.4" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[refrencePath]" />
-          <Assign sap:VirtualizedContainerService.HintSize="548,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+          <Assign sap:VirtualizedContainerService.HintSize="664,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[incomplePackagePath]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[in_ProjectConfig.Item("IncompletePackagePath").ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Directory" sap:VirtualizedContainerService.HintSize="664,22.4" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[refrencePath]" />
+          <Assign sap:VirtualizedContainerService.HintSize="664,60" sap2010:WorkflowViewState.IdRef="Assign_13">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[mappingFilePath]</OutArgument>
             </Assign.To>
@@ -267,12 +277,12 @@
               <InArgument x:TypeArguments="x:String">[in_ProjectConfig.Item("Unilever_refrencePath").ToString &amp; "mapping.xlsx"]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Navigate_Document_Search workflow" sap:VirtualizedContainerService.HintSize="548,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Navigate_Document_Search.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Navigate_Document_Search workflow" sap:VirtualizedContainerService.HintSize="664,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Navigate_Document_Search.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <scg:Dictionary x:TypeArguments="x:String, Argument" />
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Navigate_To_Document_Results workflow" sap:VirtualizedContainerService.HintSize="548,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Navigate_To_Document_Results.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Navigate_To_Document_Results workflow" sap:VirtualizedContainerService.HintSize="664,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Navigate_To_Document_Results.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="in_MappingFilePath">[mappingFilePath]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_MappinngSheetName">Vendor ID</InArgument>
@@ -280,17 +290,17 @@
               <InArgument x:TypeArguments="x:String" x:Key="in_CustomerRefNr">[custRefNumber]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Search_Document_Invoice workflow" sap:VirtualizedContainerService.HintSize="548,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Search_Document_Invoice.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Search_Document_Invoice workflow" sap:VirtualizedContainerService.HintSize="664,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Search_Document_Invoice.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="in_CustomerRefNr">[custRefNumber]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Download_Document workflow" sap:VirtualizedContainerService.HintSize="548,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Download_Document.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Download_Document workflow" sap:VirtualizedContainerService.HintSize="664,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Download_Document.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="in_InvoiceFilePath">[refrencePath &amp; "\" &amp; refNumber &amp; "_invoice.pdf"]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ContinueOnError="True" DisplayName="Invoke Extract_pdf_Invoice workflow" sap:VirtualizedContainerService.HintSize="548,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Extract_Data_Invoice.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="True" DisplayName="Invoke Extract_pdf_Invoice workflow" sap:VirtualizedContainerService.HintSize="664,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Extract_Data_Invoice.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <OutArgument x:TypeArguments="x:String" x:Key="out_ReferenceNumber">[invoiceReferenceNumber]</OutArgument>
               <OutArgument x:TypeArguments="x:String" x:Key="out_BeginDate">[invoiceBeginDate]</OutArgument>
@@ -305,7 +315,7 @@
               <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_ProductName">[dtProductName]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CreateShippingData workflow" sap:VirtualizedContainerService.HintSize="548,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="CreateShippingData.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CreateShippingData workflow" sap:VirtualizedContainerService.HintSize="664,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="CreateShippingData.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <OutArgument x:TypeArguments="s:Exception" x:Key="out_SystemException">[out_SystemException]</OutArgument>
               <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Succeeded">[out_Succeeded]</OutArgument>
@@ -322,7 +332,7 @@
               <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_SumFinalAmount">[out_SumFinalAmount]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="548,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="664,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
             <ui:CommentOut.Body>
               <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="548,145.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
                 <sap:WorkflowViewStateService.ViewState>
@@ -358,30 +368,30 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:CommentOut>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Navigate_VendorDeals_Review_Update workflow" sap:VirtualizedContainerService.HintSize="548,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Navigate_VendorDeals_Review_Update.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Navigate_VendorDeals_Review_Update workflow" sap:VirtualizedContainerService.HintSize="664,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Navigate_VendorDeals_Review_Update.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <scg:Dictionary x:TypeArguments="x:String, Argument" />
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Set_Review_Update_Worklist_Search_Criteria workflow" sap:VirtualizedContainerService.HintSize="548,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Set_Review_Update_Worklist_Search_Criteria.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Set_Review_Update_Worklist_Search_Criteria workflow" sap:VirtualizedContainerService.HintSize="664,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Set_Review_Update_Worklist_Search_Criteria.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="in_ReferenceNumber">[invoiceReferenceNumber]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_MappingFilePath">[mappingFilePath]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Navigate_Promotion_Nbr workflow" sap:VirtualizedContainerService.HintSize="548,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Navigate_Promotion_Nbr.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Navigate_Promotion_Nbr workflow" sap:VirtualizedContainerService.HintSize="664,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Navigate_Promotion_Nbr.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="in_ReferenceNumber">[invoiceReferenceNumber]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_BeginDate">[invoiceBeginDate]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_EndDate">[invoiceEndDate]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Navigate_Print_Deal workflow" sap:VirtualizedContainerService.HintSize="548,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Navigate_Print_Deal.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Navigate_Print_Deal workflow" sap:VirtualizedContainerService.HintSize="664,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Navigate_Print_Deal.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="in_DealRecapFilePath">[refrencePath &amp; "\" &amp; refNumber &amp; "_deal.pdf"]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <If Condition="[invoiceAdDate.Trim.Length &gt; 0]" sap:VirtualizedContainerService.HintSize="548,980" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[invoiceAdDate.Trim.Length &gt; 0]" sap:VirtualizedContainerService.HintSize="664,980" sap2010:WorkflowViewState.IdRef="If_2">
             <If.Then>
               <Sequence sap:VirtualizedContainerService.HintSize="368.8,830.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
@@ -425,8 +435,24 @@
                 </ui:InvokeWorkflowFile>
               </Sequence>
             </If.Then>
+            <If.Else>
+              <Sequence DisplayName="Move_TPR_Sheet" sap:VirtualizedContainerService.HintSize="254.4,115.2" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:MoveFile ContinueOnError="{x:Null}" Destination="[refrencePath &amp; &quot;\&quot; &amp; refNumber &amp; &quot;_TPR.pdf&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="216,22.4" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="False" Path="C:\Users\JayveersinhMandora\Documents\advantage\Deductions_UnileverSuperValu_Deduction\Data\Advantage\UAT Invoice\TPR Sheet.pdf" />
+              </Sequence>
+            </If.Else>
           </If>
-          <Assign DisplayName="Assign out_UPCFamilyTable" sap:VirtualizedContainerService.HintSize="509.6,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Merge_Pdf workflow" sap:VirtualizedContainerService.HintSize="664,89.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Merge_Pdf.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="mergePackageFilePath">[refrencePath &amp; "\" &amp; refNumber &amp; "\"]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="savePackageFilePath">[refrencePath &amp; "\" &amp; refNumber &amp; "\" &amp; custRefNumber &amp; "_" &amp; refNumber &amp; "_" &amp; dedAmt]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <Assign DisplayName="Assign out_UPCFamilyTable" sap:VirtualizedContainerService.HintSize="664,60" sap2010:WorkflowViewState.IdRef="Assign_15">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[upcFamilyTable]</OutArgument>
             </Assign.To>
@@ -434,7 +460,7 @@
               <InArgument x:TypeArguments="x:String">[Newtonsoft.Json.JsonConvert.SerializeObject(out_UPCFamilyTable)]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign DisplayName="Assign out_SumFinalAmount" sap:VirtualizedContainerService.HintSize="509.6,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+          <Assign DisplayName="Assign out_SumFinalAmount" sap:VirtualizedContainerService.HintSize="664,60" sap2010:WorkflowViewState.IdRef="Assign_16">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[sumFinalAmount]</OutArgument>
             </Assign.To>
@@ -442,7 +468,7 @@
               <InArgument x:TypeArguments="x:String">[Newtonsoft.Json.JsonConvert.SerializeObject(out_SumFinalAmount)]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign DisplayName="Assign dtProductName" sap:VirtualizedContainerService.HintSize="509.6,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+          <Assign DisplayName="Assign dtProductName" sap:VirtualizedContainerService.HintSize="664,60" sap2010:WorkflowViewState.IdRef="Assign_17">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[productName]</OutArgument>
             </Assign.To>
@@ -450,7 +476,7 @@
               <InArgument x:TypeArguments="x:String">[Newtonsoft.Json.JsonConvert.SerializeObject(dtProductName)]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="509.6,22.4" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_ProjectConfig.Item(&quot;USVD_QueueName_Deduction&quot;).ToString]" Reference="[refNumber]">
+          <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="664,22.4" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_ProjectConfig.Item(&quot;USVD_QueueName_Deduction&quot;).ToString]" Reference="[refNumber]">
             <ui:AddQueueItem.ItemInformation>
               <InArgument x:TypeArguments="x:String" x:Key="refNumber">[refNumber]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="invoiceAdDate">[invoiceAdDate]</InArgument>
@@ -459,9 +485,10 @@
               <InArgument x:TypeArguments="x:String" x:Key="sumFinalAmount">[sumFinalAmount]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="productName">[productName]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="invoiceBeginDate">[invoiceBeginDate]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="ampsDedAmount">[dedAmt]</InArgument>
             </ui:AddQueueItem.ItemInformation>
           </ui:AddQueueItem>
-          <Assign sap:VirtualizedContainerService.HintSize="509.6,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+          <Assign sap:VirtualizedContainerService.HintSize="664,60" sap2010:WorkflowViewState.IdRef="Assign_14">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[out_Succeeded]</OutArgument>
             </Assign.To>
@@ -472,10 +499,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="551.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,728.8" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -483,7 +510,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Exception Occured" sap:VirtualizedContainerService.HintSize="368.8,485.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Exception Occured" sap:VirtualizedContainerService.HintSize="368.8,658.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -514,6 +541,10 @@
                   <InArgument x:TypeArguments="x:String">Process Data</InArgument>
                 </Assign.Value>
               </Assign>
+              <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="330.4,132.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Move" TargetType="si:Directory">
+                <InArgument x:TypeArguments="x:String">[refrencePath &amp; "\" &amp; refNumber]</InArgument>
+                <InArgument x:TypeArguments="x:String">[incomplePackagePath &amp; "\"]</InArgument>
+              </InvokeMethod>
             </Sequence>
           </ActivityAction>
         </Catch>

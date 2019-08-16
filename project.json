@@ -1,7 +1,7 @@
 {
   "name": "Deductions_UnileverSuperValu_Deduction",
   "description": "Deductions_UnileverSuperValu_Deduction",
-  "main": "Deductions_UnileverSuperValu_Deduction .xaml",
+  "main": "Deductions_UnileverSuperValu_Deduction.xaml",
   "dependencies": {
     "Microsoft.Activities.Extensions": "2.0.6.9",
     "SQLiteDatabaseForUiPath": "[1.0.17]",
@@ -16,7 +16,7 @@
   "webServices": [],
   "schemaVersion": "4.0",
   "studioVersion": "19.7.0.74",
-  "projectVersion": "1.0.2",
+  "projectVersion": "1.0.3",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
